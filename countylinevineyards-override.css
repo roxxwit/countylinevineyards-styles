@@ -1,0 +1,4930 @@
+/* ========================================
+   MAIN.CSS - Combined Application Styles
+   Load order: cms.css â†’ card.css â†’ ws-style.css â†’ shop-left-menu.css
+   ======================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Roboto:wght@300;400;500;700&display=swap");
+
+@font-face {
+  font-family: "Abadi Light";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("https://countylinevineyards.com/wp-content/uploads/2020/11/abadi-mt-condensed-light-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Abadi Bold";
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+  src: url("https://countylinevineyards.com/wp-content/uploads/2020/11/Abadi-MT-Condensed-Extra-Bold-Regular-Font.ttf") format("truetype");
+}
+
+/* ========================================
+   ROOT VARIABLES - Design System
+   ======================================== */
+
+:root {
+  /* ========== TYPOGRAPHY ========== */
+  /* Font Families - 2 Font Maximum */
+  --font-display: "Cormorant Garamond";
+  --font-body: "Roboto";
+
+  /* Font Sizes - Standardized Scale */
+  --font-size-2xs: 11px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-md: 18px;
+  --font-size-lg: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 32px;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+
+  /* Line Heights */
+  --line-height-tight: 1.4;
+  --line-height-normal: 1.6;
+
+  /* ========== COLOR PALETTE ========== */
+  /* Primary Brand Color - Earth Brown (winery warmth) */
+  --color-primary: #402000;
+  --color-primary-dark: #241400;
+  --color-primary-light: #7a4a20;
+
+  /* Neutral Colors - Warm Cream/Beige Scale */
+  --color-white: #fcfcfc;
+  --color-black: #080400;
+  --color-gray-50: #fcfcfc;
+  --color-gray-100: #f4f4e8;
+  --color-gray-200: #ecece0;
+  --color-gray-300: #dcdccc;
+  --color-gray-400: #a4a4a4;
+  --color-gray-500: #484848;
+  --color-gray-600: #342000;
+  --color-gray-700: #241400;
+  --color-gray-800: #141000;
+  --color-gray-900: #080400;
+
+  /* Semantic Colors */
+  --color-text: var(--color-gray-700);
+  --color-text-dark: var(--color-gray-900);
+  --color-text-light: var(--color-gray-500);
+  --color-background: var(--color-gray-50);
+  --color-border: var(--color-gray-300);
+  --color-border-light: var(--color-gray-200);
+  --color-error: #c0392b;
+
+  /* ========== COMPONENT COLORS ========== */
+  --color-input-bg: var(--color-white);
+  --color-input-text: var(--color-gray-700);
+  --color-input-border: var(--color-border);
+
+  /* ========== OVERLAYS & TRANSPARENCY ========== */
+  --overlay-subtle: rgba(0, 0, 0, 0.1);
+  --overlay-light: rgba(167, 172, 183, 0.3);
+  --overlay-medium: rgba(0, 0, 0, 0.16);
+  --overlay-strong: rgba(0, 0, 0, 0.5);
+  --overlay-dark: rgba(0, 0, 0, 0.8);
+  --overlay-header: rgba(19, 24, 29, 0.12);
+
+  /* ========== SPACING ========== */
+  --border-width-thin: 1px;
+  --border-radius-sm: 3px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 5px;
+
+  /* ========== SHADOWS ========== */
+  --shadow-sm: 0 2px 5px var(--overlay-subtle);
+  --shadow-md: 0 4px 20px 0 var(--overlay-light);
+  --shadow-lg: 0 0 24px 1px var(--overlay-header);
+
+  /* ========== GRADIENTS ========== */
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
+  --gradient-error: linear-gradient(287deg, #f0280a 0%, #bc2610 100%);
+
+  /* ========== LAYOUT ========== */
+  --container-max-width: 1160px;
+  --header-height: 148px;
+
+  /* ========== LEGACY/COMPONENT PROPERTIES ========== */
+  --btn-padding: 12px 15px;
+  --btn-text-transform: uppercase;
+  --btn-letter-spacing: 1px;
+  --btn-border: var(--border-width-thin) solid #484848;
+  --btn-hover-opacity: 1;
+  --cart-summary-top: 148px;
+}
+
+/* ========================================
+   BOOTSTRAP VARIABLE OVERRIDES
+   Align Bootstrap variables with design system
+   ======================================== */
+
+:root {
+  /* Core Brand Colors */
+  --purple: var(--color-primary);
+  --maroon: var(--color-primary-dark);
+  --orange: var(--color-primary-light);
+  --light: var(--color-white);
+  --darkkhaki: var(--color-primary-light);
+  --black: var(--color-black);
+
+  /* Typography */
+  --font-family-primary: var(--font-body);
+  --font-color: var(--color-text);
+  --font-color-rgb: 36, 20, 0;
+
+  /* Borders */
+  --border-color: var(--color-border);
+  --border: 1px solid var(--border-color);
+
+  /* Primary Colors */
+  --primary: var(--color-primary);
+  --primary-rgb: 64, 32, 0;
+  --primary-dark: var(--color-primary-dark);
+  --primary-light: var(--color-white);
+
+  /* Secondary Colors */
+  --secondary: var(--color-primary-light);
+
+  /* Background */
+  --bg-color: transparent;
+  --modal-bg-color: var(--color-white);
+  --bg-input: var(--color-white);
+
+  /* Button Styles */
+  --btn-border-color: #484848;
+  --btn-bg-color: #484848;
+  --btn-color: var(--color-white);
+  --btn-active-bg-color: #484848;
+  --btn-hover-bg-color: #c9c9c9;
+  --btn-active-color: var(--color-white);
+  --btn-active-border-color: #484848;
+  --box-shadow-primary: 0 0 0 0.2rem rgba(72, 72, 72, 0.25);
+
+  /* Links */
+  --lnk-color: var(--color-primary);
+  --lnk-color-active: var(--color-primary-light);
+
+  /* Headings */
+  --head-color: var(--color-primary);
+
+  /* Forms */
+  --bg-color-checkbox: var(--color-black);
+}
+
+/* ========================================
+   1. CMS.CSS
+   ======================================== */
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: none;
+}
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.25s ease-in-out;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: var(--font-size-2xl);
+}
+
+h2 {
+  margin: 0 0 10px;
+  font-size: var(--font-size-md);
+}
+
+h3 {
+  margin: 0 0 10px;
+  font-size: var(--font-size-md);
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+.req:after {
+  color: var(--color-error);
+}
+
+.rule {
+  border-color: var(--color-border);
+}
+
+#wine-clubs .btn {
+  margin-bottom: 5px;
+}
+
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  background-color: #484848;
+  color: var(--color-white);
+  border-color: #484848;
+  font-family: "Abadi Light", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  transition:
+    background-color 0.25s ease-in-out,
+    color 0.25s ease-in-out,
+    opacity 0.25s ease-in-out;
+}
+
+.btn:hover {
+  text-decoration: none;
+  background-color: #c9c9c9;
+  border-color: #c9c9c9;
+}
+
+#box,
+body.typeGenericPage,
+form#aspnetForm {
+  display: flex;
+  flex-direction: column;
+}
+
+div#box,
+form#aspnetForm {
+  flex-grow: 1;
+}
+
+.label,
+label {
+  font-weight: bold;
+}
+
+.CustomerAccount {
+  display: block;
+  margin: 0 0 20px;
+}
+
+#pageContent {
+  padding: 20px 10px;
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.typeGenericPage #pageContentCenter {
+  width: auto;
+}
+
+.txt-product-search,
+.typeGenericPage #pageContentLeft,
+a.sign-up,
+a.quick-order,
+a.sign-in {
+  width: 100%;
+}
+
+form[action="/wine-club-join-thank-you.aspx"] #textContent > h1 span {
+  font:
+    32px/38px Arial,
+    Helvetica,
+    sans-serif !important;
+}
+
+#jqpopupContainer.popup-body {
+  padding-top: 0;
+}
+
+.addr-popup {
+  overflow: hidden;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  outline: none;
+}
+
+#ctl00_Auth1_lblAccountGreeting,
+#ctl00_Auth1_lblAccountGreetingGuest,
+#ctl00_Auth1_lblAccountGreetingGuest + .splitter,
+.popup #ctl00_cphBody_ciAddressInfo_trRegularEditSaveAsDefault + .row,
+.addr-popup .edit-addr + br {
+  display: none;
+}
+
+.button-search-product {
+  left: auto;
+  right: 10px;
+  top: 7px;
+  background: white url(../search-icon.png) right center no-repeat;
+  padding-top: 16px !important;
+}
+
+#headerContainer {
+  width: 100%;
+}
+
+#headerContainer,
+#footer {
+  flex: 0 0 0px;
+}
+
+.button-search-product,
+.product-search-options {
+  z-index: 1;
+}
+
+/* ========================================
+   HEADER STYLES - Modern Premium Layout
+   ======================================== */
+
+.header-wrapper {
+  background: var(--color-gray-50) !important;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Auth & Cart Bar */
+.auth-wrapper {
+  display: block !important;
+  background: var(--color-gray-200);
+  border-bottom: 1px solid var(--color-border);
+  padding: 6px 0;
+}
+
+.auth-wrapper .ord-container {
+  display: flex !important;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: var(--container-max-width);
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+  height: auto !important;
+}
+
+#authStatus {
+  display: flex !important;
+  align-items: center;
+  gap: 16px;
+  font-size: var(--font-size-xs);
+  font-family: var(--font-body);
+  color: var(--color-text) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#viewCartPlaceHolder a {
+  color: var(--color-primary) !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.splitter {
+  color: var(--color-gray-400) !important;
+}
+
+#authPlaceHolder {
+  color: var(--color-text) !important;
+  font-weight: 400;
+}
+
+.auth-link {
+  color: var(--color-primary) !important;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.cart-link {
+  color: var(--color-primary) !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Auth wrapper text overrides - higher specificity */
+#authStatus .cart-link {
+  color: var(--color-primary) !important;
+}
+
+#authStatus .auth-link {
+  color: var(--color-primary) !important;
+}
+
+#authStatus .splitter {
+  color: var(--color-gray-400) !important;
+}
+
+#authStatus div {
+  color: var(--color-text) !important;
+}
+
+/* Header Main Navigation - Type C: Logo Left, Nav Right */
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: transparent;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 20px;
+}
+
+/* Logo Wrap - Left-aligned */
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex: 0 0 auto;
+  order: 0;
+  gap: 12px;
+}
+
+.header-empty {
+  flex: 1 0 auto;
+  min-width: 0;
+}
+
+.logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.logo a:hover {
+  transform: scale(1.08);
+}
+
+.logo img {
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
+
+.btn-menu-wrap {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  order: 2;
+}
+
+/* Main Menu Styling */
+.main-menu {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0;
+  align-items: center;
+}
+
+.main-menu li {
+  position: relative;
+  list-style: none;
+}
+
+.main-menu a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: var(--color-text-dark);
+  font-size: 16px;
+  font-family: "Abadi Light", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border-radius: var(--border-radius-sm);
+  white-space: nowrap;
+}
+
+.main-menu a:hover {
+  color: var(--color-primary);
+  background: transparent;
+}
+
+/* Wines Link with Dropdown Button */
+.main-menu li.has-child a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-toggle-sub-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  color: var(--color-text-dark);
+}
+
+.btn-toggle-sub-menu svg {
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+}
+
+.main-menu li.has-child:hover .btn-toggle-sub-menu,
+.main-menu li.has-child.open .btn-toggle-sub-menu {
+  transform: rotate(180deg);
+  color: var(--color-primary);
+}
+
+/* Submenu Dropdown */
+.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  background: var(--color-white);
+  border: 2px solid #484848;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  min-width: 180px;
+  list-style: none;
+  padding: 12px 0;
+  margin: 0;
+  border-radius: var(--border-radius-md);
+  margin-top: 0px;
+}
+
+.main-menu li:hover > .sub-menu,
+.main-menu li.open > .sub-menu {
+  display: flex;
+}
+
+.sub-menu li {
+  list-style: none;
+  border: none;
+}
+
+.sub-menu a {
+  display: block;
+  padding: 10px 20px;
+  font-size: var(--font-size-xs);
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+}
+
+.sub-menu a:hover {
+  background: var(--color-gray-200);
+  color: var(--color-primary);
+  padding-left: 24px;
+}
+
+/* Main Menu Positioning */
+.main-menu-1 {
+  order: -1;
+  flex: 0 0 auto;
+}
+
+.main-menu-2 {
+  order: 1;
+  flex: 0 0 auto;
+}
+
+/* Type C: Full nav on right side */
+.main-menu-full {
+  order: 1;
+  flex: 1 1 auto;
+  justify-content: flex-end;
+}
+
+/* SHOP pill CTA button */
+.nav-shop-item a.nav-shop-btn {
+  background: #484848 !important;
+  color: var(--color-gray-50) !important;
+  border-radius: 20px;
+  padding: 8px 20px !important;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease;
+}
+
+.nav-shop-item a.nav-shop-btn:hover {
+  background: #2e2e2e !important;
+  color: var(--color-gray-50) !important;
+}
+
+/* Burger Menu Button */
+.mobile-toggle,
+.burger {
+  background: none;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  padding: 8px;
+  display: none;
+  z-index: 1041;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  color: var(--color-white);
+}
+
+.mobile-toggle:hover,
+.burger:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.burger-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 24px;
+}
+
+.burger-inner {
+  position: relative;
+  width: 24px;
+  height: 18px;
+}
+
+.burger-inner .line {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text-dark);
+  transition: all 250ms cubic-bezier(0.2, 0.6, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.burger-inner .top-bun {
+  top: 0;
+}
+
+.burger-inner .patty {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.burger-inner .bottom-bun {
+  bottom: 0;
+}
+
+.burger.open .burger-inner .top-bun {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.burger.open .burger-inner .patty {
+  opacity: 0;
+}
+
+.burger.open .burger-inner .bottom-bun {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Navigation */
+.mobile-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-white);
+  z-index: 1040;
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  transform: translateY(-100%);
+  transition: transform 0.5s cubic-bezier(0.2, 0.6, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+body.open .mobile-navigation {
+  transform: translateY(0);
+}
+
+.navigation-row {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.main-navigation {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  flex: 1;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+}
+
+.nav-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+.main-navigation > .main-menu {
+  flex-direction: column;
+  gap: 0;
+  flex: 1;
+}
+
+.main-navigation a {
+  padding: 16px 12px;
+  font-size: var(--font-size-md);
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.main-navigation a:last-child {
+  border-bottom: none;
+}
+
+.navigation-empty {
+  flex: 1;
+  margin-top: auto;
+}
+
+/* Overlay */
+.ord-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+body.open .ord-overlay {
+  display: block;
+  opacity: 1;
+}
+
+/* ========================================
+   HEADER RESPONSIVE DESIGN
+   ======================================== */
+
+@media only screen and (max-width: 1024px) {
+  .header-main {
+    flex-wrap: wrap;
+    padding: 15px 20px;
+    justify-content: space-between;
+    gap: 15px;
+  }
+
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1 0 100%;
+    width: 100%;
+    order: unset;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+  }
+
+  .main-menu-1,
+  .main-menu-2,
+  .main-menu-full {
+    display: none;
+  }
+
+  .mobile-toggle,
+  .burger {
+    display: flex;
+  }
+
+  body.open {
+    overflow: hidden;
+  }
+
+  body.open.has-overlay .ord-overlay {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .header-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    gap: 20px;
+  }
+
+  .main-menu-1,
+  .main-menu-2,
+  .main-menu-full {
+    display: flex;
+  }
+
+  .burger,
+  .mobile-toggle,
+  .mobile-navigation {
+    display: none !important;
+  }
+
+  .logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 auto;
+  }
+
+  .header-empty {
+    display: none;
+  }
+
+  .logo {
+    flex: 0 0 auto;
+  }
+
+  .btn-menu-wrap {
+    display: none;
+  }
+}
+
+.basket_table .item .txt {
+  display: inline-block;
+  min-width: unset;
+  padding: 0;
+}
+
+/* align content on empty wines page  */
+
+form[action="/wines/"] .shop-content,
+form[action="/wines"] .shop-content {
+  width: 100%;
+  display: block;
+}
+
+#pageContentRight,
+#pageContentLeft {
+  float: none !important;
+}
+
+#authStatus {
+  text-transform: uppercase;
+  padding: 10px 10px;
+  text-align: right;
+  white-space: unset;
+}
+
+#authStatus div {
+  display: inline;
+}
+
+.authStatus span.splitter {
+  visibility: hidden;
+  vertical-align: top;
+}
+
+/***** cat-v1-1 *****/
+
+#cat-v1-1 {
+  width: 100%;
+  position: relative;
+}
+
+#cat-v1-1 .no-data {
+  font-size: var(--font-size-md);
+  text-align: center;
+  padding: 90px 0;
+}
+
+.shop-content h1 {
+  margin: 0;
+}
+
+.shop-content h1 span {
+  font-weight: normal !important;
+}
+
+.activeCart-panel {
+  flex: 0 0 175px;
+  -ms-flex: 0 0 175px;
+}
+
+.add-to-cart {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.add-to-cart legend {
+  display: none;
+}
+
+.add-to-cart > table {
+  margin: 0 0 10px;
+}
+
+.add-to-cart .qty-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/***** activeCart *****/
+
+.uc.activeCart {
+  position: sticky;
+  top: var(--cart-summary-top);
+}
+
+table.activeCart {
+  border: 2px solid var(--color-border-light);
+  width: 100%;
+  border-radius: 6px;
+  transition: border-color 0.4s ease;
+}
+
+.uc.activeCart:hover table.activeCart {
+  border-color: #484848;
+}
+
+.activeCart .cartBody {
+  padding: 16px;
+}
+
+/* Shopping Summary Styling */
+.cart-checkout-container {
+  margin: 12px 0;
+}
+
+.cart-items-label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.cart-items-label .lblVal {
+  color: var(--color-gray-600);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cart-items-container {
+  width: 100% !important;
+}
+
+.cart-item-line {
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  transition: opacity 0.3s ease;
+}
+
+.cart-item-line:hover {
+  opacity: 0.8;
+}
+
+.cart-item-line .thumb {
+  padding-right: 8px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.cart-item-line .thumb img {
+  max-width: 55px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.cart-item-line .prod-info {
+  padding: 0 !important;
+  padding-left: 8px !important;
+}
+
+.cart-item-line .prod-info .title {
+  display: block;
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  margin-bottom: 4px;
+}
+
+.cart-item-line .price {
+  margin: 4px 0;
+  font-size: var(--font-size-xs);
+}
+
+.cart-item-line .price-label {
+  color: var(--color-gray-500);
+  font-weight: 600;
+  font-size: var(--font-size-2xs);
+}
+
+.cart-item-line .qty {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.cart-item-line .qty-label {
+  color: var(--color-gray-500);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.cart-item-line .qty input {
+  width: 30px;
+  padding: 4px 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  text-align: center;
+  font-size: var(--font-size-xs);
+}
+
+.cart-item-line .lnk-update {
+  color: var(--color-primary);
+  text-decoration: underline;
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  padding: 2px 6px;
+}
+
+.cart-item-line .lnk-update:hover {
+  color: var(--color-primary-dark);
+}
+
+.cart-item-line .btn.hvr {
+  padding: 4px 10px;
+  font-size: var(--font-size-2xs);
+  margin-left: 4px;
+}
+
+.cart-item-line .btn.basket {
+  background: var(--color-gray-200);
+  color: var(--color-text);
+  border-color: var(--color-gray-300);
+}
+
+.cart-item-line .btn.basket:hover {
+  background: var(--color-gray-300);
+  color: var(--color-text);
+  border-color: var(--color-gray-400);
+}
+
+.cart-item-line .btn.remove {
+  background: var(--color-error);
+  color: var(--color-white);
+  border-color: var(--color-error);
+}
+
+.cart-item-line .btn.remove:hover {
+  background: #c62828;
+  border-color: #c62828;
+}
+
+/* Space and Rule Styling */
+.space-after-items {
+  height: 8px;
+}
+
+.rule {
+  border-top: 1px solid var(--color-border);
+  margin: 12px 0;
+}
+
+/* Order Summary / Subtotal */
+#ctl00_cphBody_cphContentLeftSide_ctl01_ctl00_ActiveCart1_pnlSumary {
+  margin-top: 12px;
+}
+
+.subtotal-cost {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  font-size: var(--font-size-sm);
+}
+
+.subtotal-cost-label {
+  color: var(--color-gray-600);
+  font-weight: 600;
+}
+
+.subtotal-cost .numeric {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: var(--font-size-md);
+}
+
+h2.anounce {
+  color: var(--color-error);
+  font-size: var(--font-size-md);
+  line-height: 15px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.add-to-cart-confirmation-message {
+  position: fixed !important;
+  bottom: 20px;
+  right: 20px;
+  left: auto !important;
+  top: auto !important;
+  z-index: 1000 !important;
+  background: var(--color-white);
+  border: 2px solid #484848;
+  border-radius: 8px;
+  padding: 16px 20px;
+  max-width: 320px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: var(--color-gray-700);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  animation: slideInToast 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInToast {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.add-to-cart-confirmation-message.hiding {
+  animation: slideOutToast 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideOutToast {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+}
+
+/***** shop-left-menu *****/
+
+.activeCart .cartHeader,
+.shop-left-menu .menu-header,
+#accountContent .header,
+#checkout .header,
+#basket .header {
+  border-bottom: 1px solid transparent;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: var(--font-size-md);
+  line-height: 24px;
+  font-family: inherit;
+  color: var(--color-white);
+  overflow: hidden;
+}
+
+.left-box-head.col a {
+  font-size: var(--font-size-md);
+  text-decoration: underline;
+}
+
+/***** productDetails *****/
+
+#pageContentCenter,
+#productDetails {
+  width: 100%;
+  float: none !important;
+}
+
+.data-header {
+  display: none;
+  overflow: hidden;
+  padding: 0 0 10px;
+}
+
+.data-header .pager {
+  padding-top: 17px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.data-header .pager .c,
+.data-header .pager .t {
+  font-weight: bold;
+}
+
+.current-page-descr {
+  margin: 0 0 5px;
+}
+
+.data-header .title {
+  padding: 10px;
+  text-align: center;
+  display: none;
+}
+
+.prod-details .sub-title {
+  font-family: var(--font-display);
+  color: var(--color-primary);
+  display: block;
+  font-size: var(--font-size-2xl);
+  line-height: 1.2;
+  font-weight: bold;
+}
+
+.prod-details .data {
+  width: 100%;
+}
+
+.prod-details .cmd-container,
+.prod-details .price-container {
+  margin: 15px 0;
+}
+
+/***** tabs-product *****/
+
+#tabs-product {
+  background: none;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  margin-left: 0;
+}
+
+/* Hide tab navigation - show all content on one page */
+#tabs-product > ul,
+#tabs-product .ui-tabs-nav {
+  display: none !important;
+}
+
+/* Display all tab panels */
+#tabs-product .ui-tabs-panel {
+  display: block !important;
+  padding: 0;
+  border-radius: 0;
+}
+
+#tabs-product .tabs-container {
+  display: grid !important;
+  grid-template-columns: 350px 1fr !important;
+  grid-template-rows: auto auto auto auto !important;
+  gap: 60px !important;
+  width: 100% !important;
+  padding: 60px 0 !important;
+  border: none !important;
+  overflow: visible !important;
+  position: relative !important;
+}
+
+#tabs-product .tabs-wrap {
+  grid-column: 1 / 3 !important;
+  display: contents !important;
+}
+
+#tabs-product .tabs-content {
+  display: contents !important;
+}
+
+/* Product image - left, spans multiple rows */
+#tabs-product .prod-image {
+  grid-column: 1 !important;
+  grid-row: 1 / 4 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+#tabs-product .prod-image img {
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Overview tab styling */
+#tab_overview {
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 28px !important;
+  align-self: start !important;
+  background: transparent !important;
+  border: 2px solid var(--color-border-light) !important;
+  border-radius: 8px !important;
+  padding: 40px !important;
+}
+
+#tab_overview .sub-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+#tab_overview .uc.addToCart {
+  background: transparent !important;
+  border: 2px solid var(--color-border-light) !important;
+  border-radius: 8px !important;
+  padding: 32px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  margin-top: 12px !important;
+  margin-bottom: 60px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  color: var(--color-text) !important;
+}
+
+#tab_overview .uc.addToCart:hover {
+  box-shadow: 0 8px 24px rgba(241, 68, 59, 0.35) !important;
+  transform: translateY(-2px) !important;
+}
+
+#tab_overview .uc.addToCart > span {
+  color: var(--color-text-dark) !important;
+  font-weight: 600 !important;
+  font-size: var(--font-size-base) !important;
+}
+
+#tab_overview .uc.addToCart span,
+#tab_overview .uc.addToCart label {
+  color: var(--color-text-dark) !important;
+}
+
+#tab_overview .uc.addToCart .label,
+#tab_overview .uc.addToCart .price-label,
+#tab_overview .uc.addToCart .qty-label {
+  color: var(--color-text-dark) !important;
+  font-weight: 600 !important;
+}
+
+#tab_overview .uc.addToCart .price,
+#tab_overview .uc.addToCart .sale-price,
+#tab_overview .uc.addToCart .old-price {
+  color: var(--color-primary) !important;
+  font-weight: 600 !important;
+}
+
+#tab_overview .uc.addToCart .subtotal {
+  display: none !important;
+}
+
+#tab_overview .uc.addToCart fieldset.add-to-cart {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Price section at top */
+#tab_overview .uc.addToCart .price-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  align-items: flex-start !important;
+}
+
+#tab_overview .uc.addToCart .price-label {
+  font-size: var(--font-size-xs) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.8px !important;
+  color: var(--color-gray-500) !important;
+  font-weight: 600 !important;
+}
+
+#tab_overview .uc.addToCart .sale-price {
+  font-size: var(--font-size-2xl) !important;
+  font-weight: 700 !important;
+  color: var(--color-primary) !important;
+}
+
+#tab_overview .uc.addToCart .old-price {
+  font-size: var(--font-size-sm) !important;
+  color: var(--color-gray-400) !important;
+  text-decoration: line-through !important;
+}
+
+/* Quantity and button section */
+#tab_overview .uc.addToCart .cmd-container {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 16px !important;
+  width: 100% !important;
+}
+
+#tab_overview .uc.addToCart .qty-label {
+  font-size: var(--font-size-xs) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.8px !important;
+  color: var(--color-gray-500) !important;
+  font-weight: 600 !important;
+  display: block !important;
+  margin-bottom: 4px !important;
+}
+
+#tab_overview .uc.addToCart fieldset > div {
+  display: block !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+#tab_overview .uc.addToCart .qty-container {
+  display: flex !important;
+  gap: 8px !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+}
+
+#tab_overview .uc.addToCart input,
+#tab_overview .uc.addToCart select {
+  padding: 14px 16px !important;
+  border: 1px solid var(--color-border-light) !important;
+  border-radius: 8px !important;
+  background: var(--color-white) !important;
+  color: var(--color-text-dark) !important;
+  font-size: var(--font-size-sm) !important;
+  font-family: var(--font-body) !important;
+  transition: all 0.3s ease !important;
+}
+
+#tab_overview .uc.addToCart input::placeholder {
+  color: var(--color-gray-400) !important;
+}
+
+#tab_overview .uc.addToCart input:focus,
+#tab_overview .uc.addToCart select:focus {
+  background: var(--color-white) !important;
+  border-color: #484848 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(72, 72, 72, 0.1) !important;
+}
+
+#tab_overview .uc.addToCart input[type="number"],
+#tab_overview .uc.addToCart input[type="text"].number {
+  width: 80px !important;
+  text-align: center !important;
+  font-weight: 600 !important;
+  font-size: var(--font-size-base) !important;
+}
+
+#tab_overview .uc.addToCart .btn,
+#tab_overview .uc.addToCart button {
+  background: #484848 !important;
+  color: white !important;
+  border: none !important;
+  padding: 16px 28px !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  font-size: var(--font-size-base) !important;
+  font-family: var(--font-display) !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  width: 100% !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 12px rgba(241, 68, 59, 0.2) !important;
+}
+
+#tab_overview .uc.addToCart .btn:hover,
+#tab_overview .uc.addToCart button:hover {
+  background: var(--color-primary-dark) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(241, 68, 59, 0.35) !important;
+}
+
+#tab_overview .prod-descr {
+  line-height: 1.6;
+  color: var(--color-gray-700);
+  font-size: var(--font-size-sm);
+  margin: 0;
+  padding: 0;
+}
+
+#tab_overview .prod-descr p {
+  margin: 0;
+}
+
+#tab_overview .tasting-notes-hdr,
+#tab_overview .production-notes-hdr,
+#tab_overview .other-notes-hdr {
+  display: block !important;
+  font-size: var(--font-size-sm) !important;
+  font-weight: 700 !important;
+  color: var(--color-text) !important;
+  margin-top: 20px !important;
+  margin-bottom: 12px !important;
+  padding-bottom: 8px !important;
+  border-bottom: 2px solid var(--color-border-light) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+#tab_overview .tasting-notes,
+#tab_overview .production-notes,
+#tab_overview .other-notes {
+  line-height: 1.8 !important;
+  color: var(--color-gray-700) !important;
+  font-size: var(--font-size-sm) !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 4px !important;
+  margin-bottom: 8px !important;
+}
+
+#tab_overview .other-notes {
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+}
+
+#tab_overview .tasting-notes p,
+#tab_overview .production-notes p,
+#tab_overview .other-notes p {
+  margin: 0;
+}
+
+/* Wine information specs - right column, second row */
+#tab_wine_spec {
+  grid-column: 2 !important;
+  grid-row: 2 !important;
+  margin-top: 0 !important;
+  align-self: start !important;
+  background: transparent !important;
+  border: 2px solid var(--color-border-light) !important;
+  border-radius: 8px !important;
+  padding: 40px !important;
+  z-index: 1 !important;
+}
+
+#tab_wine_spec .wine-information {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  border: none !important;
+  border-radius: 0 !important;
+  overflow: hidden !important;
+}
+
+#tab_wine_spec .wine-information tr {
+  transition: background-color 0.3s ease;
+  background-color: transparent !important;
+}
+
+#tab_wine_spec .wine-information tr.alt {
+  background-color: transparent !important;
+}
+
+#tab_wine_spec .wine-information tr.norm {
+  background-color: transparent !important;
+}
+
+#tab_wine_spec .wine-information tr:hover {
+  background-color: rgba(241, 68, 59, 0.05);
+}
+
+#tab_wine_spec .wine-information td {
+  padding: 24px 0 !important;
+  border-bottom: 1px solid var(--color-border-light) !important;
+  font-size: var(--font-size-sm) !important;
+  line-height: 1.6 !important;
+}
+
+#tab_wine_spec .wine-information tr:last-child td {
+  border-bottom: none;
+}
+
+#tab_wine_spec .wine-information td:first-child {
+  font-weight: 700;
+  color: var(--color-gray-700);
+  width: 40%;
+}
+
+#tab_wine_spec .wine-information td:last-child {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* Reviews section - right column, third row */
+#tab_reviews {
+  grid-column: 2 !important;
+  grid-row: 3 !important;
+  align-self: start !important;
+  background: transparent !important;
+  border: 2px solid var(--color-border-light) !important;
+  border-radius: 8px !important;
+  padding: 40px !important;
+}
+
+#tab_reviews p {
+  line-height: 1.9 !important;
+  color: var(--color-gray-700) !important;
+  font-size: var(--font-size-sm) !important;
+  margin: 0 0 20px 0 !important;
+}
+
+#tab_reviews > h3 {
+  font-size: var(--font-size-lg) !important;
+  font-weight: 700 !important;
+  color: var(--color-text) !important;
+  margin: 0 0 24px 0 !important;
+  padding-bottom: 16px !important;
+  border-bottom: 2px solid var(--color-border-light) !important;
+}
+
+#tab_reviews b {
+  color: var(--color-text);
+  font-weight: 700;
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+#tab_reviews i {
+  color: var(--color-primary);
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Vineyards tab - left, bottom row */
+#tab_vineyards {
+  grid-column: 1 !important;
+  grid-row: 4 !important;
+  background: transparent !important;
+  border: 2px solid var(--color-border-light) !important;
+  border-radius: 8px !important;
+  padding: 40px !important;
+}
+
+#tab_vineyards > h3 {
+  font-size: var(--font-size-lg) !important;
+  font-weight: 700 !important;
+  color: var(--color-text) !important;
+  margin: 0 0 20px 0 !important;
+  padding-bottom: 16px !important;
+  border-bottom: 2px solid var(--color-border-light) !important;
+}
+
+#tab_vineyards p {
+  line-height: 1.9 !important;
+  color: var(--color-gray-700) !important;
+  font-size: var(--font-size-sm) !important;
+  margin: 0 !important;
+}
+
+/* Winemaker tab - right, bottom row */
+#tab_winemaker {
+  grid-column: 2 !important;
+  grid-row: 4 !important;
+  background: transparent !important;
+  border: 2px solid var(--color-border-light) !important;
+  border-radius: 8px !important;
+  padding: 40px !important;
+}
+
+#tab_winemaker > h3 {
+  font-size: var(--font-size-lg) !important;
+  font-weight: 700 !important;
+  color: var(--color-text) !important;
+  margin: 0 0 20px 0 !important;
+  padding-bottom: 16px !important;
+  border-bottom: 2px solid var(--color-border-light) !important;
+}
+
+#tab_winemaker p {
+  line-height: 1.9 !important;
+  color: var(--color-gray-700) !important;
+  font-size: var(--font-size-sm) !important;
+  margin: 0 !important;
+}
+
+/* Responsive layout */
+@media (max-width: 1400px) {
+  #tabs-product .tabs-container {
+    grid-template-columns: 300px 1fr !important;
+    gap: 50px !important;
+    padding: 50px 0 !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  #tabs-product .tabs-container {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto auto auto auto auto !important;
+    gap: 40px !important;
+    padding: 40px 0 !important;
+  }
+
+  #tabs-product .prod-image {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    max-width: 500px !important;
+    margin: 0 auto !important;
+  }
+
+  #tab_overview {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    padding: 32px !important;
+  }
+
+  #tab_wine_spec {
+    grid-column: 1 !important;
+    grid-row: 3 !important;
+    padding: 32px !important;
+  }
+
+  #tab_reviews {
+    grid-column: 1 !important;
+    grid-row: 4 !important;
+    padding: 32px !important;
+  }
+
+  #tab_vineyards {
+    grid-column: 1 !important;
+    grid-row: 5 !important;
+    padding: 32px !important;
+  }
+
+  #tab_winemaker {
+    grid-column: 1 !important;
+    grid-row: 6 !important;
+    padding: 32px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #tabs-product .tabs-container {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    padding: 30px 0 !important;
+  }
+
+  #tab_overview,
+  #tab_wine_spec,
+  #tab_reviews,
+  #tab_vineyards,
+  #tab_winemaker {
+    padding: 24px !important;
+    gap: 20px !important;
+  }
+
+  #tab_overview .uc.addToCart {
+    padding: 24px !important;
+    margin-bottom: 0 !important;
+  }
+
+  #tab_overview .sub-title {
+    font-size: var(--font-size-xl) !important;
+  }
+
+  #tab_reviews > h3,
+  #tab_vineyards > h3,
+  #tab_winemaker > h3 {
+    font-size: var(--font-size-base) !important;
+  }
+}
+
+  #tab_reviews {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  #tab_vineyards {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  #tab_winemaker {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+  #tab_reviews {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  #tab_vineyards {
+    grid-column: 1;
+    grid-row: 5;
+    margin-top: 0;
+  }
+
+  #tab_winemaker {
+    grid-column: 1;
+    grid-row: 6;
+  }
+
+  #tabs-product .tabs-wrap {
+    grid-column: 1;
+  }
+
+  #tabs-product .tabs-content {
+    grid-column: 1;
+  }
+}
+
+#tab_vintages {
+  text-align: center;
+}
+
+#vintage-text {
+  margin-bottom: 20px;
+}
+
+#tab_vintages a {
+  display: block;
+  margin: 0 0 5px;
+}
+
+#tab_wine_spec > div {
+  overflow: hidden;
+}
+
+.wine-information {
+  width: 100%;
+  border: 1px solid var(--color-border);
+}
+
+.wine-information td {
+  padding: 5px;
+  border: none;
+  width: auto !important;
+}
+
+.wine-information tr.alt {
+  background: var(--color-border-light);
+}
+
+.tabs-container .addToCart > span {
+  display: block;
+}
+
+.tabs-container .addToCart {
+  padding: 10px 0 0;
+}
+
+/***** WINE CLUB *****/
+
+.wineclub-membership > div > a > h3 {
+  font-size: var(--font-size-md);
+}
+
+.join-wine-club-holder {
+  width: 100%;
+}
+
+.join-wine-club-holder:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.join-wine-club-left,
+.join-wine-club-right {
+  float: left;
+  width: 50%;
+  padding: 0 10px 0 0;
+}
+
+.join-wine-club-right {
+  float: right;
+  padding: 0 0 0 10px;
+}
+
+.join-wine-club-content fieldset {
+  margin: 0 0 10px;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+}
+
+.join-wine-club-content legend h3 {
+  margin: 0;
+}
+
+.wine-club-selections .prod-img {
+  width: auto;
+  margin: 0 10px 10px 0;
+}
+
+.basket_table .item .col-2 a,
+.order_details .item .col-2 a {
+  font-size: var(--font-size-sm);
+}
+
+.uc.paymentOptions {
+  overflow: hidden;
+}
+
+.secure-shopping,
+.popup div.secure-shopping {
+  width: 50%;
+  float: right;
+  padding-left: 10px;
+  padding-top: 18px;
+}
+
+.popup div.secure-shopping {
+  width: 50% !important;
+}
+
+.paymentOptions .paymentOptions_table,
+.popup .paymentOptions .paymentOptions_table {
+  width: 50% !important;
+  float: left;
+  padding-right: 10px;
+}
+
+.variations ul li a.btn {
+  float: none;
+}
+
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0px;
+  padding: 10px;
+  border: 1px solid var(--color-border);
+  min-height: 40px;
+  background: var(--color-white);
+  min-width: 55px;
+}
+
+.txt,
+.txtbig,
+.ddl,
+.select_box select {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+  background: var(--color-white);
+  border-radius: 0px;
+  padding: 10px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid var(--color-border);
+}
+
+textarea.txt {
+  max-width: 100%;
+  min-width: 100%;
+  width: 100% !important;
+}
+
+.forgot_pass {
+  max-width: 300px;
+}
+
+.paymentOptions_row,
+.fieldset_row {
+  width: 100%;
+  margin: 0 0 5px;
+}
+
+.paymentOptions_row:after,
+.fieldset_row:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.paymentOptions_box {
+  float: left;
+  width: 50%;
+  padding-right: 10px;
+}
+
+.shipping-info select.ddl {
+  margin-top: 5px;
+}
+
+.date_selects {
+  overflow: hidden;
+  margin: 0 -10px 0 0;
+}
+
+.select_box {
+  float: left;
+  width: 33.3%;
+  padding: 0 10px 10px 0;
+}
+
+.safe-secure-btm {
+  overflow: hidden;
+  margin: 0 0 10px;
+}
+
+.safe-secure-btm .floatLeft {
+  float: left;
+}
+
+.productVersion {
+  white-space: normal;
+  color: var(--color-text-dark);
+}
+
+.msg div {
+  max-width: 100%;
+  width: auto !important;
+}
+
+.bootstrapWizard li .title {
+  font-size: var(--font-size-md);
+}
+
+/***** SIGN IN *****/
+
+.page-signin #contentContainer {
+  display: flex;
+}
+
+.page-signin #pageContentCenter {
+  flex: 1 1 auto;
+  margin-right: 30px;
+}
+
+.page-signin .activeCart {
+  width: 100%;
+}
+
+.page-signin #pageContentLeft {
+  display: none !important;
+}
+
+.page-signin #pageContentRight {
+  flex: 0 0 175px;
+  float: none !important;
+}
+
+.signin_table .row {
+  width: 100%;
+  margin: 0 0 15px;
+}
+
+.signin_table .row:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.signin_table .col {
+  float: left;
+  width: 50%;
+  padding-right: 15px;
+}
+
+.signin_table .col.right {
+  float: right;
+}
+
+.btns .btn {
+  margin: 0 5px 0 0;
+}
+
+.label_box {
+  margin: 0 0 5px;
+}
+
+.signin_table .select_row {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.signin_table .select_row:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.signin_table .select_box {
+  padding: 0 15px 0 0;
+}
+
+/***** MY ACCOUNT *****/
+
+form[action="/account.aspx"] #pageContentCenter {
+  display: inline-block !important;
+  width: 80% !important;
+  float: none !important;
+}
+
+form[action="/account.aspx"] #pageContentRight {
+  display: inline-block !important;
+  width: 20% !important;
+  max-width: 200px;
+}
+
+#accountContent .section,
+#checkout .section,
+#basket.section {
+  margin: 0 0 25px;
+  border: 1px solid var(--color-border);
+}
+
+#accountContent .header,
+#checkout .header,
+#basket .header {
+  text-align: left;
+}
+
+.lnkSignOut {
+  text-transform: none;
+  color: var(--color-white);
+}
+
+.lnk {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.account_address {
+  overflow: hidden;
+}
+
+.section .content h3,
+.section .content .account_address h3 {
+  font-size: var(--font-size-md);
+}
+
+.account_address .column {
+  float: left;
+  width: 50%;
+  padding: 0 0 0 10px;
+}
+
+.account_address .column:first-child {
+  padding: 0 10px 0 0;
+}
+
+.ciRegularView .row {
+  display: table;
+  width: 100%;
+  margin: 0 0 10px;
+}
+
+.ciRegularView .col {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.ciRegularView .col:first-child {
+  width: 90px;
+}
+
+.details_header,
+.details .item,
+.order_details .item {
+  display: table;
+  width: 100%;
+  margin: 0 0 10px;
+}
+
+.details_header > div,
+.details .item > div,
+.order_details .item > div {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.details_header > div {
+  font-weight: bold;
+}
+
+.details .col-1 {
+  width: 15%;
+}
+
+.details .col-2 {
+  width: 10%;
+  text-align: center;
+}
+
+.details .col-3 {
+  width: 10%;
+  text-align: center;
+}
+
+.details .col-4 {
+  width: 35%;
+}
+
+.details .col-5 {
+  width: 15%;
+}
+
+.details .col-6 {
+  width: 15%;
+  text-align: right;
+}
+
+.details .footer {
+  border-top: 1px solid var(--color-border);
+  padding: 10px 0 0;
+  text-align: right;
+}
+
+.details .productVersion {
+  white-space: normal;
+}
+
+.details .mobile-label,
+.order_details .mobile-label,
+.basket_table .mobile-label {
+  display: none;
+  font-weight: bold;
+}
+
+.order_details .col-1 {
+  width: 10%;
+}
+
+.order_details .col-2 {
+  width: 30%;
+}
+
+.order_details .col-3 {
+  width: 30%;
+}
+
+.order_details .col-4 {
+  width: 15%;
+}
+
+.order_details .col-5 {
+  width: 15%;
+  text-align: right;
+}
+
+.order_details .footer {
+  display: table;
+  width: 100%;
+  padding: 10px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.order_details .footer .col:first-child {
+  text-align: left;
+}
+
+.order_details .footer .col {
+  text-align: right;
+  display: table-cell;
+}
+
+.order_details .footer .col-center {
+  text-align: center;
+  font-size: var(--font-size-xs);
+}
+
+.order_details .col-3 .txt,
+.order_details .text_apply {
+  float: left;
+}
+
+.order_details .col-3 .txt {
+  margin-right: 5px;
+}
+
+.edit-addr .row {
+  display: table;
+  width: 100%;
+  margin: 0 0 10px;
+}
+
+.edit-addr .col {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.edit-addr .col:first-child {
+  width: 130px;
+}
+
+.edit-addr .select_box {
+  padding-bottom: 0;
+}
+
+.edit-addr .row .btn {
+  margin: 0 3px;
+}
+
+/***** NEWSLETTER *****/
+
+.newsletter {
+  max-width: 450px;
+}
+
+.newsletter_table .row {
+  display: table;
+  width: 100%;
+  margin: 0 0 10px;
+}
+
+.newsletter_table .col {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.newsletter_table .col:first-child {
+  width: 130px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+/***** HELP *****/
+
+.product-search {
+  display: block;
+}
+
+form[action*="/newsletter"] #tableColumnsContainer,
+form[action="/account.aspx"] #contentContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+form[action="/account.aspx"] #pageContentRight {
+  max-width: 200px;
+  width: 20%;
+}
+
+form[action="/account.aspx"] #pageContentCenter {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.help_content {
+  width: 80%;
+}
+
+.help_aside {
+  max-width: 200px;
+  width: 20%;
+}
+
+.help_holder > div {
+  width: 100% !important;
+}
+
+/***** CHECKOUT *****/
+
+.checkout-header {
+  display: table;
+  width: 100%;
+  margin: 0 0 10px;
+}
+
+.checkout-header .col {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.checkout-header .error {
+  margin: 0 0 10px;
+}
+
+#checkout .left-box-head {
+  width: 175px;
+  padding: 0 0 20px 25px;
+  vertical-align: bottom;
+}
+
+.checkout-section {
+  display: table;
+  width: 100%;
+  margin: 0 0 20px;
+}
+
+.checkout-top-box {
+  border: 1px solid var(--color-border);
+  display: table-cell;
+  vertical-align: top;
+}
+
+.checkout-top-box.summary {
+  width: 200px;
+}
+
+.checkout-section .divider {
+  width: 25px;
+  display: table-cell;
+}
+
+.addr-table {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
+.addr-table .column {
+  float: left;
+  width: 50%;
+  margin: 0 0 10px;
+  padding: 0 0 0 10px;
+}
+
+.addr-table .column:first-child {
+  padding: 0 10px 0 0;
+}
+
+.promo-content {
+  overflow: hidden;
+  margin: 0 0 20px;
+}
+
+.promo-content .col-left {
+  float: left;
+  width: 60%;
+}
+
+.promo-content .col-right {
+  float: right;
+}
+
+.promo-content .txt {
+  max-width: 300px;
+  display: inline-block;
+}
+
+.promo-content .label {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+#checkout .bottom-section .btns {
+  width: 100%;
+  margin: 0 0 10px;
+}
+
+#checkout .bottom-section .btns:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+#checkout .bottom-section .btn-right {
+  float: right;
+}
+
+/***** BASKET *****/
+
+.basket_table .cart-header,
+.basket_table .item,
+.basket_table #divRowNoItems,
+.basket_table .footer {
+  width: 100%;
+  display: table;
+  margin: 0 0 10px;
+}
+
+.basket_table .item,
+.basket_table .footer {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.basket_table .cart-header > div,
+.basket_table .item > div,
+.basket_table .footer > div {
+  display: table-cell;
+  vertical-align: top;
+  padding-bottom: 10px;
+}
+
+.basket_table .cart-header > div {
+  font-weight: bold;
+}
+
+.basket_table .col-center {
+  text-align: center;
+}
+
+.basket_table .col-center h2 {
+  font-weight: bold;
+}
+
+.basket_table .col-1 {
+  width: 10%;
+}
+
+.basket_table .col-2 {
+  width: 45%;
+}
+
+.basket_table .col-3 {
+  width: 15%;
+}
+
+.basket_table .col-4 {
+  width: 15%;
+}
+
+.basket_table .col-5 {
+  width: 15%;
+  text-align: right;
+}
+
+.basket_table .footer .col-1 {
+  width: 70%;
+}
+
+.basket_table .footer .col-2,
+.basket_table .footer .col-3 {
+  width: 15%;
+}
+
+.basket_table .footer .col-3 {
+  text-align: right;
+}
+
+.basket_table .footer_2 {
+  padding: 10px 0;
+}
+
+.basket_table .btn-print {
+  float: right;
+}
+
+.details.cof > div:first-child {
+  width: 100%;
+  display: table;
+  margin: 0 0 20px;
+}
+
+.details.cof > div:first-child > div {
+  display: table-cell;
+  width: 15% !important;
+}
+
+.details.cof > div:first-child > div:first-child {
+  width: 45% !important;
+}
+
+.details.cof > div:first-child > div:last-child {
+  width: 25% !important;
+}
+
+.details.cof .btn {
+  margin-top: 20px;
+}
+
+.details.cof .item > div {
+  width: 15%;
+}
+
+.details.cof .item > div:first-child {
+  width: 45%;
+}
+
+.details.cof .item > div:last-child {
+  width: 25%;
+}
+
+.details.cof .wccc,
+.details.cof .wccc:hover {
+  padding: 10px !important;
+}
+
+/***** POPUPS *****/
+
+.ui-dialog {
+  border: solid 1px var(--color-border) !important;
+  border-radius: 0 !important;
+  padding: 10px;
+  background: var(--color-white);
+}
+
+.ui-widget-header {
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  padding: 5px !important;
+  text-align: center;
+}
+
+.ui-dialog .ui-dialog-title {
+  margin: 0;
+  font: bold 14px/20px var(--font-body);
+  color: var(--color-white);
+}
+
+.popup h2 {
+  margin: 0 0 5px;
+}
+
+.popup p {
+  margin: 0 0 5px;
+}
+
+.warning {
+  margin: 0 0 10px;
+}
+
+.change-password .row {
+  margin: 0 0 10px;
+  display: table;
+  width: 100%;
+}
+
+.change-password .col {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.change-password .col:first-child {
+  padding: 0 10px 0 0;
+  width: 150px;
+}
+
+.change-password #div1 {
+  text-align: center;
+}
+
+.change-password .lnk {
+  text-decoration: none;
+}
+
+.addr-popup .btn-row {
+  margin: 0 0 15px;
+}
+
+.popup .addr-popup .addr-table > div .col {
+  font-size: var(--font-size-sm);
+  border-left: 1px solid var(--color-border);
+}
+
+.default-ship {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 0 20px;
+  background-color: var(--color-border);
+}
+
+.checkout-top-box.summary .btn {
+  padding: 10px;
+}
+
+.popup .addr-popup .addr-table > div .col {
+  padding: 10px;
+}
+
+.popup .addr-popup .addr-table > div {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.popup .addr-popup .addr-table > div .col:last-child .btn {
+  margin: 5px auto;
+}
+
+.popup .addr-popup .addr-table > div .col,
+.default-ship .col {
+  width: 30%;
+  display: table-cell;
+  vertical-align: top;
+  padding: 10px;
+}
+
+.popup .addr-popup .addr-table > div .selection,
+.default-ship .col .selection {
+  display: flex;
+  padding: 0 0 0 5px;
+  border-left: 0;
+  width: 5% !important;
+  margin: auto 0;
+}
+
+.popup .addr-popup .addr-table > div .col:last-child,
+.default-ship .col:last-child {
+  display: flex;
+  vertical-align: middle;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 25%;
+  flex-grow: 1;
+}
+
+.addr-popup .divRowHeader .headerCellContact {
+  padding-left: 21%;
+}
+
+.addr-popup .divRowHeader .headerCellAddress {
+  padding-left: 3%;
+}
+
+.popup .addr-popup .addr-table > div .col:first-child {
+  border-left: none;
+}
+
+body.popup {
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-white);
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+  background: var(--color-border);
+}
+
+div.table .row.h > div {
+  border: none;
+}
+
+.popup .addr-popup .addr-table > div .col .mobile-label {
+  font-weight: bold;
+  display: none;
+}
+
+.addr-popup .divRowHeader .headerCellContact {
+  padding-left: 17%;
+}
+
+.addr-popup .divRowHeader .headerCellAddress {
+  padding-left: 7%;
+}
+
+.add-to-cart-confirmation-message .btn-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  font-size: 20px;
+}
+
+.add-to-cart-confirmation-message .btn-close:hover {
+  opacity: 1;
+}
+
+.add-to-cart-confirmation-message .btn-close::before {
+  content: "âœ•";
+  display: block;
+  line-height: 1;
+}
+
+.add-to-cart-confirmation-message .add-to-cart-checkout {
+  margin-top: 12px;
+  display: flex;
+}
+
+.add-to-cart-confirmation-message .add-to-cart-checkout .btn {
+  flex: 1;
+  text-align: center;
+  padding: 8px 12px;
+  font-size: var(--font-size-sm);
+}
+
+@media only screen and (max-width: 900px) {
+  .account_address .column,
+  .account_address .column:first-child,
+  .addr-table .column,
+  .addr-table .column:first-child {
+    float: none;
+    width: 100%;
+    padding: 0;
+  }
+  .account_address .column:first-child,
+  .addr-table .column:first-child {
+    padding-bottom: 25px;
+  }
+  .shop-content,
+  #tabs-product .tabs-container {
+    flex-direction: column;
+  }
+  .activeCart-panel {
+    flex: 1 1 auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .activeCart-panel {
+    max-width: 100%;
+  }
+
+  form[action="/account.aspx"] #contentContainer,
+  form[action="/account"] #contentContainer,
+  form[action="/newsletter.aspx"] #tableColumnsContainer,
+  form[action="/newsletter"] #tableColumnsContainer {
+    flex-direction: column;
+  }
+  form[action="/account.aspx"] #pageContentRight,
+  form[action="/account"] #pageContentRight,
+  form[action="/newsletter.aspx"] #tableColumnsContainer .help_content,
+  form[action="/newsletter.aspx"] #tableColumnsContainer .help_aside,
+  form[action="/newsletter"] #tableColumnsContainer .help_content,
+  form[action="/newsletter"] #tableColumnsContainer .help_aside {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  form[action="/account"] #pageContentCenter,
+  form[action="/account.aspx"] #pageContentCenter,
+  form[action="/account"] #pageContentRight,
+  form[action="/account.aspx"] #pageContentRight {
+    display: block !important;
+    width: 100% !important;
+    float: none;
+    max-width: 100%;
+  }
+
+  .popup .addr-popup .addr-table > div {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .addr-popup .divRowHeader div:nth-child(2) {
+    padding-left: 17%;
+  }
+  #tabs-product .prod-image {
+    display: block;
+    float: none;
+    margin: 0 auto 10px;
+    text-align: center;
+  }
+  .join-wine-club-left,
+  .join-wine-club-right {
+    width: 100%;
+    padding: 0;
+    float: none;
+  }
+  .popup div.secure-shopping {
+    float: none;
+    width: 100% !important;
+    padding: 0;
+  }
+  .secure-shopping {
+    width: 100%;
+    padding: 0;
+  }
+  .paymentOptions .paymentOptions_table,
+  .popup .paymentOptions .paymentOptions_table {
+    width: 100% !important;
+    float: none;
+    padding: 0;
+  }
+  .signin_table .col,
+  .signin_table .col.right {
+    float: none;
+    width: 100%;
+    padding: 0 0 15px;
+  }
+  .signin_table .row {
+    margin: 0;
+  }
+  .account-holder {
+    margin-right: 10px;
+  }
+  .page-account #pageContentRight {
+    margin-left: 0;
+    width: 100%;
+  }
+  .page-account div.activeCart {
+    width: 100%;
+  }
+  .promo-content .col-left,
+  .promo-content .col-right {
+    float: none;
+    width: 100%;
+  }
+  .addr-table .column,
+  .addr-table .column:first-child {
+    padding: 0;
+    width: 100%;
+    float: none;
+  }
+  .newsletter {
+    max-width: 100%;
+  }
+  .activeCart-panel {
+    width: 100%;
+  }
+  .page-signin #pageContentRight {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  .page-signin #pageContentCenter {
+    float: none;
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .page-signin #contentContainer {
+    flex-direction: column;
+  }
+
+  #cat-v1-1 {
+    flex-direction: column;
+  }
+
+  .activeCart-panel {
+    float: left;
+    width: 100%;
+    margin: 0;
+    max-width: 100%;
+  }
+  .activeCart {
+    width: 100%;
+  }
+  .popup form[action="/WineryShippingRestricted.aspx"] {
+    line-height: 1 !important;
+  }
+  .tabs-container .addToCart {
+    position: static;
+    background: none;
+    border: 0;
+    padding: 30px 0;
+  }
+  .data-header .pager {
+    float: none;
+  }
+  #tabs-product .tabs-container {
+    padding: 10px 0 0 !important;
+    border: 0;
+  }
+  #tabs-product .tabs-content {
+    margin-right: 0;
+  }
+  #tabs-product .ui-tabs-nav li {
+    float: none;
+    margin: 0;
+  }
+  #tabs-product .ui-tabs-nav a {
+    float: none;
+    display: block;
+  }
+  #tabs-product .ui-tabs-nav li.ui-tabs-selected {
+    margin: 0;
+  }
+  #tabs-product .ui-tabs-nav li.ui-tabs-selected a {
+    padding-bottom: 5px;
+  }
+  .paymentOptions_box {
+    float: none;
+    width: 100%;
+    padding: 0 0 5px;
+  }
+  .paymentOptions_row {
+    margin: 0;
+  }
+  .signin_wrap {
+    margin: 0 0 20px;
+  }
+  #activeCartContainer {
+    margin: 0;
+  }
+  .help_aside div.activeCart {
+    width: 100%;
+  }
+  .help_aside {
+    width: 100%;
+    margin: 0;
+  }
+  .help_holder {
+    margin: 0 0 20px;
+  }
+  .signin_table .select_box {
+    padding: 0 0 0 10px;
+  }
+  .signin_table .select_box:first-child {
+    padding: 0;
+  }
+  .details_header {
+    display: none;
+  }
+  .details .item > div,
+  .order_details .item > div,
+  .basket_table .item > div,
+  .basket_table .footer > div {
+    display: inline-block;
+    margin: 0 -4px 10px 0;
+  }
+  .details .mobile-label,
+  .order_details .mobile-label,
+  .basket_table .mobile-label {
+    display: block;
+    margin: 0 0 10px;
+  }
+  .details .item {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .details .col-1 {
+    width: 20%;
+  }
+  .details .col-2 {
+    width: 15%;
+  }
+  .details .col-3 {
+    width: 15%;
+  }
+  .details .col-4 {
+    width: 50%;
+  }
+  .details .col-5,
+  .details .col-6 {
+    width: 50%;
+    border-top: 1px solid var(--color-border);
+    padding-top: 10px;
+  }
+  .details .footer {
+    padding: 0;
+    border-top: 0;
+  }
+  .order_details .col-1 {
+    width: 20%;
+  }
+  .order_details .col-2 {
+    width: 80%;
+  }
+  .order_details .col-3 {
+    width: 100%;
+  }
+  .order_details .col-4,
+  .order_details .col-5 {
+    width: 50%;
+    border: solid var(--color-border);
+    border-width: 1px 0;
+    padding: 10px 0;
+  }
+  .basket_table .cart-header {
+    display: none;
+  }
+  .basket_table .item {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .basket_table .col-1 {
+    width: 20%;
+  }
+  .basket_table .col-2 {
+    width: 80%;
+  }
+  .basket_table .col-3 {
+    width: 50%;
+  }
+  .basket_table .col-4 {
+    width: 50%;
+    text-align: right;
+  }
+  .basket_table .col-5 {
+    width: 100%;
+    text-align: center;
+  }
+  .basket_table .footer .col-1 {
+    width: 50%;
+  }
+  .basket_table .footer .col-2 {
+    width: 50%;
+    text-align: right;
+  }
+  .basket_table .footer .col-3 {
+    width: 100%;
+    text-align: center;
+  }
+  .basket_table .footer_2 {
+    text-align: center;
+  }
+  .basket_table .footer_2 .btn {
+    margin: 0 0 10px;
+  }
+  .basket_table .btn-print {
+    float: none;
+  }
+  .promo-content .txt {
+    margin: 0 0 10px;
+  }
+  .promo-content .label {
+    display: block;
+  }
+  .checkout-top-box {
+    display: block;
+  }
+  .checkout-top-box:first-child {
+    margin-bottom: 20px;
+  }
+  .checkout-section .divider {
+    display: none;
+  }
+  .checkout-top-box.summary {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  .checkout-header .col {
+    display: block;
+  }
+  #checkout .left-box-head {
+    width: 100%;
+    padding: 0;
+    text-align: left;
+  }
+  .ui-dialog {
+    width: 300px !important;
+  }
+  .wine-club-selections input[type="text"] {
+    max-width: 50px;
+  }
+  #wine-clubs > div {
+    margin: 0;
+  }
+  .page-signin #pageContentCenter {
+    float: none;
+    display: inline-block;
+    width: 100%;
+  }
+  form[action="/newsletter"] .help_content,
+  form[action="/newsletter"] .help_aside {
+    max-width: 100%;
+    width: 100%;
+  }
+  .popup form[action="/WineryShippingRestricted.aspx"] {
+    line-height: 1 !important;
+  }
+}
+
+@media only screen and (max-width: 569px) {
+  .ui-dialog .ui-dialog-title {
+    font-size: var(--font-size-md);
+    line-height: 20px;
+  }
+  .change-password .col {
+    display: block;
+  }
+  .change-password .col:first-child {
+    width: auto;
+    padding: 0;
+  }
+  .default-ship {
+    border: 1px solid var(--color-border);
+  }
+  .default-ship .col {
+    display: block;
+    border-top: 1px solid var(--color-border);
+    border-left: 0;
+  }
+  .default-ship .col:first-child {
+    border: 0;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .btn {
+    margin-bottom: 0;
+  }
+
+  .prod-img {
+    text-align: center;
+  }
+
+  .popup .addr-popup .addr-table > div .col {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .two-items-across .addToCart {
+    margin: 0;
+  }
+  .addToCart,
+  .two-items-across .addToCart {
+    position: static;
+    left: 0;
+    margin: 0;
+  }
+  .safe-secure-btm .floatLeft {
+    float: none;
+    margin: 0 0 10px;
+  }
+  .safe-secure-btm .floatRight {
+    float: none;
+    text-align: center;
+  }
+  .wine-club-selections .table_header {
+    display: none;
+  }
+  .wine-club-selections .prod-img {
+    margin: 0 auto 10px;
+    display: block;
+  }
+  .ciRegularView .col {
+    display: block;
+    width: 100%;
+  }
+  .ciRegularView .col:first-child {
+    width: 100%;
+  }
+  .details .col-1 {
+    width: 40%;
+  }
+  .details .col-2,
+  .details .col-3 {
+    width: 30%;
+  }
+  .details .col-4 {
+    width: 100%;
+    display: table-header-group !important;
+  }
+  .details .col-4 .holder {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .details .col-4 .mobile-label {
+    display: none;
+  }
+  .edit-addr .col:first-child {
+    width: 100%;
+  }
+  .edit-addr .col {
+    display: block;
+  }
+  .newsletter_table .col:first-child {
+    width: 100%;
+    padding: 0;
+    text-align: left;
+  }
+  .newsletter_table .col {
+    display: block;
+  }
+  .newsletter_table .submit-row {
+    text-align: center;
+  }
+  #checkout .bottom-section .btns {
+    text-align: center;
+  }
+  #checkout .bottom-section .btn-right {
+    float: none;
+    padding-top: 10px;
+  }
+  /***** #divInProgress *****/
+  body #divInProgress {
+    width: 280px !important;
+    background: var(--color-gray-900) !important;
+    -webkit-box-shadow: 0 0 10px var(--overlay-strong);
+    box-shadow: 0 0 10px var(--overlay-strong);
+    padding: 10px;
+    border-radius: var(--border-radius-lg);
+  }
+  .details.cof > div:first-child {
+    display: none;
+  }
+  .details.cof .item > div {
+    width: 100% !important;
+  }
+  .details.cof .item > div:last-child {
+    text-align: left !important;
+  }
+  .variations ul h3 {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  #tabs-product .tabs-content {
+    display: flex;
+    gap: 30px;
+  }
+  .prod-image ~ div {
+    flex-grow: 1;
+  }
+}
+
+/* listing css */
+.two-items-across {
+  --grid-max-cards: 2;
+}
+
+.three-items-across {
+  --grid-max-cards: 3;
+}
+
+.four-items-across {
+  --grid-max-cards: 4;
+}
+
+.five-items-across {
+  --grid-max-cards: 5;
+}
+
+.vertical-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+.shop-content {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+form[action*="signin"] #footer + .uc,
+.hidden,
+a[name="product-list-top"],
+form[action*="account"] #pageContentLeft,
+.no-left-menu .activeCart-panel,
+.four-items-across-container .activeCart-panel,
+.three-items-across-container .activeCart-panel,
+.break,
+.h-split {
+  display: none !important;
+}
+
+.pagination .pager,
+.group-summary {
+  padding: 0 0 20px;
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+.pagination .pager {
+  width: 100%;
+  text-align: right;
+  padding-bottom: 0;
+}
+
+/* grid items across  */
+
+.data.responsive-items-across {
+  width: 100%;
+}
+
+.two-items-across,
+.three-items-across,
+.four-items-across,
+.five-items-across,
+.responsive-items-across {
+  display: grid;
+  column-gap: 20px;
+  row-gap: 60px;
+}
+
+.data.responsive-items-across {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.data.two-items-across {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .data {
+    grid-template-columns: repeat(var(--grid-max-cards), 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .vertical-menu {
+    flex-direction: row;
+    column-gap: 20px;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .shop-content:not(.responsive-items-across-container) {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+  }
+
+  .shop-content:not(.responsive-items-across-container) .shop-wrap {
+    flex-grow: 1;
+  }
+
+  .shop-content:not(.responsive-items-across-container) .activeCart-panel {
+    flex: 0 0 200px;
+  }
+
+  .vertical-menu .shop-content {
+    margin: 0;
+  }
+
+  .four-items-across-container,
+  .five-items-across-container {
+    flex-grow: 1;
+  }
+}
+
+form[action*="cart"] .shopping-suggestion .carousel-item .qty-selector {
+  margin: 0 auto;
+}
+
+form[action*="cart"] .shopping-suggestion .carousel-item .price-container {
+  display: block;
+  margin-right: 0;
+}
+
+/* loader in center of page on auth and cart page */
+form[action*="cart"] #pageContent,
+form[action*="auth"] #pageContent {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  form[action*="account"] #pageContentWidth {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+.img-thumbnail {
+  background-color: transparent;
+}
+
+/* hide shopping summary on newsletter page */
+#box > .banner,
+.sort-products,
+.catalog-controls:has(.sort-products:first-child:last-child),
+form[action*="/newsletter"] .help_aside._column {
+  display: none;
+}
+
+.pager.col,
+.row.catalog-controls {
+  grid-column: 1 / -1;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* ========================================
+   2. CARD.CSS
+   ======================================== */
+
+/* resets common.css */
+.prod-img {
+  padding: 0 !important;
+  background-color: transparent !important;
+  margin: 0 !important;
+  min-height: unset !important;
+}
+
+.three-items-across .prod-content,
+.responsive-items-across .price-container,
+.five-items-across .price-container {
+  display: block;
+}
+
+.responsive-items-across .cmd-container,
+.five-items-across .cmd-container,
+.four-items-across .add-to-cart .cmd-container,
+.three-items-across .add-to-cart .cmd-container {
+  display: flex;
+  justify-content: center;
+}
+
+.three-items-across .productItem,
+.four-items-across .productItem {
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+/* hide items */
+.three-items-across .add-to-cart .cmd-container label,
+.four-items-across .add-to-cart .cmd-container label {
+  display: none;
+}
+
+/* product card related css */
+.productItem {
+  width: 100% !important;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.three-items-across .productItem:hover,
+.four-items-across .productItem:hover,
+.five-items-across .productItem:hover {
+  transform: translateY(-4px);
+}
+
+.pi-content {
+  display: grid;
+  gap: 10px 20px;
+  transition:
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.4s ease;
+  border: 2px solid var(--color-border-light);
+  border-radius: 6px;
+  padding: 24px 16px;
+}
+
+.three-items-across .productItem:hover .pi-content,
+.four-items-across .productItem:hover .pi-content,
+.five-items-across .productItem:hover .pi-content {
+  border-color: #484848;
+}
+
+.productItem .prod-img {
+  grid-area: prod-img;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.productItem .prod-img img {
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.productItem .prod-summary {
+  grid-area: prod-summary;
+}
+
+.productItem .addToCart {
+  grid-area: add-to-cart;
+}
+
+.productItem .cmd-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.data:not([class*="-items-across"]) .productItem {
+  margin-bottom: 20px;
+}
+
+.data.two-items-across .productItem,
+.data:not([class*="-items-across"]) .productItem {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.data:not([class*="-items-across"]) .productItem .pi-content,
+.data.two-items-across .productItem .pi-content {
+  grid-template-areas: "prod-img prod-summary" "prod-img add-to-cart";
+}
+
+@media (min-width: 768px) {
+  .data:not([class*="-items-across"]) .productItem .pi-content,
+  .data.two-items-across .productItem .pi-content {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.three-items-across .pi-content,
+.four-items-across .pi-content,
+.five-items-across .productItem .pi-content,
+.responsive-items-across .productItem .pi-content {
+  display: grid;
+  height: 100% !important;
+  grid-template-areas: "prod-img" "prod-summary" "add-to-cart";
+  grid-template-rows: auto auto 1fr;
+  justify-content: unset;
+  text-align: center;
+}
+
+.responsive-items-across .productItem .addToCart,
+.five-items-across .productItem .addToCart,
+.four-items-across .productItem .addToCart,
+.three-items-across .productItem .addToCart {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.productItem h2 {
+  margin: 0;
+}
+
+.productItem h2 a {
+  color: var(--color-primary);
+  transition: color 0.3s ease;
+}
+
+.productItem:hover h2 a {
+  color: var(--color-primary-light);
+}
+
+.three-items-across .productItem .prod-summary h2,
+.four-items-across .productItem .prod-summary h2 {
+  font-size: var(--font-size-md);
+  line-height: 1.2;
+}
+
+.productItem .sale-price {
+  font-weight: 700;
+  color: var(--color-primary);
+  transition: transform 0.3s ease;
+}
+
+.three-items-across .productItem:hover .sale-price,
+.four-items-across .productItem:hover .sale-price {
+  transform: scale(1.08);
+}
+
+.productItem .price-label {
+  font-weight: 600;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-500);
+}
+
+.responsive-items-across .productItem .prod-img,
+.five-items-across .productItem .prod-img {
+  text-align: center;
+}
+
+.responsive-items-across .productItem,
+.five-items-across .productItem {
+  margin-right: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .data:not([class*="-items-across"]) .productItem .pi-content,
+  .data.two-items-across .productItem .pi-content {
+    display: block;
+    text-align: center;
+  }
+
+  .productItem .cmd-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 479px) {
+  .productItem .prod-content {
+    display: none;
+  }
+}
+
+/* product-card badges start */
+.productItem .comingSoon {
+  border-radius: 0 4px 4px 0;
+  padding: 4px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  color: var(--color-white);
+  font-size: var(--font-size-xs);
+}
+
+.productItem .comingSoon {
+  background-color: #484848;
+}
+
+.productItem .comingSoon p {
+  margin: 0;
+}
+
+.productItem .comingSoon.soldout {
+  background-image: var(--gradient-error);
+}
+
+/* product-card badges end */
+
+/* ========================================
+   3. WS-STYLE.CSS
+   ======================================== */
+
+body {
+  font-size: var(--font-size-md);
+  font-family: var(--font-body);
+  line-height: var(--line-height-normal);
+  font-weight: var(--font-weight-normal);
+  background-color: var(--color-background);
+}
+
+#authStatus a {
+  color: var(--color-primary) !important;
+}
+
+#authStatus a:hover {
+  color: var(--color-primary-dark) !important;
+}
+
+a {
+  color: var(--color-primary);
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+button {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+body,
+.ui-widget-content {
+  color: var(--color-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text-dark);
+  font-family: var(--font-display);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-medium);
+}
+
+.btn {
+  font-family: var(--font-body);
+  font-size: var(--font-size-2xs);
+  line-height: 20px;
+  text-transform: var(--btn-text-transform);
+  background: #484848;
+  color: var(--color-white);
+  border: var(--btn-border);
+  letter-spacing: var(--btn-letter-spacing);
+  border-radius: var(--border-radius-sm);
+  padding: var(--btn-padding);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #c9c9c9;
+  color: var(--color-white);
+  border-color: #c9c9c9;
+  transform: translateY(-1px);
+}
+
+.ord-container,
+#pageContent {
+  margin: 0 auto;
+  max-width: var(--container-max-width);
+}
+
+#authStatus a:hover {
+  text-decoration: none;
+}
+
+.ui-widget-header,
+.activeCart .cartHeader,
+.shop-left-menu .menu-header,
+#accountContent .header,
+#checkout .header,
+#basket .header,
+.bootstrapWizard li.complete .step,
+.bootstrapWizard li.active .step,
+.bootstrapWizard li.active.complete .step,
+#tabs-product ul a,
+#tabs-product .ui-tabs-nav a {
+  background: #484848;
+}
+
+#tabs-product .tabs-container a.btn {
+  color: var(--color-white);
+}
+
+#tabs-product .tabs-container a.btn:hover {
+  color: var(--color-primary);
+}
+
+.txt,
+.txtbig,
+.ddl,
+.select_box select,
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+  color: var(--color-input-text);
+}
+
+.popup h1,
+.popup h2,
+.popup h3,
+.popup h4,
+.popup h5,
+.popup h6 {
+  color: var(--color-text);
+}
+
+header p,
+footer p {
+  margin: 0;
+}
+
+.op-footer {
+  padding-top: 50px;
+  background: var(--color-gray-50) !important;
+  color: var(--color-text);
+  margin-top: 0;
+  border-top: 1px solid var(--color-border);
+  height: 261px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Support for both .footer-main wrapper and direct structure */
+.footer-main {
+  width: 100%;
+  background: inherit;
+}
+
+@media (min-width: 480px) {
+  footer.footer {
+    --container-max-width: 440px;
+    padding: 55px 0 35px;
+  }
+}
+
+@media (min-width: 768px) {
+  footer.footer {
+    --container-max-width: 740px;
+    padding: 60px 0 40px;
+  }
+}
+
+@media (min-width: 960px) {
+  footer.footer {
+    --container-max-width: 900px;
+    padding: 70px 0 50px;
+  }
+}
+
+@media (min-width: 1025px) {
+  footer.footer {
+    --container-max-width: calc(100% - 60px);
+    padding: 80px 0 60px;
+  }
+}
+
+@media (min-width: 1221px) {
+  footer.footer {
+    --container-max-width: 1160px;
+  }
+}
+
+/* Footer Brand Column */
+.footer-brand-col {
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .footer-brand-col {
+    text-align: center;
+    grid-column: 1 / -1;
+  }
+}
+
+/* Content Grid â€” right-aligned to match target */
+.footer-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 0;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .footer-content-grid {
+    grid-template-columns: 1fr 1fr 1.4fr auto;
+    gap: 30px;
+    justify-content: end;
+    margin-left: auto;
+    max-width: 60%;
+  }
+}
+
+/* Footer Sections */
+.footer-section {
+  text-align: left;
+}
+
+.footer-section h3 {
+  font-size: var(--font-size-xs);
+  font-family: "Abadi Bold", var(--font-body);
+  color: var(--color-text-dark);
+  margin: 0 0 10px 0;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 767px) {
+  .footer-section {
+    text-align: center;
+  }
+}
+
+/* Visit Section */
+.footer-visit .visit-details {
+  font-size: var(--font-size-sm);
+  line-height: 26px;
+  color: var(--color-text);
+}
+
+.visit-status {
+  font-weight: 600;
+  font-style: italic;
+  color: var(--color-text);
+  margin-bottom: 15px;
+}
+
+.visit-details p {
+  margin: 8px 0;
+}
+
+.visit-details strong {
+  color: var(--color-text-dark);
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.visit-details div:first-of-type strong {
+  margin-top: 0;
+}
+
+/* Links Section */
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-family: "Abadi Light", var(--font-body);
+  font-size: var(--font-size-xs);
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  line-height: 15px;
+  padding: 1px 0;
+  border-radius: 0;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footer-nav a:hover {
+  color: var(--color-primary);
+}
+
+@media (max-width: 767px) {
+  .footer-nav {
+    align-items: center;
+  }
+}
+
+/* Contact Section */
+.contact-details {
+  font-size: var(--font-size-sm);
+  line-height: 26px;
+  color: var(--color-text);
+}
+
+.contact-details p {
+  margin: 0 0 15px 0;
+}
+
+.contact-details strong {
+  color: var(--color-text-dark);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.contact-details a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.contact-details a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Actions Section */
+.contact-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1025px) {
+  .contact-nav {
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 10px;
+  }
+}
+
+.contact-nav .btn {
+  line-height: 12px;
+  background: #484848;
+  color: var(--color-gray-50);
+  border: 1px solid #484848;
+  transition: all 0.3s ease;
+  padding: 12px 20px;
+  font-family: "Abadi Light", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contact-nav .btn:hover {
+  background: #c9c9c9;
+  border-color: #c9c9c9;
+}
+
+/* Divider */
+.footer-divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 20px 0;
+}
+
+/* Social Section */
+.footer-social-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.social-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  margin: 0 0 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.social-nav {
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 767px) {
+  .social-nav {
+    justify-content: center;
+  }
+}
+
+.social-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-gray-500);
+  color: var(--color-gray-50);
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.social-nav a:hover {
+  background: #2e2e2e;
+}
+
+.social-nav a img {
+  width: 60%;
+  height: auto;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.footer-copyright {
+  margin: 0;
+}
+
+.copyright {
+  font-size: var(--font-size-xs);
+  line-height: 20px;
+  color: var(--color-text-dark);
+  font-family: "Abadi Bold", var(--font-body);
+  font-weight: normal;
+  margin: 0;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0px;
+}
+
+.copyright a {
+  color: var(--color-text-dark);
+  text-decoration: none;
+  font-family: "Abadi Bold", var(--font-body);
+  font-weight: normal;
+  display: inline-block;
+  margin-top: 2px;
+}
+
+.copyright a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .copyright {
+    text-align: center;
+  }
+}
+
+.footer-meta-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .footer-meta-nav {
+    justify-content: flex-end;
+    gap: 20px;
+  }
+}
+
+.footer-meta-nav a {
+  color: var(--color-text-light);
+  text-decoration: none;
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.footer-meta-nav a:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* ========================================
+   4. SHOP-LEFT-MENU.CSS
+   ======================================== */
+
+.menu-header {
+  display: none;
+}
+
+.three-items-across-menu {
+  /* border: 1px solid black !important; */
+  padding: 6px 6px !important;
+  border-radius: var(--border-radius-sm) !important;
+}
+
+.shop-left-menu .three-items-across-menu > ul,
+.shop-left-menu .four-items-across-menu > ul {
+  padding: 0;
+}
+
+.shop-left-menu > span.four-items-across-menu,
+.shop-left-menu > span.three-items-across-menu {
+  text-align: left;
+}
+
+.shop-left-menu > span {
+  display: block;
+  font-size: var(--font-size-lg);
+}
+
+.vertical-menu .shop-left-menu {
+  width: 100%;
+  background: var(--color-gray-50);
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.vertical-menu .four-items-across-menu .menu-header,
+.vertical-menu .three-items-across-menu .menu-header {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .vertical-menu .shop-left-menu {
+    flex: 0 0 220px;
+    position: sticky;
+    top: var(--cart-summary-top);
+  }
+}
+
+.vertical-menu .shop-left-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vertical-menu .shop-left-menu ul li {
+  border-bottom: 1px solid var(--color-border-light);
+  margin-bottom: 0;
+}
+
+.vertical-menu .shop-left-menu ul li:last-child {
+  border-bottom: none;
+}
+
+.vertical-menu .shop-left-menu ul li:first-child {
+  margin-top: 0;
+}
+
+.vertical-menu .shop-left-menu .menu-header {
+  background: #484848;
+  color: var(--color-white);
+  padding: 18px 20px;
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.vertical-menu .shop-left-menu ul li.has-sub {
+  display: grid;
+  grid-template-rows: auto 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.vertical-menu .shop-left-menu ul li.has-sub.open {
+  grid-template-rows: auto 1fr;
+}
+
+.vertical-menu .shop-left-menu ul li.has-sub ul {
+  font-size: 14px;
+  overflow: hidden;
+  background-color: var(--color-gray-50);
+}
+
+.vertical-menu .shop-left-menu ul li.has-sub ul a {
+  padding-left: 40px;
+  font-size: 13px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.vertical-menu .shop-left-menu ul li.has-sub > a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vertical-menu .shop-left-menu ul li.has-sub .op-toggler {
+  font-size: var(--font-size-xs);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  color: var(--color-text);
+}
+
+.vertical-menu .shop-left-menu ul li.has-sub.open .op-toggler {
+  transform: rotate(180deg);
+}
+
+.vertical-menu .shop-left-menu a {
+  display: block;
+  padding: 16px 20px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+  position: relative;
+}
+
+.vertical-menu .shop-left-menu a:hover {
+  background-color: var(--color-gray-50);
+  color: var(--color-gray-900);
+  border-left-color: #484848;
+  padding-left: 20px;
+}
+
+.vertical-menu .shop-left-menu a.selected {
+  background-color: rgba(72, 72, 72, 0.08);
+  color: var(--color-gray-900);
+  border-left-color: #484848;
+  font-weight: 600;
+}
+
+.vertical-menu .shop-left-menu ul li.has-sub ul a:hover,
+.vertical-menu .shop-left-menu ul li.has-sub ul a.selected {
+  padding-left: 36px;
+  border-left-color: transparent;
+}
+
+.horizontal-menu .shop-left-menu {
+  text-align: center;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.horizontal-menu .shop-left-menu span > ul {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.horizontal-menu .shop-left-menu span > ul li a {
+  color: var(--color-gray-500);
+  font-size: var(--font-size-md);
+}
+
+.horizontal-menu .shop-left-menu span > ul > li > a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: var(--border-radius-md);
+  transition: all 0.3s ease;
+}
+
+.horizontal-menu .shop-left-menu span > ul > li > a.selected,
+.horizontal-menu .shop-left-menu span > ul > li > a:hover {
+  color: var(--color-white);
+  background-color: #484848;
+  border-bottom: none;
+}
+
+@media (min-width: 1024px) {
+  .horizontal-menu .shop-left-menu span > ul li {
+    position: relative;
+  }
+
+  .horizontal-menu .shop-left-menu span > ul li:hover > ul {
+    display: block;
+  }
+
+  .horizontal-menu .shop-left-menu span > ul li ul {
+    display: none;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-md);
+    border: 1px solid transparent;
+    box-shadow: var(--shadow-sm);
+    z-index: 1020;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 100%;
+    padding: 5px 10px;
+  }
+
+  .horizontal-menu .shop-left-menu span > ul li ul ul {
+    left: 100%;
+    top: 0;
+  }
+
+  .horizontal-menu .shop-left-menu span > ul > li ul a {
+    white-space: nowrap;
+  }
+}
+
+/* ==========================================================================
+   ROX OVERRIDES
+   ========================================================================== */
+
+/* ==========================================================================
+   COUNTY LINE VINEYARDS - STABLE MASTER DESIGN OVERRIDE
+   ========================================================================== */
+
+/* 1. LOAD BRAND FONTS NATIVELY USING SYSTEM FALLBACK STACKS 
+   This safely pulls the clean sans-serif and elegant serif styles on your machine */
+section.header-main nav a,
+section.header-main ul li a,
+.site-navigation a,
+.main-menu a,
+.dropdown-menu a,
+section.header-main ul li ul li a {
+    font-family: "Jost", "Helvetica Neue", Arial, sans-serif !important;
+    font-size: 14px !important;                 
+    font-weight: 400 !important;                
+    color: #2c2c2c !important;                 
+    text-transform: uppercase !important;       
+    letter-spacing: 0.08em !important;          
+    text-decoration: none !important;
+}
+
+/* ==========================================================================
+   EXACT BRAND MATCH: TYPOGRAPHY & TEXT-COLOR TRANSITIONS
+   ========================================================================== */
+
+/* ==========================================================================
+   FORCE TRUE BRAND FONTS TO OVERRIDE THE BROKEN FALLBACKS
+   ========================================================================== */
+
+/* 1. Explicitly import the font tracking code directly using secure web paths */
+@import url('https://googleapis.com');
+
+/* 2. Target every navigation element link and bind it to the Jost engine styles */
+section.header-main nav a,
+section.header-main ul li a,
+section.header-main ul.site-navigation li a,
+.site-navigation a,
+.main-menu a,
+.dropdown-menu a,
+.dropdown-menu li a,
+section.header-main ul li ul li a,
+div[id*="menu"] a,
+.ord-nav-item a {
+    font-family: 'Jost', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 14px !important;                 
+    font-weight: 400 !important;                
+    color: #2c2c2c !important;                 
+    text-transform: uppercase !important;       
+    letter-spacing: 0.08em !important;          
+    text-decoration: none !important;
+    transition: color 0.2s ease-in-out !important;
+}
+
+/* 3. Make sure your account creation notice text underneath follows Cormorant Garamond */
+#custom-auth-notice p, 
+#custom-auth-notice p strong,
+#custom-auth-notice span {
+    font-family: 'Cormorant Garamond', 'Georgia', serif !important;
+    font-size: 16px !important;
+    color: rgb(51, 51, 51) !important;
+    line-height: 1.6 !important;
+}
+
+
+/* 2. THE HOVER EFFECT: NO BEIGE BACKGROUND - FADES TO LIGHTER GRAY
+   This precisely mirrors your GoDaddy Elementor experience by changing only the font color when highlighted */
+section.header-main nav a:hover,
+section.header-main ul li a:hover,
+section.header-main ul.dropdown-menu li a:hover,
+section.header-main ul li ul li a:hover,
+.dropdown-menu li a:hover {
+    background: transparent !important;
+    background-color: transparent !important; /* Keeps the container clean white */
+    color: #8a8a8a !important;                /* Transitions the text letters to a crisp, lighter brand gray */
+}
+
+/* 3. DROPDOWN BOX CLEANUP (Fixes the frozen display glitch) */
+section.header-main ul.dropdown-menu,
+section.header-main ul li ul,
+.dropdown-menu {
+    background-color: #ffffff !important;      
+    border: 1px solid #eaeaea !important;       
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important; 
+    padding: 15px 0 !important;                 
+    border-radius: 0px !important;              
+    min-width: 240px !important;                
+}
+
+/* Align and space out the clean text lines inside the dropdown container */
+section.header-main ul.dropdown-menu li a,
+section.header-main ul li ul li a,
+.dropdown-menu li a {
+    font-size: 13px !important;
+    line-height: 1.8 !important;              
+    padding: 10px 25px !important;            
+    text-align: left !important;
+    display: block !important;
+}
+
+
+
+/* --------------------------------------------------------------------------
+   4: DESKTOP BEIGE CART BAR (Protects Responsive Mobile Pipelines)
+   -------------------------------------------------------------------------- */
+@media screen and (min-width: 992px) {
+    header.header-wrapper, div#headerContainer {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    section.header-main {
+        order: 1 !important;
+        position: static !important;
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        padding: 15px 20px !important;
+        border-bottom: none !important;
+    }
+    section.auth-wrapper {
+        order: 2 !important;
+        position: static !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        background-color: #f5f2eb !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        padding: 6px 20px !important;
+        min-height: auto !important;
+        height: auto !important;
+        border-bottom: 1px solid #e5e5e5 !important;
+        border-top: none !important;
+    }
+    section.auth-wrapper div, #updViewCart, span#updViewCart {
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        white-space: nowrap !important;
+        width: 100% !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+    }
+    header, div[style*="headerContainer"] { border-bottom: none !important; }
+}
+/* ==========================================================================
+   COUNTY LINE VINEYARDS - ABADI REGULAR BRAND MATCH ENGINE
+   ========================================================================== */
+
+/* 1. COMPREHENSIVE TEXT TARGETING FOR ALL HEADER LINKS
+   This replaces your fonts with Abadi Regular and aligns your menu tracking */
+section.header-main nav a,
+section.header-main ul li a,
+section.header-main ul.site-navigation li a,
+.site-navigation a,
+.main-menu a,
+.dropdown-menu a,
+.dropdown-menu li a,
+section.header-main ul li ul li a,
+div[id*="menu"] a,
+.ord-nav-item a {
+    font-family: "Abadi", "Abadi MT", "Abadi MT Condensed Light", -apple-system, sans-serif !important;
+    font-size: 16px !important;                 /* Clean, lightweight geometric line paths */
+    font-weight: 400 !important;                /* Enforces standard Abadi Regular scale */
+    color: #2c2c2c !important;                 /* Elegant near-black slate color profiles */
+    text-transform: uppercase !important;       /* Forces uppercase letter scaling */
+    letter-spacing: 0.08em !important;          /* Precise brand letter spacing margins */
+    text-decoration: none !important;
+    transition: color 0.2s ease-in-out !important; /* Smooth fade animation */
+}
+
+/* 2. THE HOVER EFFECT: NO BEIGE BACKGROUND - FADES TO LIGHTER GRAY
+   This matches your GoDaddy Elementor look when highlighted */
+section.header-main nav a:hover,
+section.header-main ul li a:hover,
+section.header-main ul.dropdown-menu li a:hover,
+section.header-main ul li ul li a:hover,
+.dropdown-menu li a:hover {
+    background: transparent !important;
+    background-color: transparent !important;   /* Keeps the background clear white */
+    color: #8a8a8a !important;                  /* Transitions text letters to lighter gray */
+}
+
+/* 3. DROPDOWN BOX POLISH (Maintains the natural hover states) */
+section.header-main ul.dropdown-menu,
+section.header-main ul li ul,
+.dropdown-menu {
+    background-color: #ffffff !important;      
+    border: 1px solid #eaeaea !important;       
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important; 
+    padding: 15px 0 !important;                 
+    border-radius: 0px !important;              
+    min-width: 240px !important;                
+}
+
+/* Align and space out the text rows inside your dropdown menu box wrapper */
+section.header-main ul.dropdown-menu li a,
+section.header-main ul li ul li a,
+.dropdown-menu li a {
+    font-size: 16px !important;
+    line-height: 1.8 !important;              
+    padding: 10px 25px !important;            
+    text-align: left !important;
+    display: block !important;
+}
+
+/* --------------------------------------------------------------------------
+   PART 4: THE SIGN IN TEXT FIX (ABADI BRAND ALIGNMENT)
+   -------------------------------------------------------------------------- */
+#custom-auth-notice {
+    text-align: left !important;
+    margin-top: 25px !important; /* Adds professional spacing right below the button */
+}
+
+/* Force the entire text container block to render using true Abadi Regular */
+#custom-auth-notice p, 
+#custom-auth-notice p strong,
+#custom-auth-notice span,
+#custom-auth-notice p::before,
+#custom-auth-notice p::after {
+    font-family: "Abadi", "Abadi MT", "Abadi MT Condensed Light", -apple-system, sans-serif !important;
+    font-size: 15px !important;        /* Crisp, matching size that keeps the layout clean */
+    font-weight: 400 !important;       /* Clean regular geometric line path styling */
+    color: #4a4a4a !important;        /* Elegant charcoal gray matching your navigation text color */
+    line-height: 1.6 !important;       /* Adds natural visual space between lines of copy */
+    letter-spacing: 0.03em !important;
+}
+
+/* Explicitly highlight only the heading markers in bold Abadi weights */
+#custom-auth-notice p strong,
+#custom-auth-notice p:first-child::before,
+#custom-auth-notice p:last-child::before {
+    font-weight: 700 !important;       /* Makes the titles pop clearly while staying in the same font */
+    color: #2c2c2c !important;        /* Deepens the title shade slightly for sharp contrast */
+}
+/* ==========================================================================
+   FORM WRAPPER TYPOGRAPHY UNIFICATION
+   ========================================================================== */
+
+/* 1. Target the main page title header */
+.login-page h1, 
+.login-page-container h1,
+h1 {
+    font-family: "Abadi", "Abadi MT", "Abadi MT Condensed Light", -apple-system, sans-serif !important;
+    font-size: 28px !important;
+    font-weight: 400 !important;
+    color: #2c2c2c !important;
+    letter-spacing: 0.02em !important;
+    margin-bottom: 25px !important;
+}
+
+/* 2. Target the form text field labels (like "Email *") and the placeholders inside the boxes */
+.login-page label,
+.form-group label,
+label[for="Email"],
+input::placeholder,
+.form-control::placeholder {
+    font-family: "Abadi", "Abadi MT", "Abadi MT Condensed Light", -apple-system, sans-serif !important;
+    font-size: 14px !important;
+    letter-spacing: 0.04em !important;
+    color: #2c2c2c !important;
+}
+
+/* 3. Target the clickable text options (like "Forgot your password?") */
+.login-page a,
+#forgot-password-link,
+.login-page-container a {
+    font-family: "Abadi", "Abadi MT", "Abadi MT Condensed Light", -apple-system, sans-serif !important;
+    font-size: 14px !important;
+    letter-spacing: 0.03em !important;
+    text-transform: none !important; /* Keeps it naturally lowercase if desired */
+    color: #2c2c2c !important;
+}
+
+/* 4. Target the text inside the text input box itself when a customer types */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+.form-control {
+    font-family: "Abadi", "Abadi MT", "Abadi MT Condensed Light", -apple-system, sans-serif !important;
+    font-size: 14px !important;
+}
+
+/* 5. Target the background buttons ("CONTINUE" and "CREATE AN ACCOUNT") */
+input[type="submit"],
+button,
+.btn,
+.btn-primary,
+#create-account-container button {
+    font-family: "Abadi", "Abadi MT", "Abadi MT Condensed Light", -apple-system, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important; /* Keeps your crisp button text style matching the header */
+}
+/* ==========================================================================
+   FORGOT PASSWORD LINK - CLEAN ISOLATED STYLING
+   ========================================================================== */
+
+/* 1. Remove the accidental global underline leak from header and menu links */
+section.header-main a,
+.site-navigation a,
+.dropdown-menu a,
+section.header-main ul li a {
+    text-decoration: none !important; /* Strips the underline off your navigation bar completely */
+    text-transform: uppercase !important; /* Restores the crisp uppercase styling to your menu */
+}
+
+/* 2. Target ONLY the explicit password link node beneath the input box */
+#forgot-password-link,
+.login-page form a[href*="forgot"],
+a.forgot-password {
+    font-family: "Abadi", "Abadi MT", "Abadi MT Condensed Light", -apple-system, sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    color: #2c2c2c !important;
+    text-transform: none !important;      /* Safely keeps just this link lowercase */
+    text-decoration: underline !important;/* Keeps the underline ONLY on the forgot password link */
+    letter-spacing: 0.03em !important;
+    display: inline-block !important;
+    margin-top: 10px !important;
+}
+
+/* Add a clean hover effect exclusively for the password link */
+#forgot-password-link:hover,
+.login-page form a[href*="forgot"]:hover {
+    color: #8a8a8a !important;            /* Fades to your clean brand gray on hover */
+}
+/* ==========================================================================
+   CART BAR & SIGN IN UTILITY TYPOGRAPHY LOCK
+   ========================================================================== */
+
+/* Target every text element inside the top beige utility row wrapper */
+section.auth-wrapper,
+section.auth-wrapper span,
+section.auth-wrapper a,
+#updViewCart,
+#updViewCart span,
+.ord-signin,
+.ord-signin a {
+    font-family: "Abadi", "Abadi MT", "Abadi MT Condensed Light", -apple-system, sans-serif !important;
+    font-size: 13px !important;               /* Matches the proportional scale of the utility items */
+    font-weight: 400 !important;              /* Enforces standard Abadi Regular weight paths */
+    color: #2c2c2c !important;               /* Matching slate charcoal text color profiles */
+    text-transform: uppercase !important;     /* Forces the cart data and sign in string to stay in ALL CAPS */
+    letter-spacing: 0.06em !important;        /* Clean tracking space margins */
+    text-decoration: none !important;         /* Ensures no stray lines render under these text blocks */
+}
+
+/* Ensure the light gray text fade interaction matches smoothly on hover */
+section.auth-wrapper a:hover,
+#updViewCart a:hover,
+.ord-signin a:hover {
+    color: #8a8a8a !important;                /* Smooth fade to brand lighter gray */
+    background: transparent !important;
+}
+/* ==========================================================================
+   BEIGE BAR SIGN IN HOVER REINFORCEMENT
+   ========================================================================== */
+
+/* Target the exact hover action for every single link element inside the utility bar */
+section.auth-wrapper a:hover,
+section.auth-wrapper span:hover,
+#updViewCart a:hover,
+.ord-signin a:hover,
+.ord-signin:hover,
+a[href*="signin"]:hover,
+a[href*="login"]:hover,
+.signin-link:hover,
+#loginLink:hover,
+li.ord-signin:hover a,
+section.auth-wrapper *:hover {
+    color: #8a8a8a !important;            /* Forces it to fade into your clean brand gray on hover */
+    background: transparent !important;
+    background-color: transparent !important;
+    text-decoration: none !important;     /* Prevents any accidental underlines from appearing */
+}
+/* ==========================================================================
+   UNBREAKABLE BEIGE BAR SIGN IN HOVER LOCK
+   ========================================================================== */
+
+/* Target the precise link pseudo-classes OrderPort uses to force the hover color */
+section.auth-wrapper a:link:hover,
+section.auth-wrapper a:visited:hover,
+.ord-signin a:link:hover,
+.ord-signin a:visited:hover,
+div#updViewCart a:link:hover,
+div#updViewCart a:visited:hover,
+a.signin-link:link:hover,
+a.signin-link:visited:hover,
+section.auth-wrapper .ord-signin a:hover,
+#loginLink:link:hover {
+    color: #8a8a8a !important;            /* Flawlessly forces the crisp brand lighter gray color */
+    background: transparent !important;
+    background-color: transparent !important;
+    text-decoration: none !important;     /* Ensures no stray lines render under the link */
+}
+/* ==========================================================================
+   THE UNBREAKABLE WILDCARD HOVER INJECTOR
+   ========================================================================== */
+
+/* 1. Target the absolute hover container state and force all children to gray */
+section.auth-wrapper .ord-signin:hover,
+section.auth-wrapper .ord-signin:hover *,
+li.ord-signin:hover,
+li.ord-signin:hover *,
+.ord-signin:hover a,
+#loginLink:hover,
+#loginLink:hover * {
+    color: #8a8a8a !important;            /* Forces the letters to fade into your clean brand gray */
+    background: transparent !important;
+    background-color: transparent !important;
+    text-shadow: none !important;
+}
+
+/* 2. Safety Reset: Force the background box of the whole bar to remain solid beige */
+section.auth-wrapper {
+    background-color: #f5f2eb !important; /* Prevents the entire horizontal strip from fading out */
+}
+
