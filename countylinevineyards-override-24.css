@@ -4962,9 +4962,9 @@ section.auth-wrapper {
 
 /* 4. ELEMENTOR PRODUCT TITLES (Abadi Bold, Text Shadow, 0.12em Spacing) */
 .productItem h2 a {
-    font-family: "Abadi Bold", "Abadi", "Abadi MT", sans-serif !important;
-    font-size: 20px !important; 
-    font-weight: bold !important; 
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-size: 24px !important; 
+    font-weight: 600 !important; /* Semi-bold */
     font-style: normal !important; 
     text-transform: uppercase !important;
     letter-spacing: 0.12em !important; 
@@ -4972,7 +4972,7 @@ section.auth-wrapper {
     line-height: 1.4 !important;
     text-align: center !important;
     display: block !important; 
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15) !important; /* Adds the crisp pop */
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15) !important; 
 }
 
 /* 5. REFINED PRICES */
@@ -5097,8 +5097,8 @@ body {
     transform: translateX(-50%) !important;
     width: 100vw !important;
     background-image: linear-gradient(to bottom, #F2F2F2 0%, #FCFCFC 100%) !important; 
-    border-bottom: 1px solid #eaeaea !important; /* Explicit bottom line */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.03) !important; /* Very faint bottom shadow */
+    border-bottom: 1px solid #f9f9fa !important; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03) !important; 
     z-index: -1 !important;
 }
 
@@ -5118,4 +5118,52 @@ body {
 /* 9. HIDE TRUSTEDSITE BADGE */
 #trustedsite-tm-image {
     display: none !important;
+}
+
+/* 10. FOOTER ELEMENTOR MATCH */
+.op-footer {
+    background-color: #FCFCFC !important; 
+    border-top: 1px solid #eaeaea !important;
+    height: auto !important; /* Removes OrderPort's locked 261px height */
+    padding: 0 !important;
+}
+
+.footer-main {
+    padding: 95px 20px 60px 20px !important; /* Exact 95px top padding from Elementor */
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+}
+
+/* Column Headers (WINES, ORFIN LOTTS) */
+.footer-section h3 {
+    font-family: "Abadi Bold", "Abadi", sans-serif !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    color: #020101 !important;
+    margin-bottom: 20px !important;
+}
+
+/* Column Links & Copyright Text */
+.footer-nav a, .copyright, .copyright a, .visit-details, .contact-details {
+    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: #7a7a7a !important; /* Soft gray */
+    line-height: 2 !important;
+}
+
+.footer-nav a:hover, .copyright a:hover {
+    color: #020101 !important;
+}
+
+/* Social Icons (Soft Gray Circles) */
+.social-nav a {
+    background-color: #8a8a8a !important; 
+    color: #ffffff !important;
+}
+
+.social-nav a:hover {
+    background-color: #484848 !important;
 }
