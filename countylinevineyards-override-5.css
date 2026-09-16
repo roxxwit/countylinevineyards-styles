@@ -4928,122 +4928,19 @@ section.auth-wrapper {
     background-color: #f5f2eb !important; /* Prevents the entire horizontal strip from fading out */
 }
 /* ==========================================================================
-   COUNTY LINE - MINIMALIST STOREFRONT OVERRIDES
-   ========================================================================== */
-
-/* 1. FORCE ABADI FONTS ON PRODUCT CARDS & TITLES */
-:root {
-    --font-display: "Abadi Bold", "Abadi MT", sans-serif !important;
-    --font-body: "Abadi Light", "Abadi MT", sans-serif !important;
-}
-
-.productItem h2 a,
-.shop-content h1, 
-.shop-content h2, 
-.shop-content h3,
-.productItem .price {
-    font-family: var(--font-display) !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    color: #2c2c2c !important;
-}
-
-/* 2. STRIP THE UGLY HARD OUTLINES FROM PRODUCT CARDS */
-.pi-content {
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-}
-
-.productItem:hover .pi-content {
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-}
-
-/* 3. SOFTEN THE QUANTITY BOXES */
-.productItem .qty-container,
-.tabs-container .uc.addToCart .qty-container {
-    border: 1px solid #eaeaea !important; 
-    background: transparent !important;
-    border-radius: 4px !important;
-}
-
-/* 4. MATCH THE SLEEK PILL BUTTONS FROM ELEMENTOR */
-.btn, 
-.productItem .btn, 
-.nav-shop-btn,
-input[type="submit"] {
-    border-radius: 30px !important;
-    background-color: #2c2c2c !important;
-    border: none !important;
-    font-family: var(--font-body) !important;
-    font-weight: 600 !important;
-    letter-spacing: 1.5px !important;
-    color: #ffffff !important;
-}
-
-.btn:hover, 
-.productItem .btn:hover,
-input[type="submit"]:hover {
-    background-color: #555555 !important;
-}
-
-/* 5. MATCH THE OFF-WHITE BACKGROUND FROM ELEMENTOR */
-html, body, #pageContent {
-    background-color: #fcfcfc !important; 
-}
-/* 1. HIDE LEFT MENU & CENTER THE GRID */
-.shop-left-menu {
-    display: none !important;
-}
-.shop-content {
-    width: 100% !important;
-    margin: 0 auto !important;
-}
-
-/* 2. SOFTEN PRODUCT TITLES */
-.productItem h2 a {
-    font-weight: 400 !important; 
-    font-size: 18px !important; 
-    line-height: 1.4 !important;
-    letter-spacing: 1.5px !important;
-}
-
-/* 3. TAME THE INTRO PARAGRAPH */
-#textContent p {
-    max-width: 800px !important;
-    margin: 0 auto 40px auto !important;
-    text-align: center !important;
-    line-height: 1.6 !important;
-}
-
-/* 4. CLEAN UP THE COMMAND ZONE (STACKED ALIGNMENT) */
-.productItem .cmd-container {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;
-    align-items: center !important;
-    margin-top: 15px !important;
-}
-.productItem .qty-label {
-    display: none !important; /* Hides the word "Qty" to reduce clutter */
-}
-.productItem input[type="text"].number {
-    width: 60px !important;
-    height: 40px !important;
-    border: 1px solid #eaeaea !important;
-    border-radius: 4px !important;
-}
-.productItem .btn {
-    width: 100% !important;
-    max-width: 200px !important;
-}
-/* ==========================================================================
    COUNTY LINE - FULL ELEMENTOR MATCH (MASTER OVERRIDE)
    ========================================================================== */
 
-/* 1. HIDE LEFT MENU & CENTER THE GRID */
+/* 1. HEADER & AUTH BAR BACKGROUND COLORS */
+.header-wrapper, section.header-main {
+    background-color: #FCFCFC !important;
+}
+section.auth-wrapper {
+    background-color: #F0F0F0 !important; /* Slightly darker, neutral tone */
+    border-bottom: 1px solid #eaeaea !important;
+}
+
+/* 2. HIDE LEFT MENU & CENTER THE GRID */
 .shop-left-menu {
     display: none !important;
 }
@@ -5052,7 +4949,7 @@ html, body, #pageContent {
     margin: 0 auto !important;
 }
 
-/* 2. STRIP THE BOX BORDERS & SHADOWS */
+/* 3. STRIP THE BOX BORDERS & SHADOWS */
 .pi-content, 
 .productItem:hover .pi-content {
     border: none !important;
@@ -5060,20 +4957,21 @@ html, body, #pageContent {
     background: transparent !important;
 }
 
-/* 3. ELEMENTOR PRODUCT TITLES (Bold, Uppercase, Centered) */
+/* 4. ELEMENTOR PRODUCT TITLES (Light, Uppercase, Italicized) */
 .productItem h2 a {
-    font-family: "Abadi Bold", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 22px !important;
-    font-weight: bold !important;
+    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
+    font-size: 24px !important; 
+    font-weight: normal !important;
+    font-style: italic !important;
     text-transform: uppercase !important;
-    letter-spacing: 1.5px !important;
+    letter-spacing: 3px !important;
     color: #020101 !important; 
-    line-height: 1.3 !important;
+    line-height: 1.4 !important;
     text-align: center !important;
     display: block !important;
 }
 
-/* 4. ELEMENTOR DIVIDER LINE */
+/* 5. ELEMENTOR DIVIDER LINE */
 .productItem h2::after {
     content: "";
     display: block !important;
@@ -5083,7 +4981,7 @@ html, body, #pageContent {
     margin: 15px auto 15px auto !important; 
 }
 
-/* 5. REFINED PRICES */
+/* 6. REFINED PRICES */
 .productItem .price {
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
     font-size: 20px !important;
@@ -5094,7 +4992,7 @@ html, body, #pageContent {
     display: block !important;
 }
 
-/* 6. CLEAN UP COMMAND ZONE & BUTTONS */
+/* 7. CLEAN UP COMMAND ZONE & BUTTONS */
 .productItem .cmd-container {
     display: flex !important;
     flex-direction: column !important;
@@ -5125,7 +5023,7 @@ html, body, #pageContent {
     background-color: #555555 !important;
 }
 
-/* 7. TAME THE TOP INTRO PARAGRAPH */
+/* 8. TAME THE TOP INTRO PARAGRAPH */
 #textContent p {
     max-width: 800px !important;
     margin: 0 auto 40px auto !important;
