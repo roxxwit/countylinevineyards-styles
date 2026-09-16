@@ -4972,23 +4972,32 @@ section.auth-wrapper {
     padding-bottom: 0 !important;
 }
 
-/* 1. LOCK IN REFINED PRICE FONT */
-.productItem .price,
-.productItem .price-container span,
-div.price-container {
-    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 18px !important;
-    color: #020101 !important;
-    font-weight: normal !important;
+/* ==========================================================================
+   PRODUCT CARD OVERRIDES (Clean & Error-Free)
+   ========================================================================== */
+
+/* 1. PRODUCT TITLE (Abadi Bold, Condensed, Uppercase) */
+.productItem h2.prod-name a,
+.productItem h2 a {
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-size: 22px !important; 
+    font-weight: bold !important; 
+    text-transform: uppercase !important;
+    letter-spacing: 0.03em !important; 
+    color: #020101 !important; 
+    line-height: 1.1 !important;
     text-align: center !important;
-    margin-top: 10px !important;
-    display: block !important;
+    display: inline-block !important;
+    transform: scaleX(0.78) !important;
+    transform-origin: center !important;
+    width: 100% !important;
+    margin: 0 !important;
 }
 
-/* 2. LOCK IN ANDERSON VALLEY (Abadi Light, Italic, Uppercase) */
+/* 2. REGION SUB-TEXT (Anderson Valley - Italic, Uppercase) */
 .productItem .prod-content p,
 .productItem .prod-content {
-    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
+    font-family: "Abadi Light", "Abadi MT", sans-serif !important;
     font-size: 16px !important;
     font-style: italic !important;
     text-transform: uppercase !important;
@@ -4997,6 +5006,46 @@ div.price-container {
     text-align: center !important;
     margin: 4px 0 0 0 !important;
     display: block !important;
+}
+
+/* 3. REFINED PRICES */
+.productItem .price,
+.productItem .price-container,
+div.price-container {
+    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
+    font-size: 17px !important;
+    color: #020101 !important;
+    font-weight: normal !important;
+    text-align: center !important;
+    margin-top: 10px !important;
+    display: block !important;
+}
+
+/* 4. COMMAND ZONE & HIDING QTY LABEL */
+.productItem .cmd-container {
+    display: flex !important;
+    flex-direction: column !important; 
+    gap: 10px !important;
+    align-items: center !important;
+    margin-top: 5px !important;
+}
+
+.productItem .qty-label {
+    display: none !important; /* Hides the rogue "Qty" text label */
+}
+
+.productItem .qty-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+.productItem .prod-summary {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
 
 /* 7. QTY BOX & BUTTONS */
