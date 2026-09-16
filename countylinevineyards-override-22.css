@@ -4940,13 +4940,16 @@ section.auth-wrapper {
     border-bottom: 1px solid #eaeaea !important;
 }
 
-/* 2. HIDE LEFT MENU & CENTER THE GRID */
+/* 2. HIDE LEFT MENU, CENTER GRID, HIDE FLOATING CART */
 .shop-left-menu {
     display: none !important;
 }
 .shop-content {
     width: 100% !important;
     margin: 0 auto !important;
+}
+.js-cart-drawer-toggle {
+    display: none !important; /* Removes the dark floating cart button */
 }
 
 /* 3. STRIP THE BOX BORDERS & SHADOWS */
@@ -4960,11 +4963,11 @@ section.auth-wrapper {
 /* 4. ELEMENTOR PRODUCT TITLES (Semi-Bold, Uppercase) */
 .productItem h2 a {
     font-family: "Abadi", "Abadi MT", sans-serif !important;
-    font-size: 22px !important; 
-    font-weight: 400 !important; 
+    font-size: 20px !important; 
+    font-weight: 600 !important; 
     font-style: normal !important; 
     text-transform: uppercase !important;
-    letter-spacing: 1.2px !important;
+    letter-spacing: 2px !important;
     color: #020101 !important; 
     line-height: 1.4 !important;
     text-align: center !important;
@@ -4982,7 +4985,7 @@ section.auth-wrapper {
     display: block !important;
 }
 
-/* 6. REVERT COMMAND ZONE TO STACKED (Hides Duplicate Buttons) */
+/* 6. COMMAND ZONE (Stacked) */
 .productItem .cmd-container {
     display: flex !important;
     flex-direction: column !important; 
@@ -4997,7 +5000,18 @@ section.auth-wrapper {
 
 /* 7. QTY BOX & BUTTONS */
 
-/* Qty Box (Subtle) */
+/* Aggressively Strip OrderPort's Outer Qty Box wrapper */
+.productItem div.qty-container,
+fieldset.add-to-cart .qty-container {
+    border: none !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    height: auto !important;
+    box-shadow: none !important;
+}
+
+/* Inner Qty Input (Matched perfectly to Add to Cart) */
 .productItem input[type="text"].number {
     width: 60px !important;
     height: 42px !important;
@@ -5008,6 +5022,7 @@ section.auth-wrapper {
     text-align: center !important;
     font-size: 16px !important;
     font-family: "Abadi", sans-serif !important;
+    margin: 0 !important;
 }
 
 /* Add To Cart Button (Subtle & Soft) */
@@ -5030,9 +5045,7 @@ section.auth-wrapper {
     color: #2c2c2c !important;
 }
 
-/* 8. HEADER SHOP BUTTON (Elementor Match) */
-
-/* Force the list item wrapper to perfectly center the button vertically */
+/* HEADER SHOP BUTTON (Elementor Match) */
 .main-menu .nav-shop-item,
 .main-menu-full .nav-shop-item {
     display: flex !important;
@@ -5040,13 +5053,12 @@ section.auth-wrapper {
     height: 100% !important;
 }
 
-/* The Button Itself */
 .nav-shop-btn,
 .nav-shop-item a.nav-shop-btn {
-    height: 38px !important; /* Slightly slimmer height */
-    padding: 0 34px !important; /* Widened padding */
-    border-radius: 30px !important; /* Restored Pill Shape */
-    background-color: #484848 !important; /* Dark Charcoal instead of stark black */
+    height: 38px !important; 
+    padding: 0 34px !important; 
+    border-radius: 30px !important; 
+    background-color: #484848 !important; 
     color: #ffffff !important;
     letter-spacing: 1.5px !important;
     font-weight: 600 !important;
@@ -5061,11 +5073,11 @@ section.auth-wrapper {
 
 .nav-shop-btn:hover,
 .nav-shop-item a.nav-shop-btn:hover {
-    background-color: #c9c9c9 !important; /* Elementor Hover Gray */
+    background-color: #c9c9c9 !important; 
     color: #ffffff !important;
 }
 
-/* 9. EDGE-TO-EDGE LOGISTICS BAR */
+/* 8. EDGE-TO-EDGE LOGISTICS BAR */
 body {
     overflow-x: hidden !important; 
 }
