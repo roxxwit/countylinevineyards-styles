@@ -5309,39 +5309,63 @@ body {
         background-color: #ab737e !important; /* Dusty rose hover */
     }
 /* ==========================================================================
-   SIDEBAR MENU: PARENT HEADERS & SUBMENU INDENTATION
+   HEADER DROPDOWN & MULTI-LEVEL FLYOUT FIX
    ========================================================================== */
 
-/* 1. Make the Parent Category Header Non-Clickable & Styled as a Title */
-.shop-left-menu a[href*="orfin-lotts"],
-.shop-left-menu a[href*="Orfin-Lotts"] {
-    pointer-events: none !important;
-    cursor: default !important;
-    font-family: "Abadi", "Abadi MT", sans-serif !important;
-    font-weight: bold !important;
-    color: #020101 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    background: transparent !important;
-    margin-top: 15px !important;
+/* Ensure parent list items act as positioning anchors */
+.main-menu li, 
+.main-menu-full li {
+    position: relative !important;
 }
 
-/* 2. Indent Submenu Items (like Beads, Corduroy, etc.) underneath */
-.shop-left-menu li li a,
-.shop-left-menu a[href*="beads"],
-.shop-left-menu a[href*="corduroy"],
-.shop-left-menu a[href*="scarlet-cheetah"],
-.shop-left-menu a[href*="albarino"],
-.shop-left-menu a[href*="pinhead"],
-.shop-left-menu a[href*="sub14"] {
-    padding-left: 18px !important;
+/* First-level Dropdown Container */
+.main-menu .sub-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    min-width: 220px !important;
+    background: #ffffff !important;
+    border: 1px solid #eaeaea !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08) !important;
+    display: none !important;
+    z-index: 9999 !important;
+    list-style: none !important;
+    padding: 10px 0 !important;
+    margin: 0 !important;
+}
+
+/* Show first-level dropdown on hover */
+.main-menu li:hover > .sub-menu {
+    display: block !important;
+}
+
+/* NESTED FLYOUT MENUS (Pops out to the right for subcategories like Orfin Lotts) */
+.main-menu .sub-menu .sub-menu {
+    top: -10px !important; /* Aligns neatly with the parent item row */
+    left: 100% !important; /* Forces it to fly out to the right */
+    margin-left: 2px !important;
+}
+
+/* Show nested submenu on hover of parent item */
+.main-menu .sub-menu li:hover > .sub-menu {
+    display: block !important;
+}
+
+/* Dropdown Item Link Styling */
+.main-menu .sub-menu a {
     font-family: "Abadi Light", "Abadi MT", sans-serif !important;
     font-size: 13px !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.8px !important;
-    color: #555555 !important;
+    letter-spacing: 1px !important;
+    color: #484848 !important;
+    padding: 10px 22px !important;
+    display: block !important;
+    white-space: nowrap !important;
+    background: transparent !important;
+    line-height: 1.2 !important;
 }
 
-.shop-left-menu li li a:hover {
+.main-menu .sub-menu a:hover {
+    background-color: #f7f7f7 !important;
     color: #020101 !important;
 }
