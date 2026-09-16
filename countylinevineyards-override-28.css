@@ -5168,66 +5168,95 @@ body {
     background-color: #484848 !important;
 }
 /* ==========================================================================
-   10. FOOTER EXACT ELEMENTOR MATCH
-   ========================================================================== */
-.op-footer {
-    background-color: #FCFCFC !important; 
-    border-top: 1px solid #eaeaea !important;
-    height: auto !important; 
-    padding: 0 !important;
-}
+       10. FOOTER EXACT ELEMENTOR FLEX LAYOUT
+       ========================================================================== */
+    .op-footer {
+        background-color: #FCFCFC !important; 
+        border-top: 1px solid #eaeaea !important;
+        height: auto !important; 
+        padding: 0 !important;
+        width: 100% !important;
+    }
 
-.footer-main {
-    padding: 40px 20px 30px 20px !important; 
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-}
+    /* Forces the footer container to space columns evenly across the page */
+    .footer-main {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        flex-wrap: wrap !important;
+        padding: 50px 40px 40px 40px !important; 
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
 
-/* Column Headers */
-.footer-section h3 {
-    font-family: "Abadi Bold", "Abadi", sans-serif !important;
-    font-size: 12px !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1.5px !important;
-    color: #020101 !important;
-    margin-bottom: 8px !important;
-}
+    /* Individual Footer Columns */
+    .footer-main > div, 
+    .footer-main > section,
+    .footer-section {
+        flex: 1 !important;
+        min-width: 150px !important;
+        margin-bottom: 20px !important;
+    }
 
-/* Column Links */
-.footer-nav a {
-    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 11px !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.8px !important;
-    color: #7a7a7a !important; 
-    line-height: 1.5 !important;
-}
+    /* Column Headers */
+    .footer-section h3, .footer-main h3 {
+        font-family: "Abadi Bold", "Abadi", sans-serif !important;
+        font-size: 12px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        color: #020101 !important;
+        margin-bottom: 12px !important;
+    }
 
-.footer-nav a:hover {
-    color: #020101 !important;
-}
+    /* Column Links */
+    .footer-nav a {
+        font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
+        font-size: 11px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.8px !important;
+        color: #7a7a7a !important; 
+        line-height: 1.6 !important;
+        display: block !important;
+    }
 
-/* Copyright & Brand Text Under Social Icons (Bold & Compact) */
-.copyright, .copyright a, .visit-details, .contact-details {
-    font-family: "Abadi Bold", "Abadi", sans-serif !important; /* Switched to Bold to match first screenshot */
-    font-size: 11px !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.8px !important;
-    color: #020101 !important; /* Darker, punchier text color */
-    line-height: 1.4 !important;
-}
+    .footer-nav a:hover {
+        color: #020101 !important;
+    }
 
-.copyright a:hover {
-    color: #ab737e !important;
-}
+    /* Copyright & Brand Text Under Social Icons (Bold & Compact) */
+    .copyright, .copyright a, .visit-details, .contact-details {
+        font-family: "Abadi Bold", "Abadi", sans-serif !important; 
+        font-size: 11px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.8px !important;
+        color: #020101 !important; 
+        line-height: 1.4 !important;
+    }
 
-/* Social Icons Color Matching */
-.social-nav a {
-    background-color: #484848 !important; 
-    color: #ffffff !important;
-    transition: background-color 0.3s ease !important;
-}
+    .copyright a:hover {
+        color: #ab737e !important;
+    }
 
-.social-nav a:hover {
-    background-color: #ab737e !important; /* Dusty rose hover */
-}
+    /* Social Icons Styling & Alignment */
+    .social-nav {
+        display: flex !important;
+        gap: 10px !important;
+        margin-bottom: 12px !important;
+    }
+
+    .social-nav a {
+        width: 32px !important;
+        height: 32px !important;
+        border-radius: 50% !important;
+        background-color: #484848 !important; 
+        color: #ffffff !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: background-color 0.3s ease !important;
+    }
+
+    .social-nav a:hover {
+        background-color: #ab737e !important; /* Dusty rose hover */
+    }
