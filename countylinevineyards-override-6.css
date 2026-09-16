@@ -5016,8 +5016,8 @@ section.auth-wrapper {
     border-radius: 30px !important;
     background-color: #2c2c2c !important;
     color: #ffffff !important;
-    letter-spacing: 1.5px !important;
-    font-weight: 600 !important;
+    letter-spacing: 1.2px !important;
+    font-weight: 900 !important;
 }
 .productItem .btn:hover {
     background-color: #555555 !important;
@@ -5030,4 +5030,22 @@ section.auth-wrapper {
     text-align: center !important;
     line-height: 1.6 !important;
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
+}
+/* 8. OPTION A: THE ANNOUNCEMENT BANNER */
+.group-summary {
+    background-color: #F5F2EB !important; /* Warm beige */
+    padding: 12px 20px !important;
+    margin: 0 0 40px 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+.group-summary p {
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
+    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
+    font-size: 13px !important; /* Shrunk down to be less obtrusive */
+    color: #4a4a4a !important;
+    letter-spacing: 0.5px !important;
 }
