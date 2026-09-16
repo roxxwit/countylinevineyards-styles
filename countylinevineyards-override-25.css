@@ -5167,3 +5167,50 @@ body {
 .social-nav a:hover {
     background-color: #484848 !important;
 }
+/* 10. FOOTER COMPACT ELEMENTOR MATCH */
+    .op-footer {
+        background-color: #FCFCFC !important; 
+        border-top: 1px solid #eaeaea !important;
+        height: auto !important; 
+        padding: 0 !important;
+    }
+
+    .footer-main {
+        padding: 35px 20px 25px 20px !important; /* Drastically tightened top and bottom padding */
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+    }
+
+    /* Column Headers */
+    .footer-section h3 {
+        font-family: "Abadi Bold", "Abadi", sans-serif !important;
+        font-size: 12px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        color: #020101 !important;
+        margin-bottom: 10px !important; /* Tighter gap below titles */
+    }
+
+    /* Column Links & Copyright Text */
+    .footer-nav a, .copyright, .copyright a, .visit-details, .contact-details {
+        font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
+        font-size: 12px !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        color: #7a7a7a !important; 
+        line-height: 1.6 !important; /* Tighter line height so links sit closer together */
+    }
+
+    .footer-nav a:hover, .copyright a:hover {
+        color: #020101 !important;
+    }
+
+    /* Social Icons */
+    .social-nav a {
+        background-color: #8a8a8a !important; 
+        color: #ffffff !important;
+    }
+
+    .social-nav a:hover {
+        background-color: #484848 !important;
+    }
