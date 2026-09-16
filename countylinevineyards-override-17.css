@@ -4936,7 +4936,7 @@ section.auth-wrapper {
     background-color: #FCFCFC !important;
 }
 section.auth-wrapper {
-    background-color: #F0F0F0 !important; /* Slightly darker, neutral tone */
+    background-color: #F0F0F0 !important; 
     border-bottom: 1px solid #eaeaea !important;
 }
 
@@ -4957,34 +4957,24 @@ section.auth-wrapper {
     background: transparent !important;
 }
 
-/* 4. ELEMENTOR PRODUCT TITLES (Light, Uppercase, Italicized) */
+/* 4. ELEMENTOR PRODUCT TITLES (Semi-Bold, Uppercase, No Italics, No Line) */
 .productItem h2 a {
-    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 24px !important; 
-    font-weight: normal !important;
-    font-style: italic !important;
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-size: 20px !important; 
+    font-weight: 600 !important; /* Semi-bold weight */
+    font-style: normal !important; /* Removed italics */
     text-transform: uppercase !important;
-    letter-spacing: 3px !important;
+    letter-spacing: 2px !important;
     color: #020101 !important; 
     line-height: 1.4 !important;
     text-align: center !important;
     display: block !important;
 }
 
-/* 5. ELEMENTOR DIVIDER LINE */
-.productItem h2::after {
-    content: "";
-    display: block !important;
-    width: 60px !important; 
-    height: 1px !important;
-    background-color: #dcdcdc !important; 
-    margin: 15px auto 15px auto !important; 
-}
-
-/* 6. REFINED PRICES */
+/* 5. REFINED PRICES */
 .productItem .price {
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 20px !important;
+    font-size: 18px !important;
     color: #020101 !important;
     font-weight: normal !important;
     text-align: center !important;
@@ -4992,49 +4982,70 @@ section.auth-wrapper {
     display: block !important;
 }
 
-/* 7. CLEAN UP COMMAND ZONE & BUTTONS */
+/* 6. CLEAN UP COMMAND ZONE (Side-by-Side) */
 .productItem .cmd-container {
     display: flex !important;
-    flex-direction: column !important;
-    gap: 12px !important;
+    flex-direction: row !important; /* Forces side-by-side alignment */
+    gap: 8px !important;
+    justify-content: center !important;
     align-items: center !important;
     margin-top: 15px !important;
 }
+
 .productItem .qty-label {
     display: none !important; 
 }
+
+/* 7. QTY BOX & BUTTONS (Round Rectangles, #0A0A0A Background) */
 .productItem input[type="text"].number {
-    width: 60px !important;
-    height: 40px !important;
-    border: 1px solid #eaeaea !important;
-    border-radius: 4px !important;
+    width: 50px !important;
+    height: 42px !important;
+    border: none !important; /* Removed borders */
+    background-color: #0A0A0A !important; /* Matched to Elementor Shop button */
+    color: #ffffff !important; 
+    border-radius: 4px !important; /* Round rectangle shape */
     text-align: center !important;
-}
-.productItem .btn {
-    width: 100% !important;
-    max-width: 200px !important;
-    border-radius: 30px !important;
-    background-color: #2c2c2c !important;
-    color: #ffffff !important;
-    letter-spacing: 1.2px !important;
-    font-weight: 900 !important;
-}
-.productItem .btn:hover {
-    background-color: #555555 !important;
+    font-size: 16px !important;
+    font-family: "Abadi", sans-serif !important;
 }
 
-/* 8. EDGE-TO-EDGE LOGISTICS BAR (VISIBLE GRADIENT & LARGE TEXT) */
+/* Targets both Add To Cart and Header Shop Button */
+.productItem .btn, 
+.nav-shop-btn,
+.nav-shop-item a.nav-shop-btn {
+    width: auto !important;
+    height: 42px !important;
+    padding: 0 24px !important;
+    border-radius: 4px !important; /* Round rectangle shape */
+    background-color: #0A0A0A !important; 
+    color: #ffffff !important;
+    letter-spacing: 1.5px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+}
+
+/* Hover State (Silver/Gray) */
+.productItem .btn:hover, 
+.nav-shop-btn:hover,
+.nav-shop-item a.nav-shop-btn:hover {
+    background-color: #c9c9c9 !important; 
+    color: #ffffff !important;
+}
+
+/* 8. EDGE-TO-EDGE LOGISTICS BAR */
 body {
     overflow-x: hidden !important; 
 }
 
 .group-summary {
     position: relative !important;
-    /* Aggressive negative margin to swallow all nested invisible gaps */
     margin-top: -75px !important; 
-    /* Extra top padding so the text stays vertically centered */
     padding: 60px 20px 35px 20px !important; 
-    margin-bottom: 60px !important;
+    margin-bottom: 25px !important; /* Reduced margin to pull bottles up */
     background: transparent !important; 
     z-index: 1 !important; 
 }
@@ -5047,8 +5058,7 @@ body {
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 100vw !important;
-    /* Change #F2F2F2 to #F5F5F5 if you need it even lighter */
-    background-image: linear-gradient(to bottom, #f5f5f7 0%, #FCFCFC 100%) !important; 
+    background-image: linear-gradient(to bottom, #F2F2F2 0%, #FCFCFC 100%) !important; 
     z-index: -1 !important;
 }
 
@@ -5060,7 +5070,7 @@ body {
     text-align: center !important;
     line-height: 1.7 !important;
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 16px !important; /* Bumped up to 21px for maximum readability */
+    font-size: 16px !important; 
     color: #2c2c2c !important;
     letter-spacing: 0.5px !important;
 }
