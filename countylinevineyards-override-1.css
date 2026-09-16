@@ -4927,4 +4927,70 @@ li.ord-signin:hover *,
 section.auth-wrapper {
     background-color: #f5f2eb !important; /* Prevents the entire horizontal strip from fading out */
 }
+/* ==========================================================================
+   COUNTY LINE - MINIMALIST STOREFRONT OVERRIDES
+   ========================================================================== */
+
+/* 1. FORCE ABADI FONTS ON PRODUCT CARDS & TITLES */
+:root {
+    --font-display: "Abadi Bold", "Abadi MT", sans-serif !important;
+    --font-body: "Abadi Light", "Abadi MT", sans-serif !important;
+}
+
+.productItem h2 a,
+.shop-content h1, 
+.shop-content h2, 
+.shop-content h3,
+.productItem .price {
+    font-family: var(--font-display) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: #2c2c2c !important;
+}
+
+/* 2. STRIP THE UGLY HARD OUTLINES FROM PRODUCT CARDS */
+.pi-content {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.productItem:hover .pi-content {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+/* 3. SOFTEN THE QUANTITY BOXES */
+.productItem .qty-container,
+.tabs-container .uc.addToCart .qty-container {
+    border: 1px solid #eaeaea !important; 
+    background: transparent !important;
+    border-radius: 4px !important;
+}
+
+/* 4. MATCH THE SLEEK PILL BUTTONS FROM ELEMENTOR */
+.btn, 
+.productItem .btn, 
+.nav-shop-btn,
+input[type="submit"] {
+    border-radius: 30px !important;
+    background-color: #2c2c2c !important;
+    border: none !important;
+    font-family: var(--font-body) !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    color: #ffffff !important;
+}
+
+.btn:hover, 
+.productItem .btn:hover,
+input[type="submit"]:hover {
+    background-color: #555555 !important;
+}
+
+/* 5. MATCH THE OFF-WHITE BACKGROUND FROM ELEMENTOR */
+html, body, #pageContent {
+    background-color: #fcfcfc !important; 
+}
 
