@@ -4963,11 +4963,10 @@ section.auth-wrapper {
 /* 4. ELEMENTOR PRODUCT TITLES (Abadi Bold, Text Shadow, 0.12em Spacing) */
 .productItem h2 a {
     font-family: "Abadi Bold", "Abadi MT", sans-serif !important;
-    font-size: 20px !important; 
+    font-size: 26px !important; 
     font-weight: 600 !important; /* Semi-bold */
     font-style: normal !important; 
     text-transform: uppercase !important;
-    letter-spacing: 0.12em !important; 
     color: #020101 !important; 
     line-height: 1.4 !important;
     text-align: center !important;
@@ -5183,7 +5182,7 @@ body {
         justify-content: space-between !important;
         align-items: flex-start !important;
         flex-wrap: wrap !important;
-        padding: 50px 40px 40px 40px !important; 
+        padding: 100px 40px 40px 40px !important; 
         max-width: 1200px !important;
         margin: 0 auto !important;
         box-sizing: border-box !important;
