@@ -4988,7 +4988,7 @@ section.auth-wrapper {
     line-height: 1.1 !important;
     text-align: center !important;
     display: inline-block !important;
-    transform: scaleX(0.65) !important;
+    transform: scaleX(0.75) !important;
     transform-origin: center !important;
     width: 100% !important;
     margin: 0 !important;
