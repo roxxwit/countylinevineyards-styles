@@ -4962,16 +4962,30 @@ section.auth-wrapper {
 
 /* 4. ELEMENTOR PRODUCT TITLES (Abadi Bold, Text Shadow, 0.12em Spacing) */
 .productItem h2 a {
-    font-family: "Abadi Bold", "Abadi MT", sans-serif !important;
-    font-size: 26px !important; 
-    font-weight: 600 !important; /* Semi-bold */
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-size: 24px !important; 
+    font-weight: 900 !important; /* Semi-bold */
     font-style: normal !important; 
     text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
     color: #020101 !important; 
     line-height: 1.4 !important;
     text-align: center !important;
     display: block !important; 
     text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15) !important; 
+}
+/* SUB-TITLE / REGION TEXT (Abadi Light, Italic, Uppercase) */
+.productItem .prod-content p,
+.productItem .prod-content {
+    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
+    font-size: 16px !important;
+    font-style: italic !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.2px !important;
+    color: #555555 !important;
+    text-align: center !important;
+    margin-top: 6px !important;
+    display: block !important;
 }
 
 /* 5. REFINED PRICES */
