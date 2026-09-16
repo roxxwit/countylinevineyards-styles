@@ -4980,7 +4980,7 @@ section.auth-wrapper {
 .productItem h2.prod-name a,
 .productItem h2 a {
     font-family: "Abadi", "Abadi MT", sans-serif !important;
-    font-size: 22px !important; 
+    font-size: 26px !important; 
     font-weight: bold !important; 
     text-transform: uppercase !important;
     letter-spacing: 0.03em !important; 
@@ -4998,7 +4998,7 @@ section.auth-wrapper {
 .productItem .prod-content p,
 .productItem .prod-content {
     font-family: "Abadi Light", "Abadi MT", sans-serif !important;
-    font-size: 16px !important;
+    font-size: 22px !important;
     font-style: italic !important;
     text-transform: uppercase !important;
     letter-spacing: 1.5px !important;
