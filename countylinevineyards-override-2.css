@@ -4993,4 +4993,49 @@ input[type="submit"]:hover {
 html, body, #pageContent {
     background-color: #fcfcfc !important; 
 }
+/* 1. HIDE LEFT MENU & CENTER THE GRID */
+.shop-left-menu {
+    display: none !important;
+}
+.shop-content {
+    width: 100% !important;
+    margin: 0 auto !important;
+}
 
+/* 2. SOFTEN PRODUCT TITLES */
+.productItem h2 a {
+    font-weight: 400 !important; 
+    font-size: 18px !important; 
+    line-height: 1.4 !important;
+    letter-spacing: 1.5px !important;
+}
+
+/* 3. TAME THE INTRO PARAGRAPH */
+#textContent p {
+    max-width: 800px !important;
+    margin: 0 auto 40px auto !important;
+    text-align: center !important;
+    line-height: 1.6 !important;
+}
+
+/* 4. CLEAN UP THE COMMAND ZONE (STACKED ALIGNMENT) */
+.productItem .cmd-container {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: center !important;
+    margin-top: 15px !important;
+}
+.productItem .qty-label {
+    display: none !important; /* Hides the word "Qty" to reduce clutter */
+}
+.productItem input[type="text"].number {
+    width: 60px !important;
+    height: 40px !important;
+    border: 1px solid #eaeaea !important;
+    border-radius: 4px !important;
+}
+.productItem .btn {
+    width: 100% !important;
+    max-width: 200px !important;
+}
