@@ -4972,46 +4972,43 @@ section.auth-wrapper {
     padding-bottom: 0 !important;
 }
 
-/* 2. TRUE CONDENSED PRODUCT TITLE (Using CSS scaleX) */
+/* 1. TRULY CONDENSED & BOLD PRODUCT TITLES */
 .productItem h2 a {
     font-family: "Abadi", "Abadi MT", sans-serif !important;
-    font-size: 22px !important; 
+    font-size: 23px !important; 
     font-weight: bold !important; 
     text-transform: uppercase !important;
-    letter-spacing: 0.05em !important; 
+    letter-spacing: 0.03em !important; 
     color: #020101 !important; 
     line-height: 1.1 !important;
     text-align: center !important;
     display: inline-block !important;
-    transform: scaleX(0.85) !important; /* Physically narrows/condenses the font */
+    transform: scaleX(0.75) !important; /* Visibly narrows/condenses the font */
     transform-origin: center !important;
     width: 100% !important;
     margin: 0 !important;
 }
 
-/* 3. REGION SUB-TEXT (Anderson Valley) */
-.productItem .prod-content p,
-.productItem .prod-content {
-    font-family: "Abadi Light", "Abadi MT", sans-serif !important;
-    font-size: 16px !important;
-    font-style: italic !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    color: #555555 !important;
-    text-align: center !important;
-    margin: 4px 0 0 0 !important;
-    display: block !important;
+/* 2. CLEAN COMMAND ZONE (Hides the Qty label & stacks vertically) */
+.productItem .cmd-container {
+    display: flex !important;
+    flex-direction: column !important; 
+    gap: 10px !important;
+    align-items: center !important;
+    margin-top: 0 !important;
 }
 
-/* 4. REFINED PRICES */
-.productItem .price {
-    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 17px !important;
-    color: #020101 !important;
-    font-weight: normal !important;
-    text-align: center !important;
-    margin-top: 12px !important; /* Clean, controlled gap to price */
-    display: block !important;
+.productItem .qty-label {
+    display: none !important; /* Hides the rogue "Qty" text label */
+}
+
+.productItem .qty-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
 }
 
 /* 7. QTY BOX & BUTTONS */
