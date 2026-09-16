@@ -5031,7 +5031,7 @@ body {
 .group-summary {
     position: relative !important;
     /* Aggressive negative margin to swallow all nested invisible gaps */
-    margin-top: -85px !important; 
+    margin-top: -75px !important; 
     /* Extra top padding so the text stays vertically centered */
     padding: 60px 20px 35px 20px !important; 
     margin-bottom: 60px !important;
