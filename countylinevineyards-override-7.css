@@ -5031,21 +5031,20 @@ section.auth-wrapper {
     line-height: 1.6 !important;
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
 }
-/* 8. OPTION A: THE ANNOUNCEMENT BANNER */
+/* 8. OPTION B: THE EDITORIAL NOTE */
 .group-summary {
-    background-color: #F5F2EB !important; /* Warm beige */
-    padding: 12px 20px !important;
-    margin: 0 0 40px 0 !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
+    max-width: 750px !important;
+    margin: 0 auto 40px auto !important;
+    padding: 25px 35px !important;
+    border: 1px solid #dcdcdc !important; /* Delicate gray border */
+    background-color: transparent !important;
 }
 .group-summary p {
-    max-width: 900px !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
     text-align: center !important;
-    line-height: 1.5 !important;
+    line-height: 1.6 !important;
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 13px !important; /* Shrunk down to be less obtrusive */
+    font-size: 14px !important;
     color: #4a4a4a !important;
     letter-spacing: 0.5px !important;
 }
