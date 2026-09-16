@@ -4960,48 +4960,53 @@ section.auth-wrapper {
     background: transparent !important;
 }
 
-/* 4. ELEMENTOR PRODUCT TITLES (Abadi Narrow/Condensed & Bold, Tighter Spacing) */
-.productItem h2 a {
-    font-family: "Abadi", "Abadi MT", sans-serif !important;
-    font-stretch: condensed !important; /* Achieves the narrow/condensed look */
-    font-size: 22px !important; 
-    font-weight: bold !important; 
-    font-style: normal !important; 
-    text-transform: uppercase !important;
-    letter-spacing: 1.5px !important; /* Tighter letter-spacing so it's not overly separated */
-    color: #020101 !important; 
-    line-height: 1.1 !important;
-    margin: 0 0 4px 0 !important; /* Pulls title close to subtext */
-    text-align: center !important;
-    display: block !important; 
+/* 1. CRUSH THE WRAPPER MARGIN (Fixes the huge gap above price) */
+.productItem .prod-summary {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
 }
 
-/* SUB-TITLE / REGION TEXT (Larger, Italic, Tighter Margins) */
+/* 2. TRUE CONDENSED PRODUCT TITLE (Using CSS scaleX) */
+.productItem h2 a {
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-size: 22px !important; 
+    font-weight: bold !important; 
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important; 
+    color: #020101 !important; 
+    line-height: 1.1 !important;
+    text-align: center !important;
+    display: inline-block !important;
+    transform: scaleX(0.85) !important; /* Physically narrows/condenses the font */
+    transform-origin: center !important;
+    width: 100% !important;
+    margin: 0 !important;
+}
+
+/* 3. REGION SUB-TEXT (Anderson Valley) */
 .productItem .prod-content p,
 .productItem .prod-content {
-    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 18px !important; /* Made larger */
+    font-family: "Abadi Light", "Abadi MT", sans-serif !important;
+    font-size: 18px !important;
     font-style: italic !important;
     text-transform: uppercase !important;
     letter-spacing: 1px !important;
     color: #555555 !important;
     text-align: center !important;
-    margin: 0 0 8px 0 !important; /* Reduced bottom gap to price */
-    line-height: 1.2 !important;
+    margin: 4px 0 0 0 !important;
     display: block !important;
 }
 
-/* 5. REFINED PRICES (Tighter Top Margin) */
+/* 4. REFINED PRICES */
 .productItem .price {
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 17px !important;
+    font-size: 18px !important;
     color: #020101 !important;
     font-weight: normal !important;
     text-align: center !important;
-    margin: 0 0 10px 0 !important; /* Pulled right up against the sub-title */
+    margin-top: 12px !important; /* Clean, controlled gap to price */
     display: block !important;
 }
-
 /* 6. COMMAND ZONE (Eliminated Dead Space) */
 .productItem .cmd-container {
     display: flex !important;
