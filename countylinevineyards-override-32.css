@@ -4960,32 +4960,55 @@ section.auth-wrapper {
     background: transparent !important;
 }
 
-/* 4. ELEMENTOR PRODUCT TITLES (Abadi Bold, Text Shadow, 0.12em Spacing) */
+/* 4. ELEMENTOR PRODUCT TITLES (Abadi Narrow/Condensed & Bold, Tighter Spacing) */
 .productItem h2 a {
     font-family: "Abadi", "Abadi MT", sans-serif !important;
-    font-size: 24px !important; 
-    font-weight: 900 !important; /* Semi-bold */
+    font-stretch: condensed !important; /* Achieves the narrow/condensed look */
+    font-size: 22px !important; 
+    font-weight: bold !important; 
     font-style: normal !important; 
     text-transform: uppercase !important;
-    letter-spacing: 1.5px !important;
+    letter-spacing: 1.5px !important; /* Tighter letter-spacing so it's not overly separated */
     color: #020101 !important; 
-    line-height: 1.4 !important;
+    line-height: 1.1 !important;
+    margin: 0 0 4px 0 !important; /* Pulls title close to subtext */
     text-align: center !important;
     display: block !important; 
-    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15) !important; 
 }
-/* SUB-TITLE / REGION TEXT (Abadi Light, Italic, Uppercase) */
+
+/* SUB-TITLE / REGION TEXT (Larger, Italic, Tighter Margins) */
 .productItem .prod-content p,
 .productItem .prod-content {
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 16px !important;
+    font-size: 18px !important; /* Made larger */
     font-style: italic !important;
     text-transform: uppercase !important;
-    letter-spacing: 1.2px !important;
+    letter-spacing: 1px !important;
     color: #555555 !important;
     text-align: center !important;
-    margin-top: 6px !important;
+    margin: 0 0 8px 0 !important; /* Reduced bottom gap to price */
+    line-height: 1.2 !important;
     display: block !important;
+}
+
+/* 5. REFINED PRICES (Tighter Top Margin) */
+.productItem .price {
+    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
+    font-size: 17px !important;
+    color: #020101 !important;
+    font-weight: normal !important;
+    text-align: center !important;
+    margin: 0 0 10px 0 !important; /* Pulled right up against the sub-title */
+    display: block !important;
+}
+
+/* 6. COMMAND ZONE (Eliminated Dead Space) */
+.productItem .cmd-container {
+    display: flex !important;
+    flex-direction: column !important; 
+    gap: 8px !important;
+    align-items: center !important;
+    margin-top: 0 !important; /* Removes excess space above buttons */
 }
 
 /* 5. REFINED PRICES */
