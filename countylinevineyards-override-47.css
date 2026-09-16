@@ -5408,3 +5408,133 @@ body {
     background-color: #f7f7f7 !important;
     color: #020101 !important;
 }
+
+/* =========================================================
+   LIBRARY MEMBERSHIP: MARGINS ABOVE AND BELOW TITLE
+   ========================================================= */
+
+/* 1. Hide the overlapping duplicate menu causing the white bar */
+.main-menu li.has-child ul.sub-menu + ul.sub-menu {
+    display: none !important;
+}
+
+/* 2. Format 3rd-level submenus to fly out to the right */
+ul.sub-menu li {
+    position: relative;
+}
+ul.sub-menu ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    display: none;
+    background-color: var(--color-white, #ffffff);
+    min-width: 200px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+}
+ul.sub-menu li:hover > ul {
+    display: block;
+}
+/* 1. Remove blue background from OrderPort hamburger button */
+button.js-open-menu.mobile-toggle.burger {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* 1. Force left alignment and remove the horizontal lines */
+section.mobile-navigation ul, 
+section.mobile-navigation li,
+section.mobile-navigation a {
+    text-align: left !important;
+    border: none !important; 
+    list-style-type: none !important;
+    display: block !important;
+}
+
+/* 2. Indent the 2nd-level sub-menus (e.g., Chardonnay) */
+section.mobile-navigation ul ul {
+    padding-left: 20px !important; 
+    margin-top: 5px !important;
+}
+
+/* 3. Indent the 3rd-level sub-menus (e.g., Wingtine) even further */
+section.mobile-navigation ul ul ul {
+    padding-left: 20px !important;
+}
+/* 1. Sync mobile fonts to match your desktop navigation exactly */
+section.mobile-navigation a, 
+section.mobile-navigation li {
+    font-family: var(--font-nav) !important;
+    font-weight: 300 !important;
+    letter-spacing: 1px !important;
+}
+
+/* 2. Remove the divider line under the logo */
+section.mobile-navigation div, 
+section.mobile-navigation hr {
+    border-bottom: none !important;
+    border: none !important;
+}
+/* 1. Center the logo container */
+section.mobile-navigation .nav-logo-wrapper {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 20px !important; /* Adds breathing room below the logo */
+}
+
+/*Decrease the font size and reduce the vertical spacing */
+section.mobile-navigation .main-menu a {
+    font-size: 16px !important; /
+    padding: 0px 0px !important; /* Reduced from 16px top / 15px bottom */
+}
+/* Fix the link text color so it isn't blue */
+section.mobile-navigation .main-menu a {
+    color: #ffffff !important; 
+}
+/* 1. Force the inner logo container to center its contents */
+section.mobile-navigation .nav-logo {
+    flex-grow: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100% !important;
+}
+
+/* 2. Enlarge the logo and bypass max-width restrictions */
+section.mobile-navigation .nav-logo img {
+    width: 280px !important; /* Bumped up significantly */
+    max-width: none !important; 
+    height: auto !important;
+}
+/* 3. Reduce the 2nd-level sub-menu indentation */
+section.mobile-navigation ul ul {
+    padding-left: 10px !important; 
+    margin-top: 5px !important;
+}
+
+/* 4. Reduce the 3rd-level sub-menu indentation */
+section.mobile-navigation ul ul ul {
+    padding-left: 10px !important;
+}
+/* Tighten the vertical spacing between menu links */
+section.mobile-navigation .main-menu a {
+    padding-top: 6px !important; 
+    padding-bottom: 6px !important;
+}
+/* 1. Hide the nested sub-menus by default */
+section.mobile-navigation ul ul {
+    display: none !important;
+}
+
+/* 2. Trick mobile browsers into recognizing plain text as tappable */
+section.mobile-navigation li {
+    cursor: pointer !important; 
+    -webkit-tap-highlight-color: transparent; /* Removes the ugly blue tap flash on mobile */
+}
+
+/* 3. Reveal the sub-menu when the parent text is tapped */
+section.mobile-navigation li:hover > ul,
+section.mobile-navigation li:focus-within > ul {
+    display: block !important;
+}
+
