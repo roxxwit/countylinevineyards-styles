@@ -5044,7 +5044,7 @@ body {
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 100vw !important;
-    background: linear-gradient(to bottom, #F0F0F0 70%, #ffffff 30%) !important; /* Subtle gray to white fade */
+    background: linear-gradient(to bottom, #e0e0e0 80%, #ffffff 20%) !important; /* Subtle gray to white fade */
     z-index: -1 !important;
 }
 
