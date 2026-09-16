@@ -5030,11 +5030,13 @@ body {
 
 .group-summary {
     position: relative !important;
-    margin-top: -24px !important; 
-    padding: 40px 20px 35px 20px !important; 
+    /* Aggressive negative margin to swallow all nested invisible gaps */
+    margin-top: -45px !important; 
+    /* Extra top padding so the text stays vertically centered */
+    padding: 60px 20px 35px 20px !important; 
     margin-bottom: 60px !important;
     background: transparent !important; 
-    z-index: 1 !important; /* Locks the background layer in place */
+    z-index: 1 !important; 
 }
 
 .group-summary::before {
@@ -5045,8 +5047,8 @@ body {
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 100vw !important;
-    /* Bulletproof gradient property with a slightly deeper starting gray */
-    background-image: linear-gradient(to bottom, #E6E6E6 0%, #FCFCFC 100%) !important; 
+    /* Change #F2F2F2 to #F5F5F5 if you need it even lighter */
+    background-image: linear-gradient(to bottom, #F2F2F2 0%, #FCFCFC 100%) !important; 
     z-index: -1 !important;
 }
 
@@ -5058,7 +5060,7 @@ body {
     text-align: center !important;
     line-height: 1.7 !important;
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 19px !important; 
+    font-size: 21px !important; /* Bumped up to 21px for maximum readability */
     color: #2c2c2c !important;
     letter-spacing: 0.5px !important;
 }
