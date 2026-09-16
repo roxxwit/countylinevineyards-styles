@@ -4960,11 +4960,11 @@ section.auth-wrapper {
 /* 4. ELEMENTOR PRODUCT TITLES (Semi-Bold, Uppercase) */
 .productItem h2 a {
     font-family: "Abadi", "Abadi MT", sans-serif !important;
-    font-size: 20px !important; 
-    font-weight: 600 !important; 
+    font-size: 22px !important; 
+    font-weight: 400 !important; 
     font-style: normal !important; 
     text-transform: uppercase !important;
-    letter-spacing: 2px !important;
+    letter-spacing: 1.2px !important;
     color: #020101 !important; 
     line-height: 1.4 !important;
     text-align: center !important;
@@ -5072,7 +5072,7 @@ body {
 
 .group-summary {
     position: relative !important;
-    margin-top: -45px !important; 
+    margin-top: -75px !important; 
     padding: 60px 20px 35px 20px !important; 
     margin-bottom: 40px !important; 
     background: transparent !important; 
@@ -5099,7 +5099,7 @@ body {
     text-align: center !important;
     line-height: 1.7 !important;
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 21px !important; 
+    font-size: 16px !important; 
     color: #2c2c2c !important;
     letter-spacing: 0.5px !important;
 }
