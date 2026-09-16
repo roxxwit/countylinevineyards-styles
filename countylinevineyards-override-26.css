@@ -5176,7 +5176,7 @@ body {
     }
 
     .footer-main {
-        padding: 35px 20px 25px 20px !important; /* Drastically tightened top and bottom padding */
+        padding: 30px 20px 20px 20px !important; /* Tighter padding to match the main site */
         max-width: 1200px !important;
         margin: 0 auto !important;
     }
@@ -5184,33 +5184,34 @@ body {
     /* Column Headers */
     .footer-section h3 {
         font-family: "Abadi Bold", "Abadi", sans-serif !important;
-        font-size: 12px !important;
+        font-size: 11px !important;
         text-transform: uppercase !important;
         letter-spacing: 1.5px !important;
         color: #020101 !important;
-        margin-bottom: 10px !important; /* Tighter gap below titles */
+        margin-bottom: 6px !important; /* Extremely tight gap below headers */
     }
 
     /* Column Links & Copyright Text */
     .footer-nav a, .copyright, .copyright a, .visit-details, .contact-details {
         font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-        font-size: 12px !important;
+        font-size: 11px !important;
         text-transform: uppercase !important;
-        letter-spacing: 1px !important;
+        letter-spacing: 0.8px !important;
         color: #7a7a7a !important; 
-        line-height: 1.6 !important; /* Tighter line height so links sit closer together */
+        line-height: 1.4 !important; /* Tighter line-height so words stack closely */
     }
 
     .footer-nav a:hover, .copyright a:hover {
         color: #020101 !important;
     }
 
-    /* Social Icons */
+    /* Social Icons Color Matching (#484848 to #ab737e on hover) */
     .social-nav a {
-        background-color: #8a8a8a !important; 
+        background-color: #484848 !important; 
         color: #ffffff !important;
+        transition: background-color 0.3s ease !important;
     }
 
     .social-nav a:hover {
-        background-color: #484848 !important;
+        background-color: #ab737e !important; /* Exact dusty rose hover color */
     }
