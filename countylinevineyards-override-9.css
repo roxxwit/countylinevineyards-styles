@@ -5023,23 +5023,40 @@ section.auth-wrapper {
     background-color: #555555 !important;
 }
 
-/* 8. EDGE-TO-EDGE LOGISTICS BAR */
+/* 8. EDGE-TO-EDGE LOGISTICS BAR (GRADIENT & LARGE TEXT) */
+body {
+    overflow-x: hidden !important; 
+}
+
 .group-summary {
+    position: relative !important;
+    margin-top: -24px !important; /* Swallows the white gap from the container padding */
+    padding: 40px 20px 35px 20px !important; /* Adjusted top padding to keep text centered */
+    margin-bottom: 60px !important;
+    background: transparent !important; 
+}
+
+.group-summary::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
     width: 100vw !important;
-    margin-left: calc(50% - 50vw) !important;
-    background-color: #F0F0F0 !important; /* Matches the auth bar tone */
-    padding: 35px 20px !important;
-    margin-bottom: 60px !important; /* Gives the wine bottles room to breathe below */
-    box-sizing: border-box !important;
+    background: linear-gradient(to bottom, #F0F0F0 0%, #ffffff 100%) !important; /* Subtle gray to white fade */
+    z-index: -1 !important;
 }
 
 .group-summary p {
-    max-width: 900px !important;
+    position: relative !important; 
+    z-index: 1 !important;
+    max-width: 950px !important; /* Widened slightly to accommodate larger text */
     margin: 0 auto !important;
     text-align: center !important;
-    line-height: 1.8 !important;
+    line-height: 1.7 !important;
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 16px !important; /* Bumped up significantly for readability */
-    color: #2c2c2c !important; /* Darkened text for better contrast */
+    font-size: 19px !important; /* Bumped up significantly for easier reading */
+    color: #2c2c2c !important;
     letter-spacing: 0.5px !important;
 }
