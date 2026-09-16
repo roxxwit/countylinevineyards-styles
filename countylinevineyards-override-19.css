@@ -4968,7 +4968,7 @@ section.auth-wrapper {
     color: #020101 !important; 
     line-height: 1.4 !important;
     text-align: center !important;
-    display: block !important; /* Fixes title spacing */
+    display: block !important; 
 }
 
 /* 5. REFINED PRICES */
@@ -4982,10 +4982,10 @@ section.auth-wrapper {
     display: block !important;
 }
 
-/* 6. REVERT COMMAND ZONE TO STACKED (Hides Duplicate Buttons) */
+/* 6. COMMAND ZONE (Stacked) */
 .productItem .cmd-container {
     display: flex !important;
-    flex-direction: column !important; /* Back to stacked */
+    flex-direction: column !important; 
     gap: 12px !important;
     align-items: center !important;
     margin-top: 15px !important;
@@ -4995,16 +4995,23 @@ section.auth-wrapper {
     display: none !important; 
 }
 
-/* 7. QTY BOX & BUTTONS (Squared, Subtle Add to Cart, Bold Header Shop) */
+/* 7. QTY BOX & BUTTONS */
 
-/* Qty Box (Subtle) */
+/* Strip OrderPort's Outer Qty Box wrapper */
+.productItem .qty-container {
+    border: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+/* Inner Qty Input (Matched perfectly to Add to Cart) */
 .productItem input[type="text"].number {
     width: 60px !important;
     height: 42px !important;
-    border: 1px solid #cccccc !important; 
-    background-color: transparent !important; 
-    color: #2c2c2c !important; 
-    border-radius: 4px !important; /* Squared edges */
+    border: 1px solid #dcdcdc !important; 
+    background-color: #f7f7f7 !important; 
+    color: #4a4a4a !important; 
+    border-radius: 4px !important; 
     text-align: center !important;
     font-size: 16px !important;
     font-family: "Abadi", sans-serif !important;
@@ -5015,15 +5022,14 @@ section.auth-wrapper {
     width: 100% !important;
     max-width: 200px !important;
     height: 42px !important;
-    border-radius: 4px !important; /* Squared edges */
-    background-color: #f7f7f7 !important; /* Soft silver background */
-    color: #4a4a4a !important; /* Softer text */
-    border: 1px solid #dcdcdc !important; /* Light outline */
+    border-radius: 4px !important; 
+    background-color: #f7f7f7 !important; 
+    color: #4a4a4a !important; 
+    border: 1px solid #dcdcdc !important; 
     letter-spacing: 1.5px !important;
     font-weight: 600 !important;
     text-transform: uppercase !important;
     line-height: 40px !important;
-    /* Do NOT force display: flex here, it exposes OrderPort's hidden elements */
 }
 
 .productItem .btn:hover {
@@ -5031,13 +5037,13 @@ section.auth-wrapper {
     color: #2c2c2c !important;
 }
 
-/* Header Shop Button (Stark Black) */
+/* Header Shop Button (Elementor Pill Shape, #0A0A0A) */
 .nav-shop-btn,
 .nav-shop-item a.nav-shop-btn {
     height: 42px !important;
     padding: 0 24px !important;
-    border-radius: 4px !important; /* Squared edges */
-    background-color: #0A0A0A !important; 
+    border-radius: 30px !important; /* Restored Pill Shape */
+    background-color: #0A0A0A !important; /* Elementor Dark */
     color: #ffffff !important;
     letter-spacing: 1.5px !important;
     font-weight: 600 !important;
@@ -5047,7 +5053,7 @@ section.auth-wrapper {
 
 .nav-shop-btn:hover,
 .nav-shop-item a.nav-shop-btn:hover {
-    background-color: #c9c9c9 !important; 
+    background-color: #c9c9c9 !important; /* Elementor Hover Gray */
 }
 
 /* 8. EDGE-TO-EDGE LOGISTICS BAR */
@@ -5057,9 +5063,9 @@ body {
 
 .group-summary {
     position: relative !important;
-    margin-top: -45px !important; 
+    margin-top: -75px !important; 
     padding: 60px 20px 35px 20px !important; 
-    margin-bottom: 40px !important; /* Keeps some breathing room for the bottles */
+    margin-bottom: 40px !important; 
     background: transparent !important; 
     z-index: 1 !important; 
 }
@@ -5084,7 +5090,7 @@ body {
     text-align: center !important;
     line-height: 1.7 !important;
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 21px !important; 
+    font-size: 16px !important; 
     color: #2c2c2c !important;
     letter-spacing: 0.5px !important;
 }
