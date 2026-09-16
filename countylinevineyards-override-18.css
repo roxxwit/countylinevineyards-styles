@@ -4957,18 +4957,18 @@ section.auth-wrapper {
     background: transparent !important;
 }
 
-/* 4. ELEMENTOR PRODUCT TITLES (Semi-Bold, Uppercase, No Italics, No Line) */
+/* 4. ELEMENTOR PRODUCT TITLES (Semi-Bold, Uppercase) */
 .productItem h2 a {
     font-family: "Abadi", "Abadi MT", sans-serif !important;
     font-size: 20px !important; 
-    font-weight: 600 !important; /* Semi-bold weight */
-    font-style: normal !important; /* Removed italics */
+    font-weight: 600 !important; 
+    font-style: normal !important; 
     text-transform: uppercase !important;
     letter-spacing: 2px !important;
     color: #020101 !important; 
     line-height: 1.4 !important;
     text-align: center !important;
-    display: block !important;
+    display: block !important; /* Fixes title spacing */
 }
 
 /* 5. REFINED PRICES */
@@ -4982,12 +4982,11 @@ section.auth-wrapper {
     display: block !important;
 }
 
-/* 6. CLEAN UP COMMAND ZONE (Side-by-Side) */
+/* 6. REVERT COMMAND ZONE TO STACKED (Hides Duplicate Buttons) */
 .productItem .cmd-container {
     display: flex !important;
-    flex-direction: row !important; /* Forces side-by-side alignment */
-    gap: 8px !important;
-    justify-content: center !important;
+    flex-direction: column !important; /* Back to stacked */
+    gap: 12px !important;
     align-items: center !important;
     margin-top: 15px !important;
 }
@@ -4996,44 +4995,59 @@ section.auth-wrapper {
     display: none !important; 
 }
 
-/* 7. QTY BOX & BUTTONS (Round Rectangles, #0A0A0A Background) */
+/* 7. QTY BOX & BUTTONS (Squared, Subtle Add to Cart, Bold Header Shop) */
+
+/* Qty Box (Subtle) */
 .productItem input[type="text"].number {
-    width: 50px !important;
+    width: 60px !important;
     height: 42px !important;
-    border: none !important; /* Removed borders */
-    background-color: #0A0A0A !important; /* Matched to Elementor Shop button */
-    color: #ffffff !important; 
-    border-radius: 4px !important; /* Round rectangle shape */
+    border: 1px solid #cccccc !important; 
+    background-color: transparent !important; 
+    color: #2c2c2c !important; 
+    border-radius: 4px !important; /* Squared edges */
     text-align: center !important;
     font-size: 16px !important;
     font-family: "Abadi", sans-serif !important;
 }
 
-/* Targets both Add To Cart and Header Shop Button */
-.productItem .btn, 
+/* Add To Cart Button (Subtle & Soft) */
+.productItem .btn {
+    width: 100% !important;
+    max-width: 200px !important;
+    height: 42px !important;
+    border-radius: 4px !important; /* Squared edges */
+    background-color: #f7f7f7 !important; /* Soft silver background */
+    color: #4a4a4a !important; /* Softer text */
+    border: 1px solid #dcdcdc !important; /* Light outline */
+    letter-spacing: 1.5px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    line-height: 40px !important;
+    /* Do NOT force display: flex here, it exposes OrderPort's hidden elements */
+}
+
+.productItem .btn:hover {
+    background-color: #e6e6e6 !important; 
+    color: #2c2c2c !important;
+}
+
+/* Header Shop Button (Stark Black) */
 .nav-shop-btn,
 .nav-shop-item a.nav-shop-btn {
-    width: auto !important;
     height: 42px !important;
     padding: 0 24px !important;
-    border-radius: 4px !important; /* Round rectangle shape */
+    border-radius: 4px !important; /* Squared edges */
     background-color: #0A0A0A !important; 
     color: #ffffff !important;
     letter-spacing: 1.5px !important;
     font-weight: 600 !important;
     text-transform: uppercase !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
     border: none !important;
 }
 
-/* Hover State (Silver/Gray) */
-.productItem .btn:hover, 
 .nav-shop-btn:hover,
 .nav-shop-item a.nav-shop-btn:hover {
     background-color: #c9c9c9 !important; 
-    color: #ffffff !important;
 }
 
 /* 8. EDGE-TO-EDGE LOGISTICS BAR */
@@ -5043,9 +5057,9 @@ body {
 
 .group-summary {
     position: relative !important;
-    margin-top: -75px !important; 
+    margin-top: -45px !important; 
     padding: 60px 20px 35px 20px !important; 
-    margin-bottom: 25px !important; /* Reduced margin to pull bottles up */
+    margin-bottom: 40px !important; /* Keeps some breathing room for the bottles */
     background: transparent !important; 
     z-index: 1 !important; 
 }
@@ -5070,7 +5084,7 @@ body {
     text-align: center !important;
     line-height: 1.7 !important;
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 16px !important; 
+    font-size: 21px !important; 
     color: #2c2c2c !important;
     letter-spacing: 0.5px !important;
 }
