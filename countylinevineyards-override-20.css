@@ -4982,7 +4982,7 @@ section.auth-wrapper {
     display: block !important;
 }
 
-/* 6. COMMAND ZONE (Stacked) */
+/* 6. REVERT COMMAND ZONE TO STACKED (Hides Duplicate Buttons) */
 .productItem .cmd-container {
     display: flex !important;
     flex-direction: column !important; 
@@ -4997,20 +4997,13 @@ section.auth-wrapper {
 
 /* 7. QTY BOX & BUTTONS */
 
-/* Strip OrderPort's Outer Qty Box wrapper */
-.productItem .qty-container {
-    border: none !important;
-    background: transparent !important;
-    padding: 0 !important;
-}
-
-/* Inner Qty Input (Matched perfectly to Add to Cart) */
+/* Qty Box (Subtle) */
 .productItem input[type="text"].number {
     width: 60px !important;
     height: 42px !important;
-    border: 1px solid #dcdcdc !important; 
-    background-color: #f7f7f7 !important; 
-    color: #4a4a4a !important; 
+    border: 1px solid #cccccc !important; 
+    background-color: transparent !important; 
+    color: #2c2c2c !important; 
     border-radius: 4px !important; 
     text-align: center !important;
     font-size: 16px !important;
@@ -5037,33 +5030,49 @@ section.auth-wrapper {
     color: #2c2c2c !important;
 }
 
-/* Header Shop Button (Elementor Pill Shape, #0A0A0A) */
+/* 8. HEADER SHOP BUTTON (Elementor Match) */
+
+/* Force the list item wrapper to perfectly center the button vertically */
+.main-menu .nav-shop-item,
+.main-menu-full .nav-shop-item {
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+}
+
+/* The Button Itself */
 .nav-shop-btn,
 .nav-shop-item a.nav-shop-btn {
-    height: 42px !important;
-    padding: 0 24px !important;
+    height: 38px !important; /* Slightly slimmer height */
+    padding: 0 34px !important; /* Widened padding */
     border-radius: 30px !important; /* Restored Pill Shape */
-    background-color: #0A0A0A !important; /* Elementor Dark */
+    background-color: #484848 !important; /* Dark Charcoal instead of stark black */
     color: #ffffff !important;
     letter-spacing: 1.5px !important;
     font-weight: 600 !important;
     text-transform: uppercase !important;
     border: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    margin: auto 0 !important; 
 }
 
 .nav-shop-btn:hover,
 .nav-shop-item a.nav-shop-btn:hover {
     background-color: #c9c9c9 !important; /* Elementor Hover Gray */
+    color: #ffffff !important;
 }
 
-/* 8. EDGE-TO-EDGE LOGISTICS BAR */
+/* 9. EDGE-TO-EDGE LOGISTICS BAR */
 body {
     overflow-x: hidden !important; 
 }
 
 .group-summary {
     position: relative !important;
-    margin-top: -75px !important; 
+    margin-top: -45px !important; 
     padding: 60px 20px 35px 20px !important; 
     margin-bottom: 40px !important; 
     background: transparent !important; 
@@ -5090,7 +5099,7 @@ body {
     text-align: center !important;
     line-height: 1.7 !important;
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 16px !important; 
+    font-size: 21px !important; 
     color: #2c2c2c !important;
     letter-spacing: 0.5px !important;
 }
