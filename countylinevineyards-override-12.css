@@ -5023,17 +5023,18 @@ section.auth-wrapper {
     background-color: #555555 !important;
 }
 
-/* 8. EDGE-TO-EDGE LOGISTICS BAR (GRADIENT & LARGE TEXT) */
+/* 8. EDGE-TO-EDGE LOGISTICS BAR (VISIBLE GRADIENT & LARGE TEXT) */
 body {
     overflow-x: hidden !important; 
 }
 
 .group-summary {
     position: relative !important;
-    margin-top: -24px !important; /* Swallows the white gap from the container padding */
-    padding: 40px 20px 35px 20px !important; /* Adjusted top padding to keep text centered */
+    margin-top: -24px !important; 
+    padding: 40px 20px 35px 20px !important; 
     margin-bottom: 60px !important;
     background: transparent !important; 
+    z-index: 1 !important; /* Locks the background layer in place */
 }
 
 .group-summary::before {
@@ -5044,19 +5045,20 @@ body {
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 100vw !important;
-    background: linear-gradient(to bottom, #e0e0e0 80%, #ffffff 20%) !important; /* Subtle gray to white fade */
+    /* Bulletproof gradient property with a slightly deeper starting gray */
+    background-image: linear-gradient(to bottom, #E6E6E6 0%, #FCFCFC 100%) !important; 
     z-index: -1 !important;
 }
 
 .group-summary p {
     position: relative !important; 
-    z-index: 1 !important;
-    max-width: 950px !important; /* Widened slightly to accommodate larger text */
+    z-index: 2 !important;
+    max-width: 950px !important; 
     margin: 0 auto !important;
     text-align: center !important;
     line-height: 1.7 !important;
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 16px !important; /* Bumped up significantly for easier reading */
+    font-size: 19px !important; 
     color: #2c2c2c !important;
     letter-spacing: 0.5px !important;
 }
