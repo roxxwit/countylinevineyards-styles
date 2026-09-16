@@ -4968,8 +4968,8 @@ section.auth-wrapper {
 
 /* 2. TRUE CONDENSED PRODUCT TITLE (Using CSS scaleX) */
 .productItem h2 a {
-    font-family: "Abadi", "Abadi MT", sans-serif !important;
-    font-size: 22px !important; 
+    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
+    font-size: 26px !important; 
     font-weight: bold !important; 
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important; 
@@ -4987,7 +4987,7 @@ section.auth-wrapper {
 .productItem .prod-content p,
 .productItem .prod-content {
     font-family: "Abadi Light", "Abadi MT", sans-serif !important;
-    font-size: 18px !important;
+    font-size: 22px !important;
     font-style: italic !important;
     text-transform: uppercase !important;
     letter-spacing: 1px !important;
@@ -5004,14 +5004,14 @@ section.auth-wrapper {
     color: #020101 !important;
     font-weight: normal !important;
     text-align: center !important;
-    margin-top: 12px !important; /* Clean, controlled gap to price */
+    margin-top: 0px !important; /* Clean, controlled gap to price */
     display: block !important;
 }
 /* 6. COMMAND ZONE (Eliminated Dead Space) */
 .productItem .cmd-container {
     display: flex !important;
     flex-direction: column !important; 
-    gap: 8px !important;
+    gap: 0px !important;
     align-items: center !important;
     margin-top: 0 !important; /* Removes excess space above buttons */
 }
@@ -5023,7 +5023,7 @@ section.auth-wrapper {
     color: #020101 !important;
     font-weight: normal !important;
     text-align: center !important;
-    margin-bottom: 15px !important;
+    margin-bottom: 0px !important;
     display: block !important;
 }
 
@@ -5031,9 +5031,9 @@ section.auth-wrapper {
 .productItem .cmd-container {
     display: flex !important;
     flex-direction: column !important; 
-    gap: 12px !important;
+    gap: 0px !important;
     align-items: center !important;
-    margin-top: 15px !important;
+    margin-top: 0px !important;
 }
 
 .productItem .qty-label {
