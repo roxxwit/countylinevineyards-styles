@@ -5044,7 +5044,7 @@ body {
     left: 50% !important;
     transform: translateX(-50%) !important;
     width: 100vw !important;
-    background: linear-gradient(to bottom, #F0F0F0 0%, #ffffff 100%) !important; /* Subtle gray to white fade */
+    background: linear-gradient(to bottom, #F0F0F0 70%, #ffffff 30%) !important; /* Subtle gray to white fade */
     z-index: -1 !important;
 }
 
@@ -5056,7 +5056,7 @@ body {
     text-align: center !important;
     line-height: 1.7 !important;
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 19px !important; /* Bumped up significantly for easier reading */
+    font-size: 16px !important; /* Bumped up significantly for easier reading */
     color: #2c2c2c !important;
     letter-spacing: 0.5px !important;
 }
