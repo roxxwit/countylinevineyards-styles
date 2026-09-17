@@ -4928,7 +4928,7 @@ section.auth-wrapper {
     background-color: #f5f2eb !important; /* Prevents the entire horizontal strip from fading out */
 }
 /* ==========================================================================
-   COUNTY LINE - FULL ELEMENTOR MATCH (MASTER OVERRIDE)
+   COUNTY LINE - FULL ELEMENTOR MATCH (MASTER OVERRIDE) 09/16/2026
    ========================================================================== */
 
 /* 1. HEADER & AUTH BAR BACKGROUND COLORS */
@@ -4992,8 +4992,8 @@ section.auth-wrapper {
     transform-origin: center !important;
     width: 100% !important;
     margin: 0 !important;
+    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3) !important; /* Adds the soft drop shadow */
 }
-
 /* 2. REGION SUB-TEXT (Anderson Valley - Italic, Uppercase) */
 .productItem .prod-content p,
 .productItem .prod-content {
