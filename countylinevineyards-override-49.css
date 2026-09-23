@@ -5537,4 +5537,36 @@ section.mobile-navigation li:hover > ul,
 section.mobile-navigation li:focus-within > ul {
     display: block !important;
 }
+/* ==========================================================================
+   FOOTER GRID & SPACING - EXACT ELEMENTOR MATCH
+   ========================================================================== */
+.op-footer {
+    background-color: #FCFCFC !important; 
+    border-top: 1px solid #eaeaea !important;
+    padding: 0 !important;
+}
 
+.footer-main {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 40px 30px 30px 30px !important; /* Matches Elementor outer padding */
+    box-sizing: border-box !important;
+}
+
+.footer-content-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1.2fr 1.2fr !important; /* Exact column proportion balance */
+    gap: 40px !important; /* Matches Elementor column gap */
+    align-items: start !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Column Reset & Alignment */
+.footer-content-grid > article,
+.footer-content-grid > div {
+    margin: 0 !important;
+    padding: 0 !important;
+}
