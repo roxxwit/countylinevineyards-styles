@@ -5543,142 +5543,25 @@ EDITS SEPTEMBER 24, 2026
 ------------------------------------------------------------------------------*/
 
 /* ==========================================================================
-   PRODUCT DETAILS PAGE MATCH (Shop Cohesion Override)
+   PRODUCT DETAILS: COMPLETE SHOP PAGE MATCH
    ========================================================================== */
 
-/* 1. Strip the bulky gray border & hover shadow around the Add To Cart box */
-#tab_overview .uc.addToCart {
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    padding: 0 !important;
-}
-
-#tab_overview .uc.addToCart:hover {
-    box-shadow: none !important;
-    transform: none !important;
-}
-
-/* 2. Product Title Match (Abadi Bold, Condensed, Uppercase with Shadow) */
-#tab_overview .sub-title {
-    font-family: "Abadi", "Abadi MT", sans-serif !important;
-    font-size: 32px !important; /* Slightly larger than shop cards */
-    font-weight: bold !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
-    color: #020101 !important;
-    line-height: 1.1 !important;
-    display: inline-block !important;
-    transform: scaleX(0.75) !important;
-    transform-origin: left center !important; /* Keeps it flush left */
-    margin-bottom: 20px !important;
-    text-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3) !important;
-}
-
-/* 3. Hide redundant PRICE and QTY labels for a cleaner look */
-#tab_overview .uc.addToCart .price-label,
-#tab_overview .uc.addToCart .qty-label {
-    display: none !important;
-}
-
-/* 4. Price Text Match (Abadi Light) */
-#tab_overview .uc.addToCart .sale-price,
-#tab_overview .uc.addToCart .price {
-    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 24px !important; 
-    color: #020101 !important;
-    font-weight: normal !important;
-    text-align: left !important;
-}
-
-/* 5. QTY Input Field Match (Clean outlined box) */
-#tab_overview .uc.addToCart input[type="text"].number,
-#tab_overview .uc.addToCart input[type="number"] {
-    width: 60px !important;
-    height: 42px !important;
-    border: 1px solid #cccccc !important;
-    background-color: transparent !important;
-    color: #2c2c2c !important;
-    border-radius: 4px !important;
-    text-align: center !important;
-    font-size: 16px !important;
-    font-family: "Abadi", sans-serif !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* 6. Add to Cart Button Match (Minimalist light gray outline style) */
-#tab_overview .uc.addToCart .btn,
-#tab_overview .uc.addToCart button {
-    background-color: #f7f7f7 !important;
-    color: #4a4a4a !important;
-    border: 1px solid #dcdcdc !important;
-    letter-spacing: 1.5px !important;
-    font-weight: 600 !important;
-    text-transform: uppercase !important;
-    line-height: 42px !important;
-    padding: 0 28px !important;
-    box-shadow: none !important;
-    height: 42px !important;
-    max-width: 250px !important;
-}
-
-#tab_overview .uc.addToCart .btn:hover,
-#tab_overview .uc.addToCart button:hover {
-    background-color: #e6e6e6 !important;
-    color: #2c2c2c !important;
-    box-shadow: none !important;
-    transform: none !important;
-}
-
-/* 7. Tighten spacing in the Add to Cart zone */
-#tab_overview .uc.addToCart fieldset.add-to-cart {
-    gap: 20px !important;
-}
-
-/* 8. Tasting Notes Header Match */
-#tab_overview .tasting-notes-hdr,
-#tab_overview .production-notes-hdr,
-#tab_overview .other-notes-hdr {
-    font-family: "Abadi Bold", "Abadi", sans-serif !important;
-    font-size: 13px !important;
-    letter-spacing: 1.5px !important;
-    border-bottom: none !important;
-    margin-top: 30px !important;
-    color: #020101 !important;
-}
-
-/* 9. Tasting Notes Body Text */
-#tab_overview .tasting-notes,
-#tab_overview .production-notes,
-#tab_overview .other-notes,
-#tab_overview .prod-descr {
-    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 15px !important;
-    color: #2c2c2c !important;
-    line-height: 1.8 !important;
-}
-/* ==========================================================================
-   PRODUCT DETAILS: REORDER & CENTER (Title, Region, Cart, Notes)
-   ========================================================================== */
-
-/* 1. Turn the overview tab into a flexible column so we can rearrange it */
+/* 1. FLEXBOX REORDER: Pull Region Text Under Title & Center */
 #tab_overview {
     display: flex !important;
     flex-direction: column !important;
 }
 
-/* 2. Lock the Title in the #1 spot, center it, and fix scale origin */
 #tab_overview .sub-title {
     order: 1 !important;
     margin-bottom: 2px !important; 
     text-align: center !important;
     align-self: center !important;
     width: 100% !important;
-    transform-origin: center center !important; /* Critical for centered scaleX */
+    transform-origin: center center !important;
 }
 
-/* 3. Pull Description (Region Text) to the #2 spot and style/center it */
+/* Region Text ("Sonoma Coast") */
 #tab_overview .prod-descr {
     order: 2 !important;
     font-family: "Abadi Light", "Abadi MT", sans-serif !important;
@@ -5694,30 +5577,90 @@ EDITS SEPTEMBER 24, 2026
     width: 100% !important;
 }
 
-/* 4. Kill default paragraph spacing so region text sits flush */
-#tab_overview .prod-descr p {
+#tab_overview .prod-descr p { 
     margin: 0 !important; 
 }
 
-/* 5. Push the Cart Box into the #3 spot */
+/* 2. CART AREA: Push to #3 spot and hide labels */
 #tab_overview .uc.addToCart {
     order: 3 !important;
     width: 100% !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
 }
 
-/* 6. Center the Price Container and Text */
-#tab_overview .uc.addToCart .price-container {
-    align-items: center !important;
-    width: 100% !important;
+#tab_overview .uc.addToCart fieldset.add-to-cart {
+    border: none !important;
 }
 
+#tab_overview .uc.addToCart .price-label,
+#tab_overview .uc.addToCart .qty-label {
+    display: none !important;
+}
+
+#tab_overview .uc.addToCart .price-container,
 #tab_overview .uc.addToCart .sale-price,
 #tab_overview .uc.addToCart .price {
+    align-items: center !important;
     text-align: center !important;
     width: 100% !important;
 }
 
-/* 7. Lock the rest of the Tasting/Production Notes underneath */
+/* 3. STRIP EXTRA QTY CONTAINER BORDER/BACKGROUND */
+#tab_overview .uc.addToCart .qty-container {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 auto 15px auto !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* 4. MATCH INPUT BORDER TO BUTTON BORDER */
+#tab_overview .uc.addToCart input[type="text"].number,
+#tab_overview .uc.addToCart input[type="number"] {
+    width: 60px !important;
+    height: 42px !important;
+    border: 1px solid #dcdcdc !important; /* Unified Gray Border */
+    background-color: transparent !important;
+    color: #2c2c2c !important;
+    border-radius: 4px !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    font-family: "Roboto", "Abadi", sans-serif !important; /* Non-serif match */
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+
+/* 5. MATCH BUTTON TO SHOP PAGE (Sans-serif, matched gray border) */
+#tab_overview .uc.addToCart .btn,
+#tab_overview .uc.addToCart button {
+    font-family: "Roboto", "Abadi", sans-serif !important; /* Removes serif font */
+    font-size: 14px !important; /* Matches shop page size */
+    background-color: #f7f7f7 !important;
+    color: #4a4a4a !important;
+    border: 1px solid #dcdcdc !important; /* Unified Gray Border */
+    letter-spacing: 1.5px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    line-height: 40px !important;
+    padding: 0 28px !important;
+    box-shadow: none !important;
+    height: 42px !important;
+    margin: 0 auto !important;
+}
+
+#tab_overview .uc.addToCart .btn:hover,
+#tab_overview .uc.addToCart button:hover {
+    background-color: #e6e6e6 !important;
+    color: #2c2c2c !important;
+}
+
+/* 6. Lock Tasting/Production Notes underneath */
 #tab_overview .tasting-notes-hdr { order: 4 !important; }
 #tab_overview .tasting-notes { order: 5 !important; }
 #tab_overview .production-notes-hdr { order: 6 !important; }
