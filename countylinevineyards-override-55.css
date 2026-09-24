@@ -5724,3 +5724,156 @@ EDITS SEPTEMBER 24, 2026
 #tab_overview .production-notes { order: 7 !important; }
 #tab_overview .other-notes-hdr { order: 8 !important; }
 #tab_overview .other-notes { order: 9 !important; }
+
+/* ==========================================================================
+   PRODUCT DETAILS: COMPLETE SHOP PAGE MATCH & CLEANUP
+   ========================================================================== */
+
+/* 1. CONTAINER BORDERS: Replace beige border with unified light gray */
+#tab_overview,
+#tab_wine_spec,
+#tab_reviews,
+#tab_vineyards,
+#tab_winemaker {
+    border: 1px solid #eaeaea !important;
+    background: transparent !important;
+}
+
+/* 2. FLEXBOX REORDER: Pull Region Text Under Title & Center */
+#tab_overview {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+#tab_overview .sub-title {
+    order: 1 !important;
+    margin-bottom: 2px !important; 
+    text-align: center !important;
+    align-self: center !important;
+    width: 100% !important;
+    transform-origin: center center !important;
+}
+
+/* 3. REGION TEXT & PARAGRAPHS: Force Abadi Light (Overrides Roboto) */
+#tab_overview .prod-descr {
+    order: 2 !important;
+    font-style: italic !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    color: #555555 !important;
+    text-align: center !important;
+    margin-top: 0 !important;
+    margin-bottom: 30px !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+#tab_overview p,
+#tab_overview span,
+#tab_overview .prod-descr,
+#tab_overview .prod-descr *,
+#tab_overview .tasting-notes,
+#tab_overview .tasting-notes * {
+    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
+    font-size: 15px !important; 
+    line-height: 1.8 !important;
+    color: #2c2c2c !important;
+}
+
+/* Keep region text specifically larger */
+#tab_overview .prod-descr,
+#tab_overview .prod-descr p {
+    font-size: 22px !important; 
+    margin: 0 !important;
+}
+
+/* 4. CART AREA: Push to #3 spot and hide labels */
+#tab_overview .uc.addToCart {
+    order: 3 !important;
+    width: 100% !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+#tab_overview .uc.addToCart fieldset.add-to-cart {
+    border: none !important;
+}
+
+#tab_overview .uc.addToCart .price-label,
+#tab_overview .uc.addToCart .qty-label {
+    display: none !important;
+}
+
+#tab_overview .uc.addToCart .price-container,
+#tab_overview .uc.addToCart .sale-price,
+#tab_overview .uc.addToCart .price {
+    align-items: center !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+/* 5. STRIP EXTRA QTY CONTAINER BORDER (Fixes double lines) */
+#tab_overview .uc.addToCart .qty-container {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 auto 15px auto !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+
+/* 6. INPUT BOX BORDER */
+#tab_overview .uc.addToCart input[type="text"].number,
+#tab_overview .uc.addToCart input[type="number"] {
+    width: 60px !important;
+    height: 42px !important;
+    border: 1px solid #dcdcdc !important; 
+    background-color: transparent !important;
+    color: #2c2c2c !important;
+    border-radius: 4px !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    font-family: "Abadi", "Abadi MT", sans-serif !important; 
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+}
+
+/* 7. MATCH BUTTON TO SHOP PAGE (Removes Cormorant serif) */
+#tab_overview .uc.addToCart .btn,
+#tab_overview .uc.addToCart a.btn,
+#tab_overview .uc.addToCart button {
+    font-family: "Abadi", "Abadi MT", sans-serif !important; 
+    font-size: 14px !important; 
+    background-color: #f7f7f7 !important;
+    color: #4a4a4a !important;
+    border: 1px solid #dcdcdc !important; 
+    letter-spacing: 1.5px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    line-height: 40px !important;
+    padding: 0 28px !important;
+    box-shadow: none !important;
+    height: 42px !important;
+    margin: 0 auto !important;
+    display: inline-block !important;
+}
+
+#tab_overview .uc.addToCart .btn:hover,
+#tab_overview .uc.addToCart a.btn:hover,
+#tab_overview .uc.addToCart button:hover {
+    background-color: #e6e6e6 !important;
+    color: #2c2c2c !important;
+}
+
+/* 8. Lock Tasting/Production Notes underneath */
+#tab_overview .tasting-notes-hdr { order: 4 !important; }
+#tab_overview .tasting-notes { order: 5 !important; }
+#tab_overview .production-notes-hdr { order: 6 !important; }
+#tab_overview .production-notes { order: 7 !important; }
+#tab_overview .other-notes-hdr { order: 8 !important; }
+#tab_overview .other-notes { order: 9 !important; }
+
