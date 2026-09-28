@@ -6066,3 +6066,137 @@ EDITS SEPTEMBER 24, 2026
     text-transform: uppercase !important;
     font-size: 16px !important;
 }
+/* ==========================================================================
+   ANGULAR CART PAGE OVERRIDE (app-basket) - SHOP PAGE MATCH
+   ========================================================================== */
+
+/* 1. GLOBAL CART FONT OVERRIDE (Kill Roboto) */
+app-cart-layout *, 
+app-basket * {
+    font-family: "Abadi Light", "Abadi MT", sans-serif !important;
+}
+
+/* 2. MAIN CART CONTAINER & BORDERS (Replace Beige with Light Gray) */
+app-basket .section.card {
+    border: 1px solid #eaeaea !important; 
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* 3. TOP HEADER ROW ("Your Cart", "Unit Price") */
+app-basket .row.header {
+    background-color: transparent !important;
+    border-bottom: 2px solid #eaeaea !important;
+    padding: 15px 20px !important; /* Restores padding to fix text touching borders */
+    color: #020101 !important;
+}
+
+app-basket .row.header > div {
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    font-weight: 600 !important;
+}
+
+/* 4. FIX PADDING ON RIGHT-ALIGNED TEXT (Fixes Unit Price & Subtotal touching border) */
+app-basket .no-gutters,
+app-basket .text-md-right,
+app-basket .col-12.text-center.text-md-right {
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+}
+
+/* 5. PRODUCT TITLE (Abadi Bold, Condensed, Uppercase) */
+app-basket h3.product-title,
+app-basket h3.product-title a {
+    font-family: "Abadi", "Abadi MT", sans-serif !important; /* Removes Cormorant */
+    font-size: 24px !important; 
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: #020101 !important;
+    display: inline-block !important;
+    transform: scaleX(0.75) !important;
+    transform-origin: left center !important;
+    text-decoration: none !important;
+    line-height: 1.1 !important;
+    margin-bottom: 10px !important;
+}
+
+app-basket h3.product-title a:hover {
+    color: #555555 !important;
+}
+
+/* 6. INDIVIDUAL ITEM PRICES */
+app-basket app-product-price span.price {
+    font-family: "Abadi Light", "Abadi MT", sans-serif !important;
+    font-size: 18px !important;
+    color: #2c2c2c !important;
+}
+
+/* 7. QUANTITY BOX (Matches Shop Page) */
+app-basket app-qty-selector input.form-control {
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-size: 16px !important;
+    color: #2c2c2c !important;
+    border: 1px solid #dcdcdc !important; 
+    border-radius: 4px !important;
+    height: 42px !important;
+    max-width: 60px !important;
+    text-align: center !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* 8. SUBTOTAL ROW TEXT (Removes Roboto, applies Abadi) */
+app-basket .row.mt-3.mb-md-2,
+app-basket .row.my-3 .col-12.text-md-right {
+    font-family: "Abadi Light", "Abadi MT", sans-serif !important;
+    font-size: 18px !important;
+    color: #2c2c2c !important;
+    padding-bottom: 15px !important;
+}
+
+app-basket .row.my-3 .col-12.text-md-right b,
+app-basket .row.my-3 .col-12.text-md-right strong {
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    font-size: 16px !important;
+    color: #020101 !important;
+}
+
+/* 9. CART BUTTONS (Update, Delete, Empty Cart, Checkout) */
+app-basket .btn {
+    font-family: "Abadi", "Abadi MT", sans-serif !important; 
+    font-size: 13px !important; 
+    background-color: #f7f7f7 !important;
+    color: #4a4a4a !important;
+    border: 1px solid #dcdcdc !important; 
+    letter-spacing: 1.5px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    line-height: normal !important;
+    padding: 10px 24px !important;
+    box-shadow: none !important;
+    border-radius: 4px !important;
+    vertical-align: middle !important;
+    display: inline-block !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+app-basket .btn:hover {
+    background-color: #e6e6e6 !important;
+    color: #2c2c2c !important;
+    text-decoration: none !important;
+}
+
+/* 10. ITEM ROW BORDERS */
+app-basket .row.content {
+    border-bottom: 1px solid #eaeaea !important;
+    padding: 20px 0 !important;
+    margin: 0 !important;
+}
