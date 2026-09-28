@@ -6200,3 +6200,33 @@ app-basket .row.content {
     padding: 20px 0 !important;
     margin: 0 !important;
 }
+/* ==========================================================================
+   ANGULAR CART: SPACING & ICON FIXES
+   ========================================================================== */
+
+/* 1. HIDE THE CART ICON */
+app-basket i.fa-shopping-cart,
+app-basket .icon.fa-shopping-cart {
+    display: none !important;
+}
+
+/* 2. FIX HEADER ROW: Add side padding and remove letter-spacing */
+app-basket .row.header.no-gutters {
+    padding: 15px 25px !important; /* Adds 25px padding to left/right */
+}
+
+app-basket .row.header > div {
+    letter-spacing: normal !important; /* Removes the stretched letter spacing */
+}
+
+/* 3. FIX FOOTER BUTTON ROW: Add side padding so buttons don't touch the border */
+app-basket .row.footer.no-gutters,
+app-basket .row.content.footer.no-gutters {
+    padding: 20px 25px !important; /* Keeps 20px top/bottom, adds 25px left/right */
+}
+
+/* 4. FIX ITEM ROW: Ensure individual cart items also align with the new headers */
+app-basket .row.content.no-gutters:not(.footer) {
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+}
