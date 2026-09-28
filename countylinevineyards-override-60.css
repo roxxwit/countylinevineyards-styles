@@ -6230,3 +6230,23 @@ app-basket .row.content.no-gutters:not(.footer) {
     padding-left: 25px !important;
     padding-right: 25px !important;
 }
+/* ==========================================================================
+   ANGULAR CART: FINAL PADDING, RADIUS & BORDER CLEANUP
+   ========================================================================== */
+
+/* 1. ROUNDED CORNERS: Match shop product cards */
+app-basket .section.card {
+    border-radius: 8px !important; /* Replaces the previous 0px radius */
+    overflow: hidden !important; /* Prevents rows from bleeding outside the rounded edges */
+}
+
+/* 2. FIX PADDING ON ALL COLUMNS: Prevents text from touching the outer borders */
+app-basket .row.no-gutters > [class*="col-"] {
+    padding-left: 25px !important;
+    padding-right: 25px !important;
+}
+
+/* 3. REMOVE EXTRA SUBTOTAL LINE: Strips the hardcoded Bootstrap top border */
+app-basket .border-top {
+    border-top: none !important;
+}
