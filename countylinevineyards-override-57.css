@@ -5943,3 +5943,126 @@ EDITS SEPTEMBER 24, 2026
 #tab_overview .uc.addToCart a[id*="lnkLimitedOfferCode"] {
     display: none !important;
 }
+
+/*----------------------------------------------------------
+ SEPTEMBER 28, 2026 
+-----------------------------------------------------------*/
+/* ==========================================================================
+   CART PAGE: COMPLETE SHOP PAGE MATCH & CLEANUP
+   ========================================================================== */
+
+/* 1. STRIP DARK HEADERS & BACKGROUNDS */
+/* Removes the heavy charcoal box around "Your Cart" and "Unit Price" */
+.basket_table .cart-header,
+#basket .header {
+    background-color: transparent !important;
+    border-bottom: 2px solid #eaeaea !important;
+    color: #020101 !important;
+    padding: 15px 0 !important;
+}
+
+/* Formats the header text ("Your Cart: 13 item(s)") */
+.basket_table .cart-header > div {
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    font-weight: 600 !important;
+}
+
+/* 2. PRODUCT TYPOGRAPHY (Matches Shop Cards) */
+/* Forces Abadi, uppercase, and the 75% width compression on the wine title */
+.basket_table .item .col-2 a {
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-size: 24px !important; 
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: #020101 !important;
+    display: inline-block !important;
+    transform: scaleX(0.75) !important;
+    transform-origin: left center !important; /* Keeps it flush left */
+    text-decoration: none !important;
+    line-height: 1.1 !important;
+    margin-bottom: 10px !important;
+}
+
+.basket_table .item .col-2 a:hover {
+    color: #555555 !important;
+}
+
+/* Price & Subtotal text styling */
+.basket_table .item .col-3, 
+.basket_table .item .col-4,
+.basket_table .item .col-5,
+.basket_table .footer {
+    font-family: "Abadi Light", "Abadi MT", sans-serif !important;
+    font-size: 18px !important;
+    color: #2c2c2c !important;
+}
+
+/* 3. MATCH QUANTITY INPUT BOXES */
+.basket_table input[type="text"],
+.basket_table input[type="number"] {
+    width: 60px !important;
+    height: 42px !important;
+    border: 1px solid #dcdcdc !important; 
+    background-color: transparent !important;
+    color: #2c2c2c !important;
+    border-radius: 4px !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    font-family: "Abadi", "Abadi MT", sans-serif !important; 
+    margin: 0 10px 0 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    vertical-align: middle !important;
+}
+
+/* 4. MATCH ALL CART BUTTONS (Update, Delete, Checkout, etc.) */
+/* Strips generic dark backgrounds and applies the minimalist light-gray style */
+.basket_table .btn,
+.basket_table .btn-print,
+#basket .btn {
+    font-family: "Abadi", "Abadi MT", sans-serif !important; 
+    font-size: 13px !important; 
+    background-color: #f7f7f7 !important;
+    color: #4a4a4a !important;
+    border: 1px solid #dcdcdc !important; 
+    letter-spacing: 1.5px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    line-height: normal !important;
+    padding: 10px 24px !important;
+    box-shadow: none !important;
+    border-radius: 4px !important;
+    vertical-align: middle !important;
+    display: inline-block !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.basket_table .btn:hover,
+.basket_table .btn-print:hover,
+#basket .btn:hover {
+    background-color: #e6e6e6 !important;
+    color: #2c2c2c !important;
+    text-decoration: none !important;
+}
+
+/* 5. CLEAN UP BORDERS & SPACING */
+/* Ensure the lines separating cart items match the light gray Elementor lines */
+.basket_table .item,
+.basket_table .footer {
+    border-bottom: 1px solid #eaeaea !important;
+    padding: 20px 0 !important;
+}
+
+/* Subtotal bold text */
+.basket_table .footer b,
+.basket_table .footer strong {
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    font-size: 16px !important;
+}
