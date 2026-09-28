@@ -6250,3 +6250,49 @@ app-basket .row.no-gutters > [class*="col-"] {
 app-basket .border-top {
     border-top: none !important;
 }
+/* ==========================================================================
+   ANGULAR CART: MASTER ALIGNMENT & BORDER FIX
+   ========================================================================== */
+
+/* 1. FIX THE DARK / DOUBLE BORDERS */
+/* Thins the header line to 1px so it matches the rest of the card */
+app-basket .row.header {
+    border-bottom: 1px solid #eaeaea !important; 
+}
+
+/* Removes the bottom border from the very last row so it doesn't double-up with the card's outer border */
+app-basket .row.content:last-of-type,
+app-basket .row.content.footer,
+app-basket .row.content.no-gutters.footer {
+    border-bottom: none !important;
+}
+
+/* 2. UNIFY ALL LEFT & RIGHT ALIGNMENT */
+/* Step A: Strip out all stray column padding that pushes elements out of alignment */
+app-basket .row.no-gutters > [class*="col-"],
+app-basket .text-md-right,
+app-basket .col-12.text-center.text-md-right {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* Step B: Apply one single, perfectly straight 30px padding margin to every row wrapper */
+app-basket .row.header.no-gutters,
+app-basket .row.content.no-gutters {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+
+/* Step C: Ensure text in the right column ($30.00, Unit Price, Subtotal) stays flush right */
+app-basket .text-md-right,
+app-basket .row.header > div:last-child {
+    text-align: right !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Step D: Force the Checkout button wrapper to stay flush right */
+app-basket .row.content.footer .col-12:last-child {
+    display: flex !important;
+    justify-content: space-between !important;
+}
