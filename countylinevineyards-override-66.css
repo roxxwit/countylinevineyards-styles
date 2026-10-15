@@ -6254,6 +6254,7 @@ app-basket .border-top {
 /* ==========================================================================
    MY ACCOUNT / 10/15/2026
    ========================================================================== */
+
 /* ==========================================================================
    ACCOUNT PAGE MATCH (Shop/Cart Cohesion Override)
    ========================================================================== */
@@ -6272,31 +6273,45 @@ app-basket .border-top {
 #accountContent p,
 #accountContent span {
     font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
-    font-size: 15px !important;
+    font-size: 16px !important; /* Bumped up */
     color: #2c2c2c !important;
 }
 
-/* 2. MAIN SECTION HEADERS (Matches "Your Cart" styling) */
+/* 2. ADD BORDERS TO CONTAINERS */
+#accountContent .section {
+    border: 1px solid #eaeaea !important;
+    border-radius: 8px !important;
+    background: transparent !important;
+    margin-bottom: 40px !important;
+    overflow: hidden !important; /* Keeps the banner locked inside the rounded corners */
+    box-shadow: none !important;
+}
+
+#accountContent .section .content {
+    padding: 30px !important; /* Adds breathing room inside the bordered box */
+}
+
+/* 3. FIX THE DARK BANNER (Force light gray, nuke default image) */
 #accountContent .section .header {
     font-family: "Abadi", "Abadi MT", sans-serif !important;
-    font-size: 14px !important;
+    font-size: 18px !important; /* Bumped up */
     text-transform: uppercase !important;
     letter-spacing: 1.5px !important;
     font-weight: 600 !important;
-    background-color: transparent !important;
+    background: #f7f7f7 !important; /* Overrides OrderPort's dark background image */
     border-bottom: 2px solid #eaeaea !important;
     color: #020101 !important;
-    padding: 15px 0 !important;
-    margin-bottom: 30px !important;
+    padding: 20px 30px !important;
+    margin-bottom: 0 !important; /* The content padding handles spacing below */
     display: flex !important;
     justify-content: space-between !important;
-    align-items: baseline !important;
+    align-items: center !important;
 }
 
-/* 3. SIGN OUT LINK */
+/* 4. SIGN OUT LINK */
 #accountContent .section .header a.lnkSignOut {
-    font-family: "Abadi Light", "Abadi MT", sans-serif !important;
-    font-size: 12px !important;
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-size: 14px !important; /* Bumped up */
     letter-spacing: 1px !important;
     color: #555555 !important;
     text-decoration: underline !important;
@@ -6307,11 +6322,11 @@ app-basket .border-top {
     color: #020101 !important;
 }
 
-/* 4. TWO COLUMN LAYOUT (Billing & Shipping) */
+/* 5. TWO COLUMN LAYOUT (Billing & Shipping) */
 #accountContent .account_address {
     display: flex !important;
     flex-wrap: wrap !important;
-    gap: 40px !important;
+    gap: 50px !important;
 }
 
 #accountContent .account_address .column {
@@ -6319,10 +6334,10 @@ app-basket .border-top {
     min-width: 300px !important;
 }
 
-/* Sub-headers */
+/* Sub-headers inside the boxes */
 #accountContent .account_address h3 {
     font-family: "Abadi", "Abadi MT", sans-serif !important;
-    font-size: 14px !important;
+    font-size: 16px !important; /* Bumped up */
     text-transform: uppercase !important;
     letter-spacing: 1.5px !important;
     font-weight: 600 !important;
@@ -6331,19 +6346,19 @@ app-basket .border-top {
     border-bottom: none !important;
 }
 
-/* 5. DATA ROWS (Name, Company, Address, etc. with matching Cart borders) */
+/* 6. DATA ROWS (Name, Company, Address, etc.) */
 #accountContent .ciRegularView .row {
     display: flex !important;
-    padding: 12px 0 !important;
+    padding: 15px 0 !important;
     border-bottom: 1px solid #eaeaea !important;
     align-items: center !important;
 }
 
 /* Left-Side Labels */
 #accountContent .ciRegularView .row .col:first-child {
-    width: 120px !important;
+    width: 140px !important; /* Widened to fit larger text */
     font-family: "Abadi", "Abadi MT", sans-serif !important;
-    font-size: 12px !important;
+    font-size: 14px !important; /* Bumped up */
     font-weight: 600 !important;
     text-transform: uppercase !important;
     letter-spacing: 1px !important;
@@ -6353,15 +6368,16 @@ app-basket .border-top {
 /* Right-Side Data */
 #accountContent .ciRegularView .row .col:last-child {
     flex: 1 !important;
+    font-size: 16px !important; /* Bumped up */
 }
 
-/* 6. BUTTONS (Exact match to "CHECKOUT" / "EMPTY CART") */
+/* 7. BUTTONS (Matches 14px Shop Page styling) */
 #accountContent a.lnk,
 #accountContent a.btn,
 #accountContent a.add-cof,
 #accountContent .div-add-card-on-file a {
     font-family: "Abadi", "Abadi MT", sans-serif !important; 
-    font-size: 13px !important; 
+    font-size: 14px !important; /* Bumped up */
     background-color: #f7f7f7 !important;
     color: #4a4a4a !important;
     border: 1px solid #dcdcdc !important; 
@@ -6369,13 +6385,13 @@ app-basket .border-top {
     font-weight: 600 !important;
     text-transform: uppercase !important;
     line-height: normal !important;
-    padding: 10px 24px !important;
+    padding: 12px 28px !important;
     box-shadow: none !important;
     border-radius: 4px !important;
     display: inline-block !important;
     transition: all 0.2s ease-in-out !important;
     text-decoration: none !important;
-    margin-top: 10px !important;
+    margin-top: 15px !important;
 }
 
 #accountContent a.lnk:hover,
@@ -6384,22 +6400,21 @@ app-basket .border-top {
 #accountContent .div-add-card-on-file a:hover {
     background-color: #e6e6e6 !important;
     color: #2c2c2c !important;
-    text-decoration: none !important;
 }
 
 /* Inline 'Change' buttons next to billing/shipping name */
 #accountContent .ciRegularView span[style*="padding-left: 30px"] {
     display: block !important;
     padding-left: 0 !important;
-    margin-top: 10px !important;
+    margin-top: 12px !important;
 }
 
 #accountContent .ciRegularView span[style*="padding-left: 30px"] a.lnk {
-    padding: 6px 12px !important;
-    font-size: 11px !important;
+    padding: 8px 16px !important;
+    font-size: 12px !important; /* Bumped up */
 }
 
-/* 7. SAVED PAYMENT METHODS TABLE */
+/* 8. SAVED PAYMENT METHODS TABLE */
 #accountContent .table {
     width: 100% !important;
     margin-top: 20px !important;
@@ -6415,50 +6430,49 @@ app-basket .border-top {
 /* Table Header Row */
 #accountContent .table .row.h {
     font-family: "Abadi", "Abadi MT", sans-serif !important;
-    font-size: 12px !important;
+    font-size: 14px !important; /* Bumped up */
     font-weight: 600 !important;
     text-transform: uppercase !important;
     letter-spacing: 1px !important;
     color: #020101 !important;
-    border-bottom: 2px solid #eaeaea !important; /* Matches top header */
+    border-bottom: 2px solid #eaeaea !important;
 }
 
 #accountContent .table .row div {
     flex: 1 !important;
+    font-size: 16px !important; /* Bumped up */
 }
 
 #accountContent .table .row div.cmd {
     display: flex !important;
     justify-content: flex-end !important;
-    gap: 10px !important;
+    gap: 15px !important;
 }
 
-/* Strip top margin off buttons inside the table */
 #accountContent .table .row div.cmd a {
     margin-top: 0 !important;
 }
 
-/* 8. EMPTY STATES & CUSTOMER SERVICE TEXT */
+/* 9. EMPTY STATES & CUSTOMER SERVICE TEXT */
 #accountContent .template .info-text,
 #accountContent .empty {
+    font-size: 16px !important; /* Bumped up */
     font-style: italic !important;
     margin-bottom: 15px !important;
 }
 
-/* Center and style the "No Order History" text */
 #accountContent .customer-order-history h2 {
     font-family: "Abadi Light", "Abadi MT", sans-serif !important;
-    font-size: 22px !important;
+    font-size: 24px !important; /* Bumped up */
     font-style: italic !important;
     color: #555555 !important;
     font-weight: normal !important;
 }
 
-/* Customer Service specific styling */
 #accountContent p.customer-service {
     font-family: "Abadi", "Abadi MT", sans-serif !important;
     font-weight: 600 !important;
-    font-size: 12px !important;
+    font-size: 14px !important; /* Bumped up */
     text-transform: uppercase !important;
     letter-spacing: 1px !important;
     color: #020101 !important;
@@ -6470,11 +6484,7 @@ app-basket .border-top {
 #accountContent a[href^="mailto:"] {
     font-family: "Abadi Light", "Abadi MT", sans-serif !important;
     color: #555555 !important;
-    font-size: 15px !important;
+    font-size: 16px !important; /* Bumped up */
     text-decoration: underline !important;
     text-transform: none !important;
-}
-
-#accountContent a[href^="mailto:"]:hover {
-    color: #020101 !important;
 }
