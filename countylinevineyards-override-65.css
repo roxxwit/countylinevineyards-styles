@@ -6254,165 +6254,227 @@ app-basket .border-top {
 /* ==========================================================================
    MY ACCOUNT / 10/15/2026
    ========================================================================== */
-/* --- MAIN CONTAINER --- */
+/* ==========================================================================
+   ACCOUNT PAGE MATCH (Shop/Cart Cohesion Override)
+   ========================================================================== */
+
+/* 1. GLOBAL ACCOUNT CONTAINER & TYPOGRAPHY */
 #accountContent {
-    font-family: "Abadi Light", "Abadi", sans-serif; /* Standardizing on your custom font */
-    color: #000;
+    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
+    color: #2c2c2c !important;
     max-width: 1000px;
     margin: 0 auto;
     padding: 40px 20px;
-    line-height: 1.6;
+    line-height: 1.8 !important;
 }
 
-/* --- INTRO TEXT --- */
-#accountContent .uc.oPText {
-    font-family: "Abadi Light", "Abadi", sans-serif;
-    margin-bottom: 40px;
-    font-size: 15px;
-    color: #333;
-    max-width: 800px;
+#accountContent .uc.oPText,
+#accountContent p,
+#accountContent span {
+    font-family: "Abadi Light", "Abadi MT", "Abadi", sans-serif !important;
+    font-size: 15px !important;
+    color: #2c2c2c !important;
 }
 
-/* --- HEADERS --- */
+/* 2. MAIN SECTION HEADERS (Matches "Your Cart" styling) */
 #accountContent .section .header {
-    font-family: "Abadi Bold", "Abadi", sans-serif;
-    font-size: 16px;
-    text-transform: uppercase;
-    border-bottom: 1px solid #e0e0e0; /* Matches the thin border in the cart */
-    padding-bottom: 15px;
-    margin-bottom: 30px;
-    color: #000;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    font-weight: 600 !important;
+    background-color: transparent !important;
+    border-bottom: 2px solid #eaeaea !important;
+    color: #020101 !important;
+    padding: 15px 0 !important;
+    margin-bottom: 30px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
 }
 
-/* --- SIGNOUT LINK --- */
+/* 3. SIGN OUT LINK */
 #accountContent .section .header a.lnkSignOut {
-    font-family: "Abadi Bold", "Abadi", sans-serif;
-    color: #000;
-    text-decoration: underline;
-    font-size: 12px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    font-family: "Abadi Light", "Abadi MT", sans-serif !important;
+    font-size: 12px !important;
+    letter-spacing: 1px !important;
+    color: #555555 !important;
+    text-decoration: underline !important;
+    text-transform: uppercase !important;
 }
 
-/* --- TWO COLUMN LAYOUT (Billing & Shipping) --- */
+#accountContent .section .header a.lnkSignOut:hover {
+    color: #020101 !important;
+}
+
+/* 4. TWO COLUMN LAYOUT (Billing & Shipping) */
 #accountContent .account_address {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 40px !important;
 }
 
 #accountContent .account_address .column {
-    flex: 1;
-    min-width: 300px;
+    flex: 1 !important;
+    min-width: 300px !important;
 }
 
+/* Sub-headers */
 #accountContent .account_address h3 {
-    font-family: "Abadi Bold", "Abadi", sans-serif;
-    font-size: 14px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    color: #000;
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    font-weight: 600 !important;
+    color: #020101 !important;
+    margin-bottom: 20px !important;
+    border-bottom: none !important;
 }
 
-/* --- DATA ROWS (Name, Company, Address, etc.) --- */
+/* 5. DATA ROWS (Name, Company, Address, etc. with matching Cart borders) */
 #accountContent .ciRegularView .row {
-    display: flex;
-    padding: 12px 0;
-    border-bottom: 1px solid #f2f2f2; /* Subtle separation matching cart layout */
-    font-family: "Abadi Light", "Abadi", sans-serif;
-    font-size: 14px;
+    display: flex !important;
+    padding: 12px 0 !important;
+    border-bottom: 1px solid #eaeaea !important;
+    align-items: center !important;
 }
 
-/* Labels on the left */
+/* Left-Side Labels */
 #accountContent .ciRegularView .row .col:first-child {
-    width: 120px;
-    font-family: "Abadi Bold", "Abadi", sans-serif;
-    text-transform: uppercase;
-    font-size: 12px;
-    color: #000;
+    width: 120px !important;
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: #020101 !important;
 }
 
-/* Data on the right */
+/* Right-Side Data */
 #accountContent .ciRegularView .row .col:last-child {
-    flex: 1;
-    color: #333;
+    flex: 1 !important;
 }
 
-/* Fix for standard inline links */
-#accountContent .ciRegularView span[style*="padding-left: 30px"] {
-    display: block;
-    padding-left: 0 !important;
-    margin-top: 8px;
-}
-
-/* --- BUTTONS (MATCHING THE CART AESTHETIC) --- */
+/* 6. BUTTONS (Exact match to "CHECKOUT" / "EMPTY CART") */
 #accountContent a.lnk,
 #accountContent a.btn,
-#accountContent a.add-cof {
-    display: inline-block;
-    background-color: #f7f7f7; /* Matches the 'EMPTY CART' / 'CHECKOUT' button background */
-    color: #000;
-    font-family: "Abadi Bold", "Abadi", sans-serif;
-    font-size: 11px;
-    text-transform: uppercase;
-    padding: 10px 18px;
-    text-decoration: none;
-    border: 1px solid #e0e0e0; /* Thin border around the buttons */
-    transition: background-color 0.2s ease;
-    margin-top: 10px;
-    text-align: center;
+#accountContent a.add-cof,
+#accountContent .div-add-card-on-file a {
+    font-family: "Abadi", "Abadi MT", sans-serif !important; 
+    font-size: 13px !important; 
+    background-color: #f7f7f7 !important;
+    color: #4a4a4a !important;
+    border: 1px solid #dcdcdc !important; 
+    letter-spacing: 1.5px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    line-height: normal !important;
+    padding: 10px 24px !important;
+    box-shadow: none !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    transition: all 0.2s ease-in-out !important;
+    text-decoration: none !important;
+    margin-top: 10px !important;
 }
 
 #accountContent a.lnk:hover,
 #accountContent a.btn:hover,
-#accountContent a.add-cof:hover {
-    background-color: #e5e5e5;
+#accountContent a.add-cof:hover,
+#accountContent .div-add-card-on-file a:hover {
+    background-color: #e6e6e6 !important;
+    color: #2c2c2c !important;
+    text-decoration: none !important;
 }
 
-/* Size down the inline 'change' buttons slightly */
+/* Inline 'Change' buttons next to billing/shipping name */
+#accountContent .ciRegularView span[style*="padding-left: 30px"] {
+    display: block !important;
+    padding-left: 0 !important;
+    margin-top: 10px !important;
+}
+
 #accountContent .ciRegularView span[style*="padding-left: 30px"] a.lnk {
-    margin-top: 5px;
-    padding: 6px 12px;
-    font-size: 10px;
+    padding: 6px 12px !important;
+    font-size: 11px !important;
 }
 
-/* --- SAVED PAYMENT METHODS TABLE --- */
+/* 7. SAVED PAYMENT METHODS TABLE */
 #accountContent .table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
+    width: 100% !important;
+    margin-top: 20px !important;
 }
 
 #accountContent .table .row {
-    display: flex;
-    padding: 15px 0;
-    border-bottom: 1px solid #e0e0e0;
-    align-items: center;
+    display: flex !important;
+    padding: 20px 0 !important;
+    border-bottom: 1px solid #eaeaea !important;
+    align-items: center !important;
 }
 
+/* Table Header Row */
 #accountContent .table .row.h {
-    font-family: "Abadi Bold", "Abadi", sans-serif;
-    text-transform: uppercase;
-    font-size: 12px;
-    color: #000;
-    border-bottom: 2px solid #000;
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: #020101 !important;
+    border-bottom: 2px solid #eaeaea !important; /* Matches top header */
 }
 
 #accountContent .table .row div {
-    flex: 1;
-    font-family: "Abadi Light", "Abadi", sans-serif;
-    font-size: 14px;
+    flex: 1 !important;
 }
 
 #accountContent .table .row div.cmd {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
+    display: flex !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
 }
 
-/* Fix button alignment inside the table */
-#accountContent .table .row div.cmd a.btn {
-    margin-top: 0;
+/* Strip top margin off buttons inside the table */
+#accountContent .table .row div.cmd a {
+    margin-top: 0 !important;
+}
+
+/* 8. EMPTY STATES & CUSTOMER SERVICE TEXT */
+#accountContent .template .info-text,
+#accountContent .empty {
+    font-style: italic !important;
+    margin-bottom: 15px !important;
+}
+
+/* Center and style the "No Order History" text */
+#accountContent .customer-order-history h2 {
+    font-family: "Abadi Light", "Abadi MT", sans-serif !important;
+    font-size: 22px !important;
+    font-style: italic !important;
+    color: #555555 !important;
+    font-weight: normal !important;
+}
+
+/* Customer Service specific styling */
+#accountContent p.customer-service {
+    font-family: "Abadi", "Abadi MT", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    color: #020101 !important;
+    margin-top: 30px !important;
+    margin-bottom: 5px !important;
+}
+
+#accountContent a.customer-service,
+#accountContent a[href^="mailto:"] {
+    font-family: "Abadi Light", "Abadi MT", sans-serif !important;
+    color: #555555 !important;
+    font-size: 15px !important;
+    text-decoration: underline !important;
+    text-transform: none !important;
+}
+
+#accountContent a[href^="mailto:"]:hover {
+    color: #020101 !important;
+}
