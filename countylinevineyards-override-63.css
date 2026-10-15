@@ -6250,3 +6250,186 @@ app-basket .row.no-gutters > [class*="col-"] {
 app-basket .border-top {
     border-top: none !important;
 }
+
+/* ==========================================================================
+   MY ACCOUNT / 10/15/2026
+   ========================================================================== */
+/* --- MAIN CONTAINER --- */
+#accountContent {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Matches the inline style */
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    line-height: 1.6;
+}
+
+/* --- INTRO TEXT --- */
+#accountContent .uc.oPText {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 16px;
+    color: #555;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- SECTION BLOCKS --- */
+#accountContent .section {
+    margin-bottom: 50px;
+}
+
+/* --- HEADERS --- */
+#accountContent .section .header {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    color: #000;
+}
+
+#accountContent .section .header a.lnkSignOut {
+    color: #888;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+#accountContent .section .header a.lnkSignOut:hover {
+    color: #000;
+}
+
+/* --- TWO COLUMN LAYOUT (Billing & Shipping) --- */
+#accountContent .account_address {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+#accountContent .account_address .column {
+    flex: 1;
+    min-width: 300px; /* Stacks on mobile automatically */
+}
+
+#accountContent .account_address h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    color: #000;
+    font-weight: 600;
+}
+
+/* --- DATA ROWS (Name, Company, Address, etc.) --- */
+#accountContent .ciRegularView .row {
+    display: flex;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+#accountContent .ciRegularView .row .col:first-child {
+    width: 100px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding-top: 3px;
+}
+
+#accountContent .ciRegularView .row .col:last-child {
+    flex: 1;
+    color: #000;
+}
+
+/* --- LINKS & BUTTONS --- */
+#accountContent a.lnk,
+#accountContent a.btn,
+#accountContent a.add-cof {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2px;
+    transition: border-color 0.3s ease;
+}
+
+#accountContent a.lnk:hover,
+#accountContent a.btn:hover,
+#accountContent a.add-cof:hover {
+    border-bottom-color: #000;
+}
+
+/* Fix for the inline "change" links next to the name */
+#accountContent .ciRegularView span[style*="padding-left: 30px"] {
+    display: block;
+    padding-left: 0 !important;
+    margin-top: 5px;
+}
+
+/* --- PAYMENT METHODS TABLE --- */
+#accountContent .table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+#accountContent .table .row {
+    display: flex;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+#accountContent .table .row.h {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #888;
+    border-bottom: 2px solid #000;
+}
+
+#accountContent .table .row div {
+    flex: 1;
+}
+
+#accountContent .table .row div.cmd {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+#accountContent .template .info-text,
+#accountContent .empty {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+/* --- ADD PAYMENT BUTTON WRAPPER --- */
+#accountContent .div-add-card-on-file {
+    margin-top: 30px;
+}
+
+/* --- CUSTOMER SERVICE TEXT --- */
+#accountContent p.customer-service {
+    font-size: 14px;
+    color: #666;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#accountContent a.customer-service {
+    color: #000;
+    text-decoration: underline;
+    font-size: 14px;
+}
+
