@@ -6256,8 +6256,8 @@ app-basket .border-top {
    ========================================================================== */
 /* --- MAIN CONTAINER --- */
 #accountContent {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; /* Matches the inline style */
-    color: #333;
+    font-family: "Abadi Light", "Abadi", sans-serif; /* Standardizing on your custom font */
+    color: #000;
     max-width: 1000px;
     margin: 0 auto;
     padding: 40px 20px;
@@ -6266,170 +6266,153 @@ app-basket .border-top {
 
 /* --- INTRO TEXT --- */
 #accountContent .uc.oPText {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 16px;
-    color: #555;
+    font-family: "Abadi Light", "Abadi", sans-serif;
+    margin-bottom: 40px;
+    font-size: 15px;
+    color: #333;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- SECTION BLOCKS --- */
-#accountContent .section {
-    margin-bottom: 50px;
 }
 
 /* --- HEADERS --- */
 #accountContent .section .header {
-    font-size: 13px;
+    font-family: "Abadi Bold", "Abadi", sans-serif;
+    font-size: 16px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #e0e0e0; /* Matches the thin border in the cart */
     padding-bottom: 15px;
     margin-bottom: 30px;
-    font-weight: 600;
     color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
+/* --- SIGNOUT LINK --- */
 #accountContent .section .header a.lnkSignOut {
-    color: #888;
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
-#accountContent .section .header a.lnkSignOut:hover {
+    font-family: "Abadi Bold", "Abadi", sans-serif;
     color: #000;
+    text-decoration: underline;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 /* --- TWO COLUMN LAYOUT (Billing & Shipping) --- */
 #accountContent .account_address {
     display: flex;
     flex-wrap: wrap;
-    gap: 60px;
+    gap: 40px;
 }
 
 #accountContent .account_address .column {
     flex: 1;
-    min-width: 300px; /* Stacks on mobile automatically */
+    min-width: 300px;
 }
 
 #accountContent .account_address h3 {
-    font-size: 12px;
+    font-family: "Abadi Bold", "Abadi", sans-serif;
+    font-size: 14px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
     margin-bottom: 20px;
     color: #000;
-    font-weight: 600;
 }
 
 /* --- DATA ROWS (Name, Company, Address, etc.) --- */
 #accountContent .ciRegularView .row {
     display: flex;
-    margin-bottom: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f2f2f2; /* Subtle separation matching cart layout */
+    font-family: "Abadi Light", "Abadi", sans-serif;
     font-size: 14px;
 }
 
+/* Labels on the left */
 #accountContent .ciRegularView .row .col:first-child {
-    width: 100px;
-    font-weight: 600;
-    color: #888;
+    width: 120px;
+    font-family: "Abadi Bold", "Abadi", sans-serif;
     text-transform: uppercase;
-    font-size: 10px;
-    letter-spacing: 1px;
-    padding-top: 3px;
-}
-
-#accountContent .ciRegularView .row .col:last-child {
-    flex: 1;
+    font-size: 12px;
     color: #000;
 }
 
-/* --- LINKS & BUTTONS --- */
+/* Data on the right */
+#accountContent .ciRegularView .row .col:last-child {
+    flex: 1;
+    color: #333;
+}
+
+/* Fix for standard inline links */
+#accountContent .ciRegularView span[style*="padding-left: 30px"] {
+    display: block;
+    padding-left: 0 !important;
+    margin-top: 8px;
+}
+
+/* --- BUTTONS (MATCHING THE CART AESTHETIC) --- */
 #accountContent a.lnk,
 #accountContent a.btn,
 #accountContent a.add-cof {
     display: inline-block;
-    text-decoration: none;
+    background-color: #f7f7f7; /* Matches the 'EMPTY CART' / 'CHECKOUT' button background */
     color: #000;
+    font-family: "Abadi Bold", "Abadi", sans-serif;
     font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 2px;
-    transition: border-color 0.3s ease;
+    padding: 10px 18px;
+    text-decoration: none;
+    border: 1px solid #e0e0e0; /* Thin border around the buttons */
+    transition: background-color 0.2s ease;
+    margin-top: 10px;
+    text-align: center;
 }
 
 #accountContent a.lnk:hover,
 #accountContent a.btn:hover,
 #accountContent a.add-cof:hover {
-    border-bottom-color: #000;
+    background-color: #e5e5e5;
 }
 
-/* Fix for the inline "change" links next to the name */
-#accountContent .ciRegularView span[style*="padding-left: 30px"] {
-    display: block;
-    padding-left: 0 !important;
+/* Size down the inline 'change' buttons slightly */
+#accountContent .ciRegularView span[style*="padding-left: 30px"] a.lnk {
     margin-top: 5px;
+    padding: 6px 12px;
+    font-size: 10px;
 }
 
-/* --- PAYMENT METHODS TABLE --- */
+/* --- SAVED PAYMENT METHODS TABLE --- */
 #accountContent .table {
     width: 100%;
     margin-top: 20px;
+    border-collapse: collapse;
 }
 
 #accountContent .table .row {
     display: flex;
     padding: 15px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e0e0e0;
     align-items: center;
 }
 
 #accountContent .table .row.h {
-    font-weight: 600;
+    font-family: "Abadi Bold", "Abadi", sans-serif;
     text-transform: uppercase;
-    font-size: 10px;
-    letter-spacing: 1px;
-    color: #888;
+    font-size: 12px;
+    color: #000;
     border-bottom: 2px solid #000;
 }
 
 #accountContent .table .row div {
     flex: 1;
+    font-family: "Abadi Light", "Abadi", sans-serif;
+    font-size: 14px;
 }
 
 #accountContent .table .row div.cmd {
     display: flex;
     justify-content: flex-end;
-    gap: 20px;
+    gap: 10px;
 }
 
-#accountContent .template .info-text,
-#accountContent .empty {
-    font-size: 14px;
-    color: #666;
-    font-style: italic;
-}
-
-/* --- ADD PAYMENT BUTTON WRAPPER --- */
-#accountContent .div-add-card-on-file {
-    margin-top: 30px;
-}
-
-/* --- CUSTOMER SERVICE TEXT --- */
-#accountContent p.customer-service {
-    font-size: 14px;
-    color: #666;
-    margin-top: 20px;
-    margin-bottom: 5px;
-}
-
-#accountContent a.customer-service {
-    color: #000;
-    text-decoration: underline;
-    font-size: 14px;
-}
-
+/* Fix button alignment inside the table */
+#accountContent .table .row div.cmd a.btn {
+    margin-top: 0;
