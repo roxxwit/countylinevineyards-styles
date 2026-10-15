@@ -6337,7 +6337,7 @@ app-basket .border-top {
 /* Sub-headers inside the boxes */
 #accountContent .account_address h3 {
     font-family: "Abadi", "Abadi MT", sans-serif !important;
-    font-size: 16px !important; /* Bumped up */
+    font-size: 14px !important; /* Bumped up */
     text-transform: uppercase !important;
     letter-spacing: 1.5px !important;
     font-weight: 600 !important;
@@ -6411,13 +6411,13 @@ app-basket .border-top {
 
 #accountContent .ciRegularView span[style*="padding-left: 30px"] a.lnk {
     padding: 8px 16px !important;
-    font-size: 12px !important; /* Bumped up */
+    font-size: 16px !important; /* Bumped up */
 }
 
 /* 8. SAVED PAYMENT METHODS TABLE */
 #accountContent .table {
     width: 100% !important;
-    margin-top: 20px !important;
+    margin-top: 18px !important;
 }
 
 #accountContent .table .row {
@@ -6440,7 +6440,7 @@ app-basket .border-top {
 
 #accountContent .table .row div {
     flex: 1 !important;
-    font-size: 16px !important; /* Bumped up */
+    font-size: 14px !important; /* Bumped up */
 }
 
 #accountContent .table .row div.cmd {
@@ -6456,14 +6456,14 @@ app-basket .border-top {
 /* 9. EMPTY STATES & CUSTOMER SERVICE TEXT */
 #accountContent .template .info-text,
 #accountContent .empty {
-    font-size: 16px !important; /* Bumped up */
+    font-size: 14px !important; /* Bumped up */
     font-style: italic !important;
     margin-bottom: 15px !important;
 }
 
 #accountContent .customer-order-history h2 {
     font-family: "Abadi Light", "Abadi MT", sans-serif !important;
-    font-size: 24px !important; /* Bumped up */
+    font-size: 18px !important; /* Bumped up */
     font-style: italic !important;
     color: #555555 !important;
     font-weight: normal !important;
@@ -6484,7 +6484,7 @@ app-basket .border-top {
 #accountContent a[href^="mailto:"] {
     font-family: "Abadi Light", "Abadi MT", sans-serif !important;
     color: #555555 !important;
-    font-size: 16px !important; /* Bumped up */
+    font-size: 14px !important; /* Bumped up */
     text-decoration: underline !important;
     text-transform: none !important;
 }
